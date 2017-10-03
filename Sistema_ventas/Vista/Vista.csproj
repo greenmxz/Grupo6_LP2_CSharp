@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdmClienteModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmClienteModificar.Designer.cs">
+      <DependentUpon>frmAdmClienteModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmClienteRegistrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     <Compile Include="frmAdmPedidoRegistrar.Designer.cs">
       <DependentUpon>frmAdmPedidoRegistrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaCliente.Designer.cs">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,8 +77,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdmClienteModificar.resx">
+      <DependentUpon>frmAdmClienteModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmClienteRegistrar.resx">
       <DependentUpon>frmAdmClienteRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaCliente.resx">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

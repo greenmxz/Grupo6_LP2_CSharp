@@ -15,6 +15,18 @@ namespace Vista
         public Principal()
         {
             InitializeComponent();
+            //IsMdiContainer = true;
+
+        }
+
+        private void modificarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void abrirModificar(object sender, MouseEventArgs e)
+        {
+            frmAdmClienteModificar frmClienteModificar = new frmAdmClienteModificar();
         }
     }
 }
