@@ -10,13 +10,18 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmAdmClienteModificar : Form
+    public partial class frmAdmCliente : Form
     {
-        public frmAdmClienteModificar()
+        public frmAdmCliente(Form padre)
         {
             InitializeComponent();
-            //MdiParent = padre;
+            MdiParent = padre;
             Visible = true;
+            
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e) {
+            frmBusquedaCliente frmBusquedaCliente = new frmBusquedaCliente();
         }
     }
 }

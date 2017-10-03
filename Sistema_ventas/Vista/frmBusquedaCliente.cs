@@ -15,6 +15,7 @@ namespace Vista
         public frmBusquedaCliente()
         {
             InitializeComponent();
+            Visible = true;
         }
     }
 }

@@ -45,17 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAdmClienteModificar.cs">
+    <Compile Include="frmAdmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdmClienteModificar.Designer.cs">
-      <DependentUpon>frmAdmClienteModificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAdmClienteRegistrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAdmClienteRegistrar.Designer.cs">
-      <DependentUpon>frmAdmClienteRegistrar.cs</DependentUpon>
+    <Compile Include="frmAdmCliente.Designer.cs">
+      <DependentUpon>frmAdmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmPedidoRegistrar.cs">
       <SubType>Form</SubType>
@@ -77,11 +71,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAdmClienteModificar.resx">
-      <DependentUpon>frmAdmClienteModificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAdmClienteRegistrar.resx">
-      <DependentUpon>frmAdmClienteRegistrar.cs</DependentUpon>
+    <Compile Include="Vista_menu\frmMenuInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista_menu\frmMenuInicio.Designer.cs">
+      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAdmCliente.resx">
+      <DependentUpon>frmAdmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
@@ -97,7 +94,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vista_menu\frmMenuInicio.resx">
+      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

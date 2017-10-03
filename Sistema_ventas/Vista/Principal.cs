@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Vista.Vista_menu;
 namespace Vista
 {
     public partial class Principal : Form
@@ -15,18 +15,14 @@ namespace Vista
         public Principal()
         {
             InitializeComponent();
-            //IsMdiContainer = true;
-
+            IsMdiContainer = true;
+            //this.Size = new Size(700,350);
+            //FormBorderStyle = FormBorderStyle.None;
+            frmMenuInicio fMenuInicio = new frmMenuInicio(this);
         }
 
-        private void modificarClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
-        private void abrirModificar(object sender, MouseEventArgs e)
-        {
-            frmAdmClienteModificar frmClienteModificar = new frmAdmClienteModificar();
-        }
+        
     }
 }
