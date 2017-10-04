@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo {
     public class Cliente {
+        private static int _id=0;
         private int _ruc;
         private string _razonSocial;
         private string _telefono;
@@ -16,6 +17,7 @@ namespace Modelo {
         public Cliente() {
         }
         public Cliente(int ruc, string razonSocial, string telefono, string correo, string direccion, string distrito) {
+            _id = _id + 1;
             _ruc = ruc;
             _razonSocial = razonSocial;
             _telefono = telefono;
