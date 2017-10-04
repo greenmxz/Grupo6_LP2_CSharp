@@ -24,8 +24,24 @@ namespace Vista
             MdiParent = padre;
             Visible = true;
             txtCodigo.Enabled = false;
+           
 
         }
 
+        private void txtStockIni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPU_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !(e.KeyChar.Equals('.')))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

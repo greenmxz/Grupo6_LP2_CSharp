@@ -144,6 +144,7 @@
             this.txtPU.Name = "txtPU";
             this.txtPU.Size = new System.Drawing.Size(71, 22);
             this.txtPU.TabIndex = 3;
+            this.txtPU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPU_KeyPress);
             // 
             // txtStockIni
             // 
@@ -151,6 +152,7 @@
             this.txtStockIni.Name = "txtStockIni";
             this.txtStockIni.Size = new System.Drawing.Size(71, 22);
             this.txtStockIni.TabIndex = 2;
+            this.txtStockIni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockIni_KeyPress);
             // 
             // txtMarca
             // 
@@ -216,6 +218,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.groupBox1);
+            this.KeyPreview = true;
             this.Name = "frmAdmProducto";
             this.Text = "Administrar Producto";
             this.groupBox1.ResumeLayout(false);
