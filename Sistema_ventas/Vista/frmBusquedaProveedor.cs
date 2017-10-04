@@ -10,24 +10,18 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmBusquedaCliente : Form
+    public partial class frmBusquedaProveedor : Form
     {
         private estado _estado;
-
         public estado Estado { get => _estado; set => _estado = value; }
-
-        public frmBusquedaCliente()
+        public frmBusquedaProveedor()
         {
             InitializeComponent();
             Estado = estado.Nuevo;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            this.Dispose();
-            this.Estado = estado.Cerrado;
-        }
-
-        private void btnSeleccionar_Click(object sender, EventArgs e) {
+        private void btnSelecProv_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.Estado = estado.Cerrado;
         }

@@ -81,6 +81,7 @@
             this.lblProductos.Size = new System.Drawing.Size(112, 44);
             this.lblProductos.TabIndex = 2;
             this.lblProductos.Text = "Administrar Productos";
+            this.lblProductos.Click += new System.EventHandler(this.lblProductos_Click_1);
             this.lblProductos.MouseEnter += new System.EventHandler(this.lblProductos_MouseEnter);
             this.lblProductos.MouseLeave += new System.EventHandler(this.lblProductos_MouseLeave);
             this.lblProductos.MouseHover += new System.EventHandler(this.lblProductos_MouseHover);
@@ -95,6 +96,7 @@
             this.lblProveedores.Size = new System.Drawing.Size(112, 44);
             this.lblProveedores.TabIndex = 3;
             this.lblProveedores.Text = "Administrar Proveedores";
+            this.lblProveedores.Click += new System.EventHandler(this.lblProveedores_Click);
             this.lblProveedores.MouseEnter += new System.EventHandler(this.lblProveedores_MouseEnter);
             this.lblProveedores.MouseLeave += new System.EventHandler(this.lblProveedores_MouseLeave);
             this.lblProveedores.MouseHover += new System.EventHandler(this.lblProveedores_MouseHover);
@@ -131,6 +133,7 @@
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panel2
             // 
@@ -151,7 +154,7 @@
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
             this.lblBienvenida.Location = new System.Drawing.Point(8, 9);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(116, 25);
+            this.lblBienvenida.Size = new System.Drawing.Size(144, 31);
             this.lblBienvenida.TabIndex = 3;
             this.lblBienvenida.Text = "Bienvenido";
             // 
@@ -193,7 +196,6 @@
             this.ClientSize = new System.Drawing.Size(240, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);

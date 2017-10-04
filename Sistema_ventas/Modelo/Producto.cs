@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace Modelo
 {
     
-    class Producto
+    public class Producto
     {
         private string _nombre;
         private string _marca;
         private float _precio;
         private string _descripcion;
+        private int _id;
 
         public Producto(string nombre, string marca, float precio, string descripcion)
         {
@@ -22,11 +23,21 @@ namespace Modelo
             Descripcion = descripcion;
         }
 
+        public Producto(string nombre, string marca, float precio, string descripcion, int id)
+        {
+            _nombre = nombre;
+            _marca = marca;
+            _precio = precio;
+            _descripcion = descripcion;
+            _id = id;
+        }
+
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Marca { get => _marca; set => _marca = value; }
         public float Precio { get => _precio; set => _precio = value; }
         public string Descripcion { get => _descripcion; set => _descripcion = value; }
-        //private int _codigo;--> El sistema generar el codigo en la bd o en la creacion del objeto
+        public int Id { get => _id; set => _id = value; }
+        
 
 
     }
