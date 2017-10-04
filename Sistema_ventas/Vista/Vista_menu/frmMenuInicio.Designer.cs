@@ -81,6 +81,7 @@
             this.lblProductos.Size = new System.Drawing.Size(112, 44);
             this.lblProductos.TabIndex = 2;
             this.lblProductos.Text = "Administrar Productos";
+            this.lblProductos.Click += new System.EventHandler(this.lblProductos_Click_1);
             this.lblProductos.MouseEnter += new System.EventHandler(this.lblProductos_MouseEnter);
             this.lblProductos.MouseLeave += new System.EventHandler(this.lblProductos_MouseLeave);
             this.lblProductos.MouseHover += new System.EventHandler(this.lblProductos_MouseHover);
@@ -153,7 +154,7 @@
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
             this.lblBienvenida.Location = new System.Drawing.Point(8, 9);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(116, 25);
+            this.lblBienvenida.Size = new System.Drawing.Size(144, 31);
             this.lblBienvenida.TabIndex = 3;
             this.lblBienvenida.Text = "Bienvenido";
             // 
@@ -189,7 +190,7 @@
             // 
             // frmMenuInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(240, 681);
