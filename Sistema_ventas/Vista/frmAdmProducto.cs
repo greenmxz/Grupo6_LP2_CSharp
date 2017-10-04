@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public enum estado { Nuevo, Cerrado }
+    //public enum estado { Nuevo, Cerrado }
     public partial class frmAdmProducto : Form
     {
         private estado frmState;
         private frmBusquedaProducto frmBPROD;
 
-        public estado Estado { get => estado; set => estado = value; }
+        public estado FrmState { get => frmState; set => frmState = value; }
 
         public frmAdmProducto()
         {
             InitializeComponent();
             txtCodigo.Enabled = false;
-            this.frmState = estado.Cerrado;
+            this.FrmState = estado.Cerrado;
         }
 
         public frmAdmProducto(Form padre)
@@ -31,7 +31,7 @@ namespace Vista
             MdiParent = padre;
             Visible = true;
             txtCodigo.Enabled = false;
-            this.frmState = estado.Cerrado;
+            this.FrmState = estado.Cerrado;
 
         }
 
@@ -54,7 +54,7 @@ namespace Vista
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            this.frmState = estado.Cerrado;
+            this.FrmState = estado.Cerrado;
             if (frmBPROD != null) { frmBPROD.Dispose(); }
         }
     }
