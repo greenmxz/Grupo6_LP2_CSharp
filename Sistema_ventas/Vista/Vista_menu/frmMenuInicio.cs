@@ -106,5 +106,19 @@ namespace Vista.Vista_menu
         {
             this.MdiParent.Close();
         }
+
+        private void lblProveedores_Click(object sender, EventArgs e)
+        {
+            if (frmAdmCliente == null || frmAdmCliente.Estado == Vista.estado.Cerrado)
+            {
+                frmAdmProveedor frmAdmProv = new frmAdmProveedor();
+                frmAdmProv.MdiParent = this.MdiParent;
+                frmAdmProv.Show();
+
+                frmAdmProv.StartPosition = FormStartPosition.Manual;
+                frmAdmProv.Left = 244;
+                frmAdmProv.Top = 0;
+            }
+        }
     }
 }

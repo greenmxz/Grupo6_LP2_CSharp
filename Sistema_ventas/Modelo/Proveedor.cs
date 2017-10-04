@@ -15,9 +15,6 @@ namespace Modelo
         private string _dirCorreo;
         private string _direccion;
         private string _distrito;
-        private string _nombreContacto;
-        private string _telefContacto;
-        private string _dirCorreoContacto;
 
     }
 }
