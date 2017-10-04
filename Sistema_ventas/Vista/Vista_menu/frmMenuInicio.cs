@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista.Vista_menu {
+namespace Vista.Vista_menu
+{
+    public enum estado { Nuevo,Cerrado}
     public partial class frmMenuInicio : Form {
-        
-        public frmMenuInicio(Form padre,string nombreUsuario) {
+        private frmAdmCliente frmAdmCliente;
+        public frmMenuInicio(Form principal,string nombreUsuario) {
             
             InitializeComponent();
-            MdiParent = padre;
+            MdiParent = principal;
             lblNombreUsuario.Text = nombreUsuario;
             Color cMenu = Color.FromArgb(34, 45, 49);
             BackColor = cMenu;
@@ -24,7 +20,7 @@ namespace Vista.Vista_menu {
         }
 
         private void lblClientes_MouseEnter(object sender, EventArgs e) {
-            lblClientes.Font = new Font(this.Font,FontStyle.Bold);
+            lblClientes.Font = new Font(this.Font,FontStyle.Bold | FontStyle.Italic);
             lblClientes.Cursor = Cursors.Hand;
         }
 
@@ -34,12 +30,12 @@ namespace Vista.Vista_menu {
         }
 
         private void lblClientes_MouseHover(object sender, EventArgs e) {
-            lblClientes.Font = new Font(this.Font, FontStyle.Bold);
+            lblClientes.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblClientes.Cursor = Cursors.Hand;
         }
 
         private void lblPedidos_MouseHover(object sender, EventArgs e) {
-            lblPedidos.Font = new Font(this.Font, FontStyle.Bold);
+            lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblPedidos.Cursor = Cursors.Hand;
         }
 
@@ -49,7 +45,7 @@ namespace Vista.Vista_menu {
         }
 
         private void lblProductos_MouseHover(object sender, EventArgs e) {
-            lblProductos.Font = new Font(this.Font, FontStyle.Bold);
+            lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProductos.Cursor = Cursors.Hand;
         }
 
@@ -59,7 +55,7 @@ namespace Vista.Vista_menu {
         }
 
         private void lblProveedores_MouseHover(object sender, EventArgs e) {
-            lblProveedores.Font = new Font(this.Font, FontStyle.Bold);
+            lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProveedores.Cursor = Cursors.Hand;
         }
 
@@ -68,27 +64,34 @@ namespace Vista.Vista_menu {
             lblProveedores.Cursor = Cursors.Default;
         }
 
-        private void lblClientes_Click(object sender, EventArgs e) {
-            frmAdmCliente fClienteModificar = new frmAdmCliente(this.ParentForm);
-            fClienteModificar.StartPosition = FormStartPosition.Manual;
-            fClienteModificar.Left = 244;
-            fClienteModificar.Top = 0;
-
-        }
-
         private void lblPedidos_MouseEnter(object sender, EventArgs e) {
-            lblPedidos.Font = new Font(this.Font, FontStyle.Bold);
+            lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblPedidos.Cursor = Cursors.Hand;
         }
 
         private void lblProductos_MouseEnter(object sender, EventArgs e) {
-            lblProductos.Font = new Font(this.Font, FontStyle.Bold);
+            lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProductos.Cursor = Cursors.Hand;
         }
 
         private void lblProveedores_MouseEnter(object sender, EventArgs e) {
-            lblProveedores.Font = new Font(this.Font, FontStyle.Bold);
+            lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProveedores.Cursor = Cursors.Hand;
+        }
+
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+            if (frmAdmCliente == null || frmAdmCliente.Estado == Vista.estado.Cerrado)
+            {
+                frmAdmCliente = new frmAdmCliente();
+                frmAdmCliente.MdiParent = this.MdiParent;
+                frmAdmCliente.Show();
+
+                frmAdmCliente.StartPosition = FormStartPosition.Manual;
+                frmAdmCliente.Left = 244;
+                frmAdmCliente.Top = 0;
+            }
+
         }
 
         private void lblProductos_Click(object sender, EventArgs e)
@@ -97,6 +100,11 @@ namespace Vista.Vista_menu {
             frmProd.StartPosition = FormStartPosition.Manual;
             frmProd.Left = 136;
             frmProd.Top = -1;
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.MdiParent.Close();
         }
     }
 }

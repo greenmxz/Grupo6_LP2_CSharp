@@ -12,19 +12,24 @@ namespace Vista
 {
     public partial class frmBusquedaCliente : Form
     {
-        public frmBusquedaCliente(Form padre)
+        private estado _estado;
+
+        public estado Estado { get => _estado; set => _estado = value; }
+
+        public frmBusquedaCliente()
         {
             InitializeComponent();
-            MdiParent= padre;
-            Visible = true;
+            Estado = estado.Nuevo;
         }
 
         private void button1_Click(object sender, EventArgs e) {
             this.Dispose();
+            this.Estado = estado.Cerrado;
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e) {
             this.Dispose();
+            this.Estado = estado.Cerrado;
         }
     }
 }

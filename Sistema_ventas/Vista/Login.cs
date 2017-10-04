@@ -10,19 +10,22 @@ using System.Windows.Forms;
 
 namespace Vista {
     public partial class Login : Form {
-
+        private string _nombreUsuario;
         public Login() {
             InitializeComponent();
             
         }
 
+        public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
+
         //public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
 
         private void btnIngresar_Click(object sender, EventArgs e) {
-            this.Hide();
-            Principal principal = new Principal(txtUsuario.Text);
+            NombreUsuario = txtUsuario.Text;
+            this.DialogResult = DialogResult.OK;
+            //Principal principal = new Principal(txtUsuario.Text);
  
-            principal.Show();
+            //principal.Show();
             
         }
 
