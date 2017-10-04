@@ -86,5 +86,13 @@ namespace Vista.Vista_menu {
             lblProveedores.Font = new Font(lblProveedores.Font.Name, 12);
             lblProveedores.Cursor = Cursors.Hand;
         }
+
+        private void lblProductos_Click(object sender, EventArgs e)
+        {
+            frmAdmProducto frmProd = new frmAdmProducto(this.ParentForm);
+            frmProd.StartPosition = FormStartPosition.Manual;
+            frmProd.Left = 136;
+            frmProd.Top = -1;
+        }
     }
 }
