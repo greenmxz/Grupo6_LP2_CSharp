@@ -12,16 +12,15 @@ namespace Vista
 {
     public partial class Principal : Form
     {
-        public Principal()
+        
+        public Principal(string nombreUsuario)
         {
             InitializeComponent();
             IsMdiContainer = true;
             //this.Size = new Size(700,350);
             //FormBorderStyle = FormBorderStyle.None;
-            frmMenuInicio fMenuInicio = new frmMenuInicio(this);
+            frmMenuInicio fMenuInicio = new frmMenuInicio(this,nombreUsuario);
         }
-
-        
 
         
     }
