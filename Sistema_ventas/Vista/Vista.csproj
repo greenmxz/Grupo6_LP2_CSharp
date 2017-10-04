@@ -69,6 +69,12 @@
     <Compile Include="frmBusquedaCliente.Designer.cs">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBusquedaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaPedido.Designer.cs">
+      <DependentUpon>frmBusquedaPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +98,17 @@
     <EmbeddedResource Include="frmAdmCliente.resx">
       <DependentUpon>frmAdmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmPedidoRegistrar.resx">
+      <DependentUpon>frmAdmPedidoRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmProducto.resx">
       <DependentUpon>frmAdmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaPedido.resx">
+      <DependentUpon>frmBusquedaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

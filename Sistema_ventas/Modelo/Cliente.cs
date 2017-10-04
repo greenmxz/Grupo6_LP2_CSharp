@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Modelo {
     public class Cliente {
         private static int _id=0;
-        private int _ruc;
+        private int _ruc;//verificar si es long int o string
         private string _razonSocial;
         private string _telefono;
         private string _correo;
