@@ -95,6 +95,7 @@
             this.lblProveedores.Size = new System.Drawing.Size(112, 44);
             this.lblProveedores.TabIndex = 3;
             this.lblProveedores.Text = "Administrar Proveedores";
+            this.lblProveedores.Click += new System.EventHandler(this.lblProveedores_Click);
             this.lblProveedores.MouseEnter += new System.EventHandler(this.lblProveedores_MouseEnter);
             this.lblProveedores.MouseLeave += new System.EventHandler(this.lblProveedores_MouseLeave);
             this.lblProveedores.MouseHover += new System.EventHandler(this.lblProveedores_MouseHover);
