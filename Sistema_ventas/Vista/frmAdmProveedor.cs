@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmAdmProveedores : Form
+    public partial class frmAdmProveedor : Form
     {
-        public frmAdmProveedores()
+        public frmAdmProveedor()
         {
             InitializeComponent();
         }
