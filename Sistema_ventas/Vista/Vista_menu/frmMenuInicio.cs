@@ -7,6 +7,7 @@ namespace Vista.Vista_menu
     public enum estado { Nuevo,Cerrado}
     public partial class frmMenuInicio : Form {
         private frmAdmCliente frmAdmCliente;
+        private frmAdmProducto frmAdmProducto;
         public frmMenuInicio(Form principal,string nombreUsuario) {
             
             InitializeComponent();
@@ -85,21 +86,14 @@ namespace Vista.Vista_menu
             {
                 frmAdmCliente = new frmAdmCliente();
                 frmAdmCliente.MdiParent = this.MdiParent;
-                frmAdmCliente.Show();
-
                 frmAdmCliente.StartPosition = FormStartPosition.Manual;
                 frmAdmCliente.Left = 244;
                 frmAdmCliente.Top = 0;
+                frmAdmCliente.Show();
+
+                
             }
 
-        }
-
-        private void lblProductos_Click(object sender, EventArgs e)
-        {
-            frmAdmProducto frmProd = new frmAdmProducto(this.ParentForm);
-            frmProd.StartPosition = FormStartPosition.Manual;
-            frmProd.Left = 136;
-            frmProd.Top = -1;
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -118,6 +112,20 @@ namespace Vista.Vista_menu
                 frmAdmProv.StartPosition = FormStartPosition.Manual;
                 frmAdmProv.Left = 244;
                 frmAdmProv.Top = 0;
+            }
+        }
+
+        private void lblProductos_Click_1(object sender, EventArgs e)
+        {
+            if (frmAdmProducto == null || frmAdmProducto.Estado == Vista.estado.Cerrado)
+            {
+                frmAdmProducto = new frmAdmProducto();
+                frmAdmProducto.MdiParent = this.MdiParent;
+                frmAdmProducto.StartPosition = FormStartPosition.Manual;
+                frmAdmProducto.Left = 244;
+                frmAdmProducto.Top = 0;
+                frmAdmProducto.Show();
+
             }
         }
     }
