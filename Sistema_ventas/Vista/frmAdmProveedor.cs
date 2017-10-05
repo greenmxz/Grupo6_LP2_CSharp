@@ -76,7 +76,6 @@ namespace Vista
 
         private void btnLimpiarProveedor_Click(object sender, EventArgs e)
         {
-            txtCodigoProveedor.Text = "";
             txtRUCProveedores.Text = "";
             txtRazSocProveedores.Text = "";
             txtTlfProveedores.Text = "";
@@ -116,6 +115,50 @@ namespace Vista
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
             string id = txtCodigoProveedor.Text;
+            string RUC = txtRUCProveedores.Text;
+            string razSoc = txtRazSocProveedores.Text;
+            string telef = txtTlfProveedores.Text;
+            string correo = txtDirElecProveedores.Text;
+            string direc = txtDirProveedores.Text;
+            string distrito = cboDistritoProveedor.Text;
+            if (RUC != "" && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
+            {
+                i++;
+                string cadena = "¿Está seguro de que desea registrar el siguiente proveedor:";
+                cadena = cadena + Environment.NewLine + "RUC : " + RUC;
+                cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
+                cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
+                cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
+                cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
+                cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + id;
+                DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de registro", MessageBoxButtons.YesNo);
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        MessageBox.Show("Proveedor registrado exitosamente");
+                        txtCodigoProveedor.Text = "PROV000" + Convert.ToString(i);
+                        txtRUCProveedores.Text = "";
+                        txtRazSocProveedores.Text = "";
+                        txtTlfProveedores.Text = "";
+                        txtDirElecProveedores.Text = "";
+                        txtDirProveedores.Text = "";
+                        cboDistritoProveedor.Text = "";
+                        break;
+                    case DialogResult.No:
+                        MessageBox.Show("La operación ha sido cancelada");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hay algunos datos que no están completos", "Error en el proceso");
+            }
+        }
+
+        private void btnModificarProveedor_Click(object sender, EventArgs e)
+        {
+            string id = txtCodigoProveedor.Text;
             i++;
             string RUC = txtRUCProveedores.Text;
             string razSoc = txtRazSocProveedores.Text;
@@ -123,7 +166,72 @@ namespace Vista
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            // "¿Está seguro de 
+            string cadena = "¿Está seguro de que desea modificar la información del siguiente proveedor:";
+            cadena = cadena + Environment.NewLine + "Código : " + id;
+            cadena = cadena + Environment.NewLine + "RUC : " + RUC;
+            cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
+            cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
+            cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
+            cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
+            cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
+            cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el proveedor con código : " + id + "NO serán reversibles";
+            DialogResult result = MessageBox.Show(cadena, "Mensaje de modificación de registro", MessageBoxButtons.YesNo);
+
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    MessageBox.Show("Proveedor modificado exitosamente");
+                    txtCodigoProveedor.Text = "";
+                    txtRUCProveedores.Text = "";
+                    txtRazSocProveedores.Text = "";
+                    txtTlfProveedores.Text = "";
+                    txtDirElecProveedores.Text = "";
+                    txtDirProveedores.Text = "";
+                    cboDistritoProveedor.Text = "";
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("La operación ha sido cancelada");
+                    break;
+            }
+        }
+
+        private void btnEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            string id = txtCodigoProveedor.Text;
+            i++;
+            string RUC = txtRUCProveedores.Text;
+            string razSoc = txtRazSocProveedores.Text;
+            string telef = txtTlfProveedores.Text;
+            string correo = txtDirElecProveedores.Text;
+            string direc = txtDirProveedores.Text;
+            string distrito = cboDistritoProveedor.Text;
+            string cadena = "¿Está seguro de que desea eliminar el siguiente proveedor:";
+            cadena = cadena + Environment.NewLine + "Código : " + id;
+            cadena = cadena + Environment.NewLine + "RUC : " + RUC;
+            cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
+            cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
+            cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
+            cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
+            cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
+            cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código : " + id + "NO serán reversibles";
+            DialogResult result = MessageBox.Show(cadena, "Mensaje de eliminación de registro", MessageBoxButtons.YesNo);
+
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    MessageBox.Show("Proveedor eliminado exitosamente");
+                    txtCodigoProveedor.Text = "";
+                    txtRUCProveedores.Text = "";
+                    txtRazSocProveedores.Text = "";
+                    txtTlfProveedores.Text = "";
+                    txtDirElecProveedores.Text = "";
+                    txtDirProveedores.Text = "";
+                    cboDistritoProveedor.Text = "";
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("La operación ha sido cancelada");
+                    break;
+            }
         }
     }
 }

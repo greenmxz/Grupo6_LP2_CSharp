@@ -43,6 +43,7 @@
             // 
             // lblClientes
             // 
+            this.lblClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblClientes.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientes.ForeColor = System.Drawing.Color.White;
             this.lblClientes.Location = new System.Drawing.Point(27, 71);
@@ -59,6 +60,7 @@
             // 
             // lblPedidos
             // 
+            this.lblPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPedidos.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPedidos.ForeColor = System.Drawing.Color.White;
             this.lblPedidos.Location = new System.Drawing.Point(27, 149);
@@ -73,6 +75,7 @@
             // 
             // lblProductos
             // 
+            this.lblProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProductos.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductos.ForeColor = System.Drawing.Color.White;
             this.lblProductos.Location = new System.Drawing.Point(27, 227);
@@ -88,6 +91,7 @@
             // 
             // lblProveedores
             // 
+            this.lblProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProveedores.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProveedores.ForeColor = System.Drawing.Color.White;
             this.lblProveedores.Location = new System.Drawing.Point(27, 305);
@@ -127,12 +131,14 @@
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Location = new System.Drawing.Point(49, 400);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(113, 28);
             this.btnCerrarSesion.TabIndex = 4;
-            this.btnCerrarSesion.Text = "Cerrar sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Text = "Cerrar";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panel2
@@ -154,7 +160,7 @@
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
             this.lblBienvenida.Location = new System.Drawing.Point(8, 9);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(144, 31);
+            this.lblBienvenida.Size = new System.Drawing.Size(116, 25);
             this.lblBienvenida.TabIndex = 3;
             this.lblBienvenida.Text = "Bienvenido";
             // 
@@ -190,7 +196,7 @@
             // 
             // frmMenuInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(240, 681);

@@ -62,6 +62,7 @@
             // 
             // btnAgregarProveedor
             // 
+            this.btnAgregarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarProveedor.Location = new System.Drawing.Point(16, 552);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
             this.btnAgregarProveedor.Size = new System.Drawing.Size(75, 23);
@@ -72,24 +73,29 @@
             // 
             // btnModificarProveedor
             // 
+            this.btnModificarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarProveedor.Location = new System.Drawing.Point(92, 552);
             this.btnModificarProveedor.Name = "btnModificarProveedor";
             this.btnModificarProveedor.Size = new System.Drawing.Size(75, 23);
             this.btnModificarProveedor.TabIndex = 1;
             this.btnModificarProveedor.Text = "Modificar";
             this.btnModificarProveedor.UseVisualStyleBackColor = true;
+            this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
             // 
             // btnEliminarProveedor
             // 
+            this.btnEliminarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarProveedor.Location = new System.Drawing.Point(168, 552);
             this.btnEliminarProveedor.Name = "btnEliminarProveedor";
             this.btnEliminarProveedor.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarProveedor.TabIndex = 2;
             this.btnEliminarProveedor.Text = "Eliminar";
             this.btnEliminarProveedor.UseVisualStyleBackColor = true;
+            this.btnEliminarProveedor.Click += new System.EventHandler(this.btnEliminarProveedor_Click);
             // 
             // btnBuscarProveedor
             // 
+            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProveedor.Location = new System.Drawing.Point(233, 181);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(89, 39);
@@ -246,6 +252,7 @@
             // 
             // btnLimpiarProveedor
             // 
+            this.btnLimpiarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarProveedor.Location = new System.Drawing.Point(244, 552);
             this.btnLimpiarProveedor.Name = "btnLimpiarProveedor";
             this.btnLimpiarProveedor.Size = new System.Drawing.Size(75, 23);

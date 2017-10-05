@@ -21,7 +21,7 @@ namespace Vista.Vista_menu
         }
 
         private void lblClientes_MouseEnter(object sender, EventArgs e) {
-            lblClientes.Font = new Font(this.Font,FontStyle.Bold | FontStyle.Italic);
+            //lblClientes.Font = new Font(this.Font,FontStyle.Bold | FontStyle.Italic);
             lblClientes.Cursor = Cursors.Hand;
         }
 
@@ -31,12 +31,12 @@ namespace Vista.Vista_menu
         }
 
         private void lblClientes_MouseHover(object sender, EventArgs e) {
-            lblClientes.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblClientes.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblClientes.Cursor = Cursors.Hand;
         }
 
         private void lblPedidos_MouseHover(object sender, EventArgs e) {
-            lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblPedidos.Cursor = Cursors.Hand;
         }
 
@@ -46,7 +46,7 @@ namespace Vista.Vista_menu
         }
 
         private void lblProductos_MouseHover(object sender, EventArgs e) {
-            lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProductos.Cursor = Cursors.Hand;
         }
 
@@ -56,7 +56,7 @@ namespace Vista.Vista_menu
         }
 
         private void lblProveedores_MouseHover(object sender, EventArgs e) {
-            lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProveedores.Cursor = Cursors.Hand;
         }
 
@@ -66,17 +66,17 @@ namespace Vista.Vista_menu
         }
 
         private void lblPedidos_MouseEnter(object sender, EventArgs e) {
-            lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblPedidos.Cursor = Cursors.Hand;
         }
 
         private void lblProductos_MouseEnter(object sender, EventArgs e) {
-            lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProductos.Cursor = Cursors.Hand;
         }
 
         private void lblProveedores_MouseEnter(object sender, EventArgs e) {
-            lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            //lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
             lblProveedores.Cursor = Cursors.Hand;
         }
 

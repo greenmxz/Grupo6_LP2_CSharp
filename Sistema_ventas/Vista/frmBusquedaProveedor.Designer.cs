@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaProveedor));
             this.btnSelecProv = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTituloBusqProv = new System.Windows.Forms.Label();
             this.btnCerrarBusqProveedor = new System.Windows.Forms.Button();
+            this.lblTituloBusqProv = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvProvCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProvRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,7 @@
             // 
             // btnSelecProv
             // 
+            this.btnSelecProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecProv.Location = new System.Drawing.Point(258, 172);
             this.btnSelecProv.Name = "btnSelecProv";
             this.btnSelecProv.Size = new System.Drawing.Size(144, 23);
@@ -65,15 +66,15 @@
             this.panel1.Size = new System.Drawing.Size(414, 137);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox1
+            // btnCerrarBusqProveedor
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnCerrarBusqProveedor.Location = new System.Drawing.Point(371, 12);
+            this.btnCerrarBusqProveedor.Name = "btnCerrarBusqProveedor";
+            this.btnCerrarBusqProveedor.Size = new System.Drawing.Size(31, 23);
+            this.btnCerrarBusqProveedor.TabIndex = 2;
+            this.btnCerrarBusqProveedor.Text = "X";
+            this.btnCerrarBusqProveedor.UseVisualStyleBackColor = true;
+            this.btnCerrarBusqProveedor.Click += new System.EventHandler(this.btnCerrarBusqProveedor_Click);
             // 
             // lblTituloBusqProv
             // 
@@ -85,15 +86,15 @@
             this.lblTituloBusqProv.TabIndex = 1;
             this.lblTituloBusqProv.Text = "label1";
             // 
-            // btnCerrarBusqProveedor
+            // pictureBox1
             // 
-            this.btnCerrarBusqProveedor.Location = new System.Drawing.Point(371, 12);
-            this.btnCerrarBusqProveedor.Name = "btnCerrarBusqProveedor";
-            this.btnCerrarBusqProveedor.Size = new System.Drawing.Size(31, 23);
-            this.btnCerrarBusqProveedor.TabIndex = 2;
-            this.btnCerrarBusqProveedor.Text = "X";
-            this.btnCerrarBusqProveedor.UseVisualStyleBackColor = true;
-            this.btnCerrarBusqProveedor.Click += new System.EventHandler(this.btnCerrarBusqProveedor_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(36, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(108, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
