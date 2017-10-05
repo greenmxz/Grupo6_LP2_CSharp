@@ -135,5 +135,20 @@ namespace Vista.Vista_menu
             form.MdiParent = this.MdiParent;
             form.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.Height == 240 && this.Width == 681) {
+                this.Height = 681;
+                this.Width = 240;
+                this.Visible = false;
+                    //240, 681
+            }
+            else {
+                this.Height = 681;
+                this.Width = 150;
+                this.Visible = true;
+            }
+        }
     }
 }

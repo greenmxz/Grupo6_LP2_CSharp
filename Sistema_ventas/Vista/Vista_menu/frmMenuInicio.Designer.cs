@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.pbImagenUsuario = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenUsuario)).BeginInit();
@@ -134,9 +135,9 @@
             // 
             this.btnCerrarSesion.BackColor = System.Drawing.Color.White;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(49, 400);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(30, 400);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(113, 28);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(94, 28);
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -144,6 +145,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.lblBienvenida);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblNombreUsuario);
@@ -195,6 +197,15 @@
             this.pbImagenUsuario.TabIndex = 0;
             this.pbImagenUsuario.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(202, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 13);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMenuInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,5 +241,6 @@
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.PictureBox pbImagenUsuario;
         private System.Windows.Forms.Label lblBienvenida;
+        private System.Windows.Forms.Button button1;
     }
 }

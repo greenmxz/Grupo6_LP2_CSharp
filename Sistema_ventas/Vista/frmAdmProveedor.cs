@@ -14,6 +14,7 @@ namespace Vista
     {
         private estado estBusquedaProv;
         private frmBusquedaProveedor frmBusqProv;
+        //private BindingList<>
         private static int i=1;
         public frmAdmProveedor()
         {
