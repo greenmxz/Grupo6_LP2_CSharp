@@ -32,5 +32,14 @@ namespace Vista {
         private void btnSalir_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                NombreUsuario = txtUsuario.Text;
+                this.DialogResult = DialogResult.OK;
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmProveedor));
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.btnEliminarProveedor = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.btnAgregarProveedor.TabIndex = 0;
             this.btnAgregarProveedor.Text = "Agregar";
             this.btnAgregarProveedor.UseVisualStyleBackColor = true;
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
             // 
             // btnModificarProveedor
             // 
@@ -145,6 +147,7 @@
             // 
             // txtCodigoProveedor
             // 
+            this.txtCodigoProveedor.Enabled = false;
             this.txtCodigoProveedor.Location = new System.Drawing.Point(103, 20);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.Size = new System.Drawing.Size(60, 20);
@@ -278,7 +281,7 @@
             // 
             this.lblTituloProveedor.AutoSize = true;
             this.lblTituloProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloProveedor.Location = new System.Drawing.Point(162, 52);
+            this.lblTituloProveedor.Location = new System.Drawing.Point(162, 43);
             this.lblTituloProveedor.Name = "lblTituloProveedor";
             this.lblTituloProveedor.Size = new System.Drawing.Size(216, 24);
             this.lblTituloProveedor.TabIndex = 1;
@@ -286,9 +289,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(24, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(108, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

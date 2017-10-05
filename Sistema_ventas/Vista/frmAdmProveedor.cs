@@ -14,6 +14,7 @@ namespace Vista
     {
         private estado estBusquedaProv;
         private frmBusquedaProveedor frmBusqProv;
+        private static int i=0;
         public frmAdmProveedor()
         {
             InitializeComponent();
@@ -110,6 +111,19 @@ namespace Vista
             this.Dispose();
             this.estBusquedaProv = estado.Cerrado;
             if (frmBusqProv != null) { frmBusqProv.Dispose(); }
+        }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            string id = "PROV000" + Convert.ToString(i);
+            i++;
+            string RUC = txtRUCProveedores.Text;
+            string razSoc = txtRazSocProveedores.Text;
+            string telef = txtTlfProveedores.Text;
+            string correo = txtDirElecProveedores.Text;
+            string direc = txtDirProveedores.Text;
+            string distrito = cboDistritoProveedor.Text;
+            // "¿Está seguro de 
         }
     }
 }
