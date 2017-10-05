@@ -19,5 +19,15 @@ namespace Vista
         }
 
         public estado Estado { get => _estado; set => _estado = value; }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

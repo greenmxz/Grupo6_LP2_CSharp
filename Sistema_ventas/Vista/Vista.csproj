@@ -128,6 +128,9 @@
     <EmbeddedResource Include="frmBusquedaPedido.resx">
       <DependentUpon>frmBusquedaPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaProducto.resx">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </EmbeddedResource>
