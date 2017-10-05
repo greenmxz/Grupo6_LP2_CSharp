@@ -16,7 +16,7 @@ namespace Vista
         private estado frmState;
         private frmBusquedaProducto frmBPROD;
 
-        public estado Estado { get => estado; set => estado = value; }
+        public estado Estado { get => frmState; set => frmState = value; }
 
         public frmAdmProducto()
         {

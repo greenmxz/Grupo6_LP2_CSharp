@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public enum estado { Nuevo, Cerrado }
+    //public enum estado { Nuevo, Cerrado }
     public partial class frmAdmCliente : Form
     {
-        private estado estado;
+        private estado frmState;
         private frmBusquedaCliente frmBusquedaCliente;
         public frmAdmCliente()
         {
             InitializeComponent();
-            this.Estado = estado.Nuevo;
+            this.frmState = estado.Nuevo;
             
         }
 
-        public estado Estado { get => estado; set => estado = value; }
+        public estado Estado { get => frmState; set => frmState = value; }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e) {
             if (frmBusquedaCliente == null || frmBusquedaCliente.Estado == estado.Cerrado)
@@ -43,7 +43,7 @@ namespace Vista
 
         private void btnCerrar_Click(object sender, EventArgs e) {
             this.Dispose();
-            this.estado = estado.Cerrado;
+            this.frmState = estado.Cerrado;
             if (frmBusquedaCliente != null) { frmBusquedaCliente.Dispose(); }
         }
     }

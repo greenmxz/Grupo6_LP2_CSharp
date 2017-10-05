@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmCliente));
             this.gbDatosCliente = new System.Windows.Forms.GroupBox();
+            this.txtDistrito = new System.Windows.Forms.TextBox();
+            this.lblDistrito = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblCoreroElectronico = new System.Windows.Forms.Label();
             this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.lblCoreroElectronico = new System.Windows.Forms.Label();
             this.lblRUC = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtRUC = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblDistrito = new System.Windows.Forms.Label();
-            this.txtDistrito = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gbDatosCliente.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,6 +82,23 @@
             this.gbDatosCliente.TabStop = false;
             this.gbDatosCliente.Text = "Datos del Cliente";
             // 
+            // txtDistrito
+            // 
+            this.txtDistrito.Location = new System.Drawing.Point(81, 196);
+            this.txtDistrito.Name = "txtDistrito";
+            this.txtDistrito.Size = new System.Drawing.Size(167, 20);
+            this.txtDistrito.TabIndex = 14;
+            this.txtDistrito.Text = "San Juan de Lurigancho";
+            // 
+            // lblDistrito
+            // 
+            this.lblDistrito.AutoSize = true;
+            this.lblDistrito.Location = new System.Drawing.Point(7, 196);
+            this.lblDistrito.Name = "lblDistrito";
+            this.lblDistrito.Size = new System.Drawing.Size(39, 13);
+            this.lblDistrito.TabIndex = 12;
+            this.lblDistrito.Text = "Distrito";
+            // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
@@ -100,15 +117,6 @@
             this.lblDireccion.TabIndex = 10;
             this.lblDireccion.Text = "Dirección:";
             // 
-            // lblCoreroElectronico
-            // 
-            this.lblCoreroElectronico.AutoSize = true;
-            this.lblCoreroElectronico.Location = new System.Drawing.Point(7, 137);
-            this.lblCoreroElectronico.Name = "lblCoreroElectronico";
-            this.lblCoreroElectronico.Size = new System.Drawing.Size(41, 13);
-            this.lblCoreroElectronico.TabIndex = 9;
-            this.lblCoreroElectronico.Text = "Correo:";
-            // 
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
@@ -117,6 +125,23 @@
             this.lblRazonSocial.Size = new System.Drawing.Size(73, 13);
             this.lblRazonSocial.TabIndex = 8;
             this.lblRazonSocial.Text = "Razon Social:";
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(81, 79);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(194, 20);
+            this.txtRazonSocial.TabIndex = 2;
+            this.txtRazonSocial.Text = "Compañia de Transformadores S.A.C";
+            // 
+            // lblCoreroElectronico
+            // 
+            this.lblCoreroElectronico.AutoSize = true;
+            this.lblCoreroElectronico.Location = new System.Drawing.Point(7, 137);
+            this.lblCoreroElectronico.Name = "lblCoreroElectronico";
+            this.lblCoreroElectronico.Size = new System.Drawing.Size(41, 13);
+            this.lblCoreroElectronico.TabIndex = 9;
+            this.lblCoreroElectronico.Text = "Correo:";
             // 
             // lblRUC
             // 
@@ -160,14 +185,6 @@
             this.txtCorreoElectronico.Size = new System.Drawing.Size(179, 20);
             this.txtCorreoElectronico.TabIndex = 3;
             this.txtCorreoElectronico.Text = "moises-ng@hotmail.com";
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(81, 79);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(194, 20);
-            this.txtRazonSocial.TabIndex = 2;
-            this.txtRazonSocial.Text = "Compañia de Transformadores S.A.C";
             // 
             // txtRUC
             // 
@@ -222,23 +239,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // lblDistrito
-            // 
-            this.lblDistrito.AutoSize = true;
-            this.lblDistrito.Location = new System.Drawing.Point(7, 196);
-            this.lblDistrito.Name = "lblDistrito";
-            this.lblDistrito.Size = new System.Drawing.Size(39, 13);
-            this.lblDistrito.TabIndex = 12;
-            this.lblDistrito.Text = "Distrito";
-            // 
-            // txtDistrito
-            // 
-            this.txtDistrito.Location = new System.Drawing.Point(81, 196);
-            this.txtDistrito.Name = "txtDistrito";
-            this.txtDistrito.Size = new System.Drawing.Size(167, 20);
-            this.txtDistrito.TabIndex = 14;
-            this.txtDistrito.Text = "San Juan de Lurigancho";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
@@ -251,14 +251,15 @@
             this.panel1.Size = new System.Drawing.Size(341, 137);
             this.panel1.TabIndex = 5;
             // 
-            // label1
+            // btnCerrar
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(171, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 56);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Administrar Clientes";
+            this.btnCerrar.AutoEllipsis = true;
+            this.btnCerrar.Location = new System.Drawing.Point(301, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(28, 18);
+            this.btnCerrar.TabIndex = 8;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pictureBox1
             // 
@@ -269,6 +270,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label1.Location = new System.Drawing.Point(171, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 56);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Administrar Clientes";
             // 
             // panel2
             // 
@@ -282,16 +292,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 544);
             this.panel2.TabIndex = 6;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.AutoEllipsis = true;
-            this.btnCerrar.Location = new System.Drawing.Point(301, 12);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 18);
-            this.btnCerrar.TabIndex = 8;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmAdmCliente
             // 

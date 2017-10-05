@@ -17,6 +17,7 @@ namespace Vista
         public frmAdmProveedor()
         {
             InitializeComponent();
+            lblTituloProveedor.Text = "Administrar" + Environment.NewLine + "Proveedor";
             cboDistritoProveedor.Items.Insert(0, "Cercado de Lima");
             cboDistritoProveedor.Items.Insert(1, "Cercado de Callao");
             cboDistritoProveedor.Items.Insert(2, "Ancón");
@@ -98,6 +99,17 @@ namespace Vista
                 frmBusqProv.Left = 588;
                 frmBusqProv.Top = 0;
             }
+        }
+
+        private void frmAdmProveedor_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCerrarProveedor_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.estBusquedaProv = estado.Cerrado;
+            if (frmBusqProv != null) { frmBusqProv.Dispose(); }
         }
     }
 }
