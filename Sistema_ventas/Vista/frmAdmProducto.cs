@@ -65,10 +65,11 @@ namespace Vista
                 frmBPROD = new frmBusquedaProducto();
                 frmBPROD.Estado = estado.Nuevo;
                 frmBPROD.MdiParent = this.MdiParent;
-                frmBPROD.Visible = true;
                 frmBPROD.StartPosition = FormStartPosition.Manual;
                 frmBPROD.Left = 588;
                 frmBPROD.Top = 0;
+                frmBPROD.Visible = true;
+                
             }
         }
     }

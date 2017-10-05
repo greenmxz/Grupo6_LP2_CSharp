@@ -107,11 +107,11 @@ namespace Vista.Vista_menu
             {
                 frmAdmProveedor frmAdmProv = new frmAdmProveedor();
                 frmAdmProv.MdiParent = this.MdiParent;
-                frmAdmProv.Show();
-
+           
                 frmAdmProv.StartPosition = FormStartPosition.Manual;
                 frmAdmProv.Left = 244;
                 frmAdmProv.Top = 0;
+                frmAdmProv.Show();
             }
         }
 

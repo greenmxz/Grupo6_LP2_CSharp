@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmProducto));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
@@ -49,9 +50,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -230,6 +233,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -260,6 +264,16 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Administrar Productos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(214, 157);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAdmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +289,7 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +316,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

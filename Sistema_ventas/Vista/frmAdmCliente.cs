@@ -32,12 +32,12 @@ namespace Vista
                 frmBusquedaCliente = new frmBusquedaCliente();
                 frmBusquedaCliente.Estado = estado.Nuevo;
                 frmBusquedaCliente.MdiParent = this.MdiParent;
-                frmBusquedaCliente.Visible = true;
-
-
+                
                 frmBusquedaCliente.StartPosition = FormStartPosition.Manual;
                 frmBusquedaCliente.Left = 588;
                 frmBusquedaCliente.Top = 0;
+
+                frmBusquedaCliente.Visible = true;
             }
         }
 

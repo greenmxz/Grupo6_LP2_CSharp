@@ -93,12 +93,11 @@ namespace Vista
                 frmBusqProv = new frmBusquedaProveedor();
                 frmBusqProv.Estado = estado.Nuevo;
                 frmBusqProv.MdiParent = this.MdiParent;
-                frmBusqProv.Visible = true;
-
-
+                
                 frmBusqProv.StartPosition = FormStartPosition.Manual;
                 frmBusqProv.Left = 588;
                 frmBusqProv.Top = 0;
+                frmBusqProv.Visible = true;
             }
         }
 
