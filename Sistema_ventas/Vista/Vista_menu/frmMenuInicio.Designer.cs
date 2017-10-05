@@ -67,6 +67,7 @@
             this.lblPedidos.Size = new System.Drawing.Size(112, 44);
             this.lblPedidos.TabIndex = 1;
             this.lblPedidos.Text = "Administrar Pedidos";
+            this.lblPedidos.Click += new System.EventHandler(this.lblPedidos_Click);
             this.lblPedidos.MouseEnter += new System.EventHandler(this.lblPedidos_MouseEnter);
             this.lblPedidos.MouseLeave += new System.EventHandler(this.lblPedidos_MouseLeave);
             this.lblPedidos.MouseHover += new System.EventHandler(this.lblPedidos_MouseHover);
@@ -154,7 +155,7 @@
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
             this.lblBienvenida.Location = new System.Drawing.Point(8, 9);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(144, 31);
+            this.lblBienvenida.Size = new System.Drawing.Size(116, 25);
             this.lblBienvenida.TabIndex = 3;
             this.lblBienvenida.Text = "Bienvenido";
             // 
@@ -190,7 +191,7 @@
             // 
             // frmMenuInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(240, 681);
@@ -200,7 +201,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenuInicio";
-            this.Text = "frmMenuInicio";
+            this.Text = "|";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

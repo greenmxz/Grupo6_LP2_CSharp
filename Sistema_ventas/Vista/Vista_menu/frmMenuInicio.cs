@@ -128,5 +128,12 @@ namespace Vista.Vista_menu
 
             }
         }
+
+        private void lblPedidos_Click(object sender, EventArgs e)
+        {
+            frmAdmPedidoRegistrar form = new frmAdmPedidoRegistrar();
+            form.MdiParent = this.MdiParent;
+            form.Show();
+        }
     }
 }
