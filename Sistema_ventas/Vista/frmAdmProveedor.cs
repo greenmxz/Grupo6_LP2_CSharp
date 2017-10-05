@@ -14,7 +14,7 @@ namespace Vista
     {
         private estado estBusquedaProv;
         private frmBusquedaProveedor frmBusqProv;
-        private static int i=0;
+        private static int i=1;
         public frmAdmProveedor()
         {
             InitializeComponent();
@@ -69,6 +69,7 @@ namespace Vista
             cboDistritoProveedor.Items.Insert(47, "Villa el Salvador");
             cboDistritoProveedor.Items.Insert(48, "Villa María del Triunfo");
             estBusquedaProv = estado.Nuevo;
+            txtCodigoProveedor.Text = "PROV000" + Convert.ToString(i);
         }
 
         public estado Estado { get => estBusquedaProv; set => estBusquedaProv = value; }
@@ -114,7 +115,7 @@ namespace Vista
 
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            string id = "PROV000" + Convert.ToString(i);
+            string id = txtCodigoProveedor.Text;
             i++;
             string RUC = txtRUCProveedores.Text;
             string razSoc = txtRazSocProveedores.Text;
