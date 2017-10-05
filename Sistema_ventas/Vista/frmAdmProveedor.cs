@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Vista
 {
@@ -14,7 +15,7 @@ namespace Vista
     {
         private estado estBusquedaProv;
         private frmBusquedaProveedor frmBusqProv;
-        //private BindingList<>
+        //private BindingList
         private static int i=1;
         public frmAdmProveedor()
         {
