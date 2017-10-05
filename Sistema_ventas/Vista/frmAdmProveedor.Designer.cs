@@ -50,9 +50,9 @@
             this.lblTlfProveedor = new System.Windows.Forms.Label();
             this.btnLimpiarProveedor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTituloProveedor = new System.Windows.Forms.Label();
             this.btnCerrarProveedor = new System.Windows.Forms.Button();
+            this.lblTituloProveedor = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxBasicoProveedor.SuspendLayout();
             this.gbxContactoProveedor.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             // btnBuscarProveedor
             // 
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(233, 182);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(233, 181);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(89, 39);
             this.btnBuscarProveedor.TabIndex = 3;
@@ -264,13 +264,15 @@
             this.panel1.Size = new System.Drawing.Size(341, 137);
             this.panel1.TabIndex = 7;
             // 
-            // pictureBox1
+            // btnCerrarProveedor
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 89);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnCerrarProveedor.Location = new System.Drawing.Point(289, 10);
+            this.btnCerrarProveedor.Name = "btnCerrarProveedor";
+            this.btnCerrarProveedor.Size = new System.Drawing.Size(33, 23);
+            this.btnCerrarProveedor.TabIndex = 2;
+            this.btnCerrarProveedor.Text = "X";
+            this.btnCerrarProveedor.UseVisualStyleBackColor = true;
+            this.btnCerrarProveedor.Click += new System.EventHandler(this.btnCerrarProveedor_Click);
             // 
             // lblTituloProveedor
             // 
@@ -282,15 +284,13 @@
             this.lblTituloProveedor.TabIndex = 1;
             this.lblTituloProveedor.Text = "Administrar proveedores";
             // 
-            // btnCerrarProveedor
+            // pictureBox1
             // 
-            this.btnCerrarProveedor.Location = new System.Drawing.Point(289, 10);
-            this.btnCerrarProveedor.Name = "btnCerrarProveedor";
-            this.btnCerrarProveedor.Size = new System.Drawing.Size(33, 23);
-            this.btnCerrarProveedor.TabIndex = 2;
-            this.btnCerrarProveedor.Text = "X";
-            this.btnCerrarProveedor.UseVisualStyleBackColor = true;
-            this.btnCerrarProveedor.Click += new System.EventHandler(this.btnCerrarProveedor_Click);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(108, 89);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmAdmProveedor
             // 

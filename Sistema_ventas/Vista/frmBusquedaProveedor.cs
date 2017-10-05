@@ -17,10 +17,17 @@ namespace Vista
         public frmBusquedaProveedor()
         {
             InitializeComponent();
+            lblTituloBusqProv.Text = "Búsqueda de" + Environment.NewLine + "Proveedores";
             Estado = estado.Nuevo;
         }
 
         private void btnSelecProv_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Estado = estado.Cerrado;
+        }
+
+        private void btnCerrarBusqProveedor_Click(object sender, EventArgs e)
         {
             this.Dispose();
             this.Estado = estado.Cerrado;

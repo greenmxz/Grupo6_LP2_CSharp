@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    //public enum estado { Nuevo, Cerrado }
+    public enum estado { Nuevo, Cerrado }
     public partial class frmAdmCliente : Form
     {
         private estado frmState;
