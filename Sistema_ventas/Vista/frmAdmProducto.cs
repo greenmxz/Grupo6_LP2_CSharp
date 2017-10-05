@@ -17,7 +17,7 @@ namespace Vista
         private frmBusquedaProducto frmBPROD;
 
         public estado Estado { get => frmState; set => frmState = value; }
-
+        //para subir
         public frmAdmProducto()
         {
             InitializeComponent();
