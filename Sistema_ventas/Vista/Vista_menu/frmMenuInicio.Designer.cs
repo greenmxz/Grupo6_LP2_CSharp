@@ -69,6 +69,7 @@
             this.lblPedidos.Size = new System.Drawing.Size(112, 44);
             this.lblPedidos.TabIndex = 1;
             this.lblPedidos.Text = "Administrar Pedidos";
+            this.lblPedidos.Click += new System.EventHandler(this.lblPedidos_Click);
             this.lblPedidos.MouseEnter += new System.EventHandler(this.lblPedidos_MouseEnter);
             this.lblPedidos.MouseLeave += new System.EventHandler(this.lblPedidos_MouseLeave);
             this.lblPedidos.MouseHover += new System.EventHandler(this.lblPedidos_MouseHover);
@@ -206,7 +207,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenuInicio";
-            this.Text = "frmMenuInicio";
+            this.Text = "|";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
