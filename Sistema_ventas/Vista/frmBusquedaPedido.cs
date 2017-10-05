@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmBusquedaProducto : Form
+    public partial class frmBusquedaPedido : Form
     {
-        private estado _estado;
-        public frmBusquedaProducto()
+        public frmBusquedaPedido()
         {
             InitializeComponent();
         }
-
-        public estado Estado { get => _estado; set => _estado = value; }
     }
 }

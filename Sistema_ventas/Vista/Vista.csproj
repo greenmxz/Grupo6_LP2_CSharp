@@ -75,21 +75,24 @@
     <Compile Include="frmBusquedaCliente.Designer.cs">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </Compile>
-
+    <Compile Include="frmBusquedaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaPedido.Designer.cs">
+      <DependentUpon>frmBusquedaPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBusquedaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBusquedaProducto.Designer.cs">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </Compile>
-
     <Compile Include="frmBusquedaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaPedido.resx">
+      <DependentUpon>frmBusquedaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>

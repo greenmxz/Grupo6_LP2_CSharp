@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public enum estado { Nuevo, Cerrado }
+    //public enum estado { Nuevo, Cerrado }
     public partial class frmAdmProducto : Form
     {
-        private estado frmState;
+        private estado _estado;
         private frmBusquedaProducto frmBPROD;
 
-        public estado Estado { get => frmState; set => frmState = value; }
-        //para subir
+        public estado Estado { get => _estado; set => _estado = value; }
+
         public frmAdmProducto()
         {
             InitializeComponent();
             txtCodigo.Enabled = false;
-            this.frmState = estado.Cerrado;
+            this.Estado = estado.Cerrado;
         }
 
         public frmAdmProducto(Form padre)
@@ -31,7 +31,7 @@ namespace Vista
             MdiParent = padre;
             Visible = true;
             txtCodigo.Enabled = false;
-            this.frmState = estado.Cerrado;
+            this.Estado = estado.Cerrado;
 
         }
 
@@ -54,8 +54,22 @@ namespace Vista
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            this.frmState = estado.Cerrado;
+            this.Estado = estado.Cerrado;
             if (frmBPROD != null) { frmBPROD.Dispose(); }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (frmBPROD == null || frmBPROD.Estado == estado.Cerrado)
+            {
+                frmBPROD = new frmBusquedaProducto();
+                frmBPROD.Estado = estado.Nuevo;
+                frmBPROD.MdiParent = this.MdiParent;
+                frmBPROD.Visible = true;
+                frmBPROD.StartPosition = FormStartPosition.Manual;
+                frmBPROD.Left = 588;
+                frmBPROD.Top = 0;
+            }
         }
     }
 }
