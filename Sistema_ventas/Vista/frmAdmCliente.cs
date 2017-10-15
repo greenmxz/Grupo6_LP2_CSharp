@@ -35,7 +35,8 @@ namespace Vista
                 
                 frmBusquedaCliente.StartPosition = FormStartPosition.Manual;
                 frmBusquedaCliente.Left = 588;
-                frmBusquedaCliente.Top = 0;
+                
+                frmBusquedaCliente.Top = 112;
 
                 frmBusquedaCliente.Visible = true;
             }

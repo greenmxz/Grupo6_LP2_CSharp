@@ -34,9 +34,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 681);
+            this.ClientSize = new System.Drawing.Size(1021, 680);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(100, 10);
             this.Name = "Principal";
             this.Text = "Principal";
+            this.Click += new System.EventHandler(this.Principal_Click);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseClick);
             this.ResumeLayout(false);
 
         }

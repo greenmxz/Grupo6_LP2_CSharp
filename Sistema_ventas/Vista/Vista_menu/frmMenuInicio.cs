@@ -8,15 +8,20 @@ namespace Vista.Vista_menu
     public partial class frmMenuInicio : Form {
         private frmAdmCliente frmAdmCliente;
         private frmAdmProducto frmAdmProducto;
-        public frmMenuInicio(Form principal,string nombreUsuario) {
+        private frmAdmProveedor frmAdmProv;
+        private frmCabecera cabecera;
+        public frmMenuInicio(frmCabecera cabecera) {
             
             InitializeComponent();
-            MdiParent = principal;
-            lblNombreUsuario.Text = nombreUsuario;
-            Color cMenu = Color.FromArgb(34, 45, 49);
-            BackColor = cMenu;
-            Visible = true;
+            this.cabecera = cabecera;
+            //lblNombreUsuario.Text = nombreUsuario;
+            //Color cMenu = Color.FromArgb(34, 45, 49);
+            //BackColor = cMenu;
+            //Visible = true;
             //Size = new Size(150,500);
+            this.StartPosition = FormStartPosition.Manual;
+            this.Left = 0;
+            this.Top = 111;
 
         }
 
@@ -87,10 +92,13 @@ namespace Vista.Vista_menu
                 frmAdmCliente = new frmAdmCliente();
                 frmAdmCliente.MdiParent = this.MdiParent;
                 frmAdmCliente.StartPosition = FormStartPosition.Manual;
-                frmAdmCliente.Left = 244;
-                frmAdmCliente.Top = 0;
+                //frmAdmCliente.Left = 244;
+                frmAdmCliente.Left = 0;
+                frmAdmCliente.Top = 112;
                 frmAdmCliente.Show();
-
+                this.Dispose();
+                cabecera.Abierto = false;
+                
                 
             }
 
@@ -98,20 +106,26 @@ namespace Vista.Vista_menu
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.MdiParent.Close();
+            //this.MdiParent.Close();
+            this.Dispose();
+            
+                
         }
 
         private void lblProveedores_Click(object sender, EventArgs e)
         {
             if (frmAdmCliente == null || frmAdmCliente.Estado == Vista.estado.Cerrado)
             {
-                frmAdmProveedor frmAdmProv = new frmAdmProveedor();
+                frmAdmProv = new frmAdmProveedor();
                 frmAdmProv.MdiParent = this.MdiParent;
            
                 frmAdmProv.StartPosition = FormStartPosition.Manual;
-                frmAdmProv.Left = 244;
-                frmAdmProv.Top = 0;
+                //frmAdmProv.Left = 244;
+                frmAdmProv.Left = 0;
+                frmAdmProv.Top = 112;
                 frmAdmProv.Show();
+                this.Dispose();
+                cabecera.Abierto = false;
             }
         }
 
@@ -122,9 +136,12 @@ namespace Vista.Vista_menu
                 frmAdmProducto = new frmAdmProducto();
                 frmAdmProducto.MdiParent = this.MdiParent;
                 frmAdmProducto.StartPosition = FormStartPosition.Manual;
-                frmAdmProducto.Left = 244;
-                frmAdmProducto.Top = 0;
+                //frmAdmProducto.Left = 244;
+                frmAdmProducto.Left = 0;
+                frmAdmProducto.Top = 112;
                 frmAdmProducto.Show();
+                this.Dispose();
+                cabecera.Abierto = false;
 
             }
         }
@@ -136,19 +153,6 @@ namespace Vista.Vista_menu
             form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (this.Height == 240 && this.Width == 681) {
-                this.Height = 681;
-                this.Width = 240;
-                this.Visible = false;
-                    //240, 681
-            }
-            else {
-                this.Height = 681;
-                this.Width = 150;
-                this.Visible = true;
-            }
-        }
+
     }
 }

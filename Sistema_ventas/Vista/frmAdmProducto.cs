@@ -67,7 +67,7 @@ namespace Vista
                 frmBPROD.MdiParent = this.MdiParent;
                 frmBPROD.StartPosition = FormStartPosition.Manual;
                 frmBPROD.Left = 588;
-                frmBPROD.Top = 0;
+                frmBPROD.Top = 112;
                 frmBPROD.Visible = true;
                 
             }

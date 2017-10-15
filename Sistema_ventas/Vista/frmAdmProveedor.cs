@@ -98,7 +98,7 @@ namespace Vista
                 
                 frmBusqProv.StartPosition = FormStartPosition.Manual;
                 frmBusqProv.Left = 588;
-                frmBusqProv.Top = 0;
+                frmBusqProv.Top = 112;
                 frmBusqProv.Visible = true;
             }
         }

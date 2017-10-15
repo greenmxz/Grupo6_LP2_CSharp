@@ -96,7 +96,7 @@
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(233, 181);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(484, 180);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(89, 39);
             this.btnBuscarProveedor.TabIndex = 3;
@@ -178,7 +178,7 @@
             this.gbxContactoProveedor.Controls.Add(this.txtTlfProveedores);
             this.gbxContactoProveedor.Controls.Add(this.lblDirElecProveedor);
             this.gbxContactoProveedor.Controls.Add(this.lblTlfProveedor);
-            this.gbxContactoProveedor.Location = new System.Drawing.Point(17, 384);
+            this.gbxContactoProveedor.Location = new System.Drawing.Point(24, 384);
             this.gbxContactoProveedor.Name = "gbxContactoProveedor";
             this.gbxContactoProveedor.Size = new System.Drawing.Size(303, 132);
             this.gbxContactoProveedor.TabIndex = 5;
@@ -271,12 +271,12 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 137);
+            this.panel1.Size = new System.Drawing.Size(585, 137);
             this.panel1.TabIndex = 7;
             // 
             // btnCerrarProveedor
             // 
-            this.btnCerrarProveedor.Location = new System.Drawing.Point(289, 10);
+            this.btnCerrarProveedor.Location = new System.Drawing.Point(540, 26);
             this.btnCerrarProveedor.Name = "btnCerrarProveedor";
             this.btnCerrarProveedor.Size = new System.Drawing.Size(33, 23);
             this.btnCerrarProveedor.TabIndex = 2;
@@ -308,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 679);
+            this.ClientSize = new System.Drawing.Size(585, 679);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLimpiarProveedor);
             this.Controls.Add(this.gbxContactoProveedor);
