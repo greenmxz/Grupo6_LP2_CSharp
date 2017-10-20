@@ -17,10 +17,17 @@ namespace Vista
         private frmBusquedaProveedor frmBusqProv;
         //private BindingList
         private static int i=1;
+        string obtenerCodTemporal(int i)
+        {
+            string codTemporal = "PROV";
+            if(i<10) { codTemporal = codTemporal + "0"; }
+            if(i<100) { codTemporal = codTemporal + "0"; }
+            codTemporal = codTemporal + Convert.ToString(i);
+            return codTemporal;
+        }
         public frmAdmProveedor()
         {
             InitializeComponent();
-            lblTituloProveedor.Text = "Administrar" + Environment.NewLine + "Proveedor";
             cboDistritoProveedor.Items.Insert(0, "Cercado de Lima");
             cboDistritoProveedor.Items.Insert(1, "Cercado de Callao");
             cboDistritoProveedor.Items.Insert(2, "Ancón");
@@ -71,7 +78,7 @@ namespace Vista
             cboDistritoProveedor.Items.Insert(47, "Villa el Salvador");
             cboDistritoProveedor.Items.Insert(48, "Villa María del Triunfo");
             estBusquedaProv = estado.Nuevo;
-            txtCodigoProveedor.Text = "PROV000" + Convert.ToString(i);
+            txtCodigoProveedor.Text = obtenerCodTemporal(i);
         }
 
         public estado Estado { get => estBusquedaProv; set => estBusquedaProv = value; }
@@ -90,8 +97,6 @@ namespace Vista
         {
             if (frmBusqProv == null || frmBusqProv.Estado == estado.Cerrado)
             {
-
-
                 frmBusqProv = new frmBusquedaProveedor();
                 frmBusqProv.Estado = estado.Nuevo;
                 frmBusqProv.MdiParent = this.MdiParent;
@@ -101,6 +106,7 @@ namespace Vista
                 frmBusqProv.Top = 112;
                 frmBusqProv.Visible = true;
             }
+            txtCodigoProveedor.Text = obtenerCodTemporal(i);
         }
 
         private void frmAdmProveedor_Load(object sender, EventArgs e)
@@ -114,16 +120,61 @@ namespace Vista
             if (frmBusqProv != null) { frmBusqProv.Dispose(); }
         }
 
+        bool rucValido(string RUC)
+        {
+            if (RUC == "") { return false; }
+            if (RUC.Length != 11) { return false; }
+            if (RUC[1] != '0') { return false; }
+            if (RUC[0] != '1' && RUC[0] != '2') { return false; }
+            return true;
+        }
+        void imprimirMessageBox(string RUC, string razSoc, string telef, string correo, string direc, string distrito)
+        {
+            string cadError = " errorres en el proceso";
+            int contError = 0;
+            if (!rucValido(RUC))
+            {
+                contError++;
+                if (RUC == "") { cadError = cadError + Environment.NewLine + "- No ha proporcionado el Registro Único del Contribuyente (RUC)"; }
+                else { cadError = cadError + Environment.NewLine + "- El RUC proporcionado no es válido"; }
+            }
+            if (telef == "")
+            {
+                contError++;
+                cadError = cadError + Environment.NewLine + "- No ha proporcionado un teléfono";
+            }
+            if (razSoc == "")
+            {
+                contError++;
+                cadError = cadError + Environment.NewLine + "- No ha proporcionado una razón social";
+            }
+            if (correo == "")
+            {
+                contError++;
+                cadError = cadError + Environment.NewLine + "- No ha proporcionado una correo electrónico";
+            }
+            if (direc == "")
+            {
+                contError++;
+                cadError = cadError + Environment.NewLine + "- No ha proporcionado una dirección";
+            }
+            if (distrito == "")
+            {
+                contError++;
+                cadError = cadError + Environment.NewLine + "- No ha proporcionado un distrito";
+            }
+            MessageBox.Show("Se han encontrado " + contError + cadError, "Error en el proceso");
+        }
+
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            string id = txtCodigoProveedor.Text;
             string RUC = txtRUCProveedores.Text;
             string razSoc = txtRazSocProveedores.Text;
             string telef = txtTlfProveedores.Text;
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            if (RUC != "" && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
+            if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
             {
                 i++;
                 string cadena = "¿Está seguro de que desea registrar el siguiente proveedor:";
@@ -133,7 +184,7 @@ namespace Vista
                 cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + id;
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + obtenerCodTemporal(i) ;
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de registro", MessageBoxButtons.YesNo);
                 switch (result)
                 {
@@ -154,86 +205,148 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Hay algunos datos que no están completos", "Error en el proceso");
+                imprimirMessageBox(RUC, razSoc, telef, correo, direc, distrito);
             }
         }
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
-            string id = txtCodigoProveedor.Text;
-            i++;
+            string id = obtenerCodTemporal(i);
             string RUC = txtRUCProveedores.Text;
             string razSoc = txtRazSocProveedores.Text;
             string telef = txtTlfProveedores.Text;
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            string cadena = "¿Está seguro de que desea modificar la información del siguiente proveedor:";
-            cadena = cadena + Environment.NewLine + "Código : " + id;
-            cadena = cadena + Environment.NewLine + "RUC : " + RUC;
-            cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
-            cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
-            cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
-            cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
-            cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
-            cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el proveedor con código : " + id + "NO serán reversibles";
-            DialogResult result = MessageBox.Show(cadena, "Mensaje de modificación de registro", MessageBoxButtons.YesNo);
-
-            switch (result)
+            if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
             {
-                case DialogResult.Yes:
-                    MessageBox.Show("Proveedor modificado exitosamente");
-                    txtCodigoProveedor.Text = "";
-                    txtRUCProveedores.Text = "";
-                    txtRazSocProveedores.Text = "";
-                    txtTlfProveedores.Text = "";
-                    txtDirElecProveedores.Text = "";
-                    txtDirProveedores.Text = "";
-                    cboDistritoProveedor.Text = "";
-                    break;
-                case DialogResult.No:
-                    MessageBox.Show("La operación ha sido cancelada");
-                    break;
+                string cadena = "¿Está seguro de que desea modificar la información del siguiente proveedor:";
+                cadena = cadena + Environment.NewLine + "Código : " + id;
+                cadena = cadena + Environment.NewLine + "RUC : " + RUC;
+                cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
+                cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
+                cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
+                cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
+                cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el proveedor con código : " + obtenerCodTemporal(i) + "NO serán reversibles";
+                DialogResult result = MessageBox.Show(cadena, "Mensaje de modificación de registro", MessageBoxButtons.YesNo);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        MessageBox.Show("Proveedor modificado exitosamente");
+                        txtCodigoProveedor.Text = "";
+                        txtRUCProveedores.Text = "";
+                        txtRazSocProveedores.Text = "";
+                        txtTlfProveedores.Text = "";
+                        txtDirElecProveedores.Text = "";
+                        txtDirProveedores.Text = "";
+                        cboDistritoProveedor.Text = "";
+                        break;
+                    case DialogResult.No:
+                        MessageBox.Show("La operación ha sido cancelada");
+                        break;
+                }
+            }
+            else
+            {
+                imprimirMessageBox(RUC, razSoc, telef, correo, direc, distrito);
             }
         }
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
         {
-            string id = txtCodigoProveedor.Text;
-            i++;
+            string id = obtenerCodTemporal(i);
             string RUC = txtRUCProveedores.Text;
             string razSoc = txtRazSocProveedores.Text;
             string telef = txtTlfProveedores.Text;
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            string cadena = "¿Está seguro de que desea eliminar el siguiente proveedor:";
-            cadena = cadena + Environment.NewLine + "Código : " + id;
-            cadena = cadena + Environment.NewLine + "RUC : " + RUC;
-            cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
-            cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
-            cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
-            cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
-            cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
-            cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código : " + id + "NO serán reversibles";
-            DialogResult result = MessageBox.Show(cadena, "Mensaje de eliminación de registro", MessageBoxButtons.YesNo);
-
-            switch (result)
+            if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
             {
-                case DialogResult.Yes:
-                    MessageBox.Show("Proveedor eliminado exitosamente");
-                    txtCodigoProveedor.Text = "";
-                    txtRUCProveedores.Text = "";
-                    txtRazSocProveedores.Text = "";
-                    txtTlfProveedores.Text = "";
-                    txtDirElecProveedores.Text = "";
-                    txtDirProveedores.Text = "";
-                    cboDistritoProveedor.Text = "";
-                    break;
-                case DialogResult.No:
-                    MessageBox.Show("La operación ha sido cancelada");
-                    break;
+                string cadena = "¿Está seguro de que desea eliminar el siguiente proveedor:";
+                cadena = cadena + Environment.NewLine + "Código : " + id;
+                cadena = cadena + Environment.NewLine + "RUC : " + RUC;
+                cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
+                cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
+                cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
+                cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
+                cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código : " + obtenerCodTemporal(i) + "NO serán reversibles";
+                DialogResult result = MessageBox.Show(cadena, "Mensaje de eliminación de registro", MessageBoxButtons.YesNo);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        MessageBox.Show("Proveedor eliminado exitosamente");
+                        txtCodigoProveedor.Text = "";
+                        txtRUCProveedores.Text = "";
+                        txtRazSocProveedores.Text = "";
+                        txtTlfProveedores.Text = "";
+                        txtDirElecProveedores.Text = "";
+                        txtDirProveedores.Text = "";
+                        cboDistritoProveedor.Text = "";
+                        break;
+                    case DialogResult.No:
+                        MessageBox.Show("La operación ha sido cancelada");
+                        break;
+                }
             }
+            else
+            {
+                imprimirMessageBox(RUC, razSoc, telef, correo, direc, distrito);
+            }
+        }
+
+        private void btnAgregarProveedor_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificarProveedor_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarProveedor_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiarProveedor_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarProveedor_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+
         }
     }
 }

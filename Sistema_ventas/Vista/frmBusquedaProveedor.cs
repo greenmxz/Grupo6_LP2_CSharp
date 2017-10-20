@@ -17,7 +17,6 @@ namespace Vista
         public frmBusquedaProveedor()
         {
             InitializeComponent();
-            lblTituloBusqProv.Text = "Búsqueda de" + Environment.NewLine + "Proveedores";
             Estado = estado.Nuevo;
         }
 

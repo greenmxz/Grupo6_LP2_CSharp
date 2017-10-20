@@ -31,41 +31,49 @@ namespace Vista.Vista_menu
         }
 
         private void lblClientes_MouseLeave(object sender, EventArgs e) {
+            lblClientes.Text = "Administrar Clientes";
             lblClientes.Font = new Font(this.Font,FontStyle.Regular);
             lblClientes.Cursor = Cursors.Default;
         }
 
         private void lblClientes_MouseHover(object sender, EventArgs e) {
-            //lblClientes.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            lblClientes.Text = "ADMINISTRAR CLIENTES";
+            lblClientes.Font = new Font(this.Font, FontStyle.Bold);
             lblClientes.Cursor = Cursors.Hand;
         }
 
         private void lblPedidos_MouseHover(object sender, EventArgs e) {
-            //lblPedidos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            lblPedidos.Text = "ADMINISTRAR PEDIDOS";
+            lblPedidos.Font = new Font(this.Font, FontStyle.Bold);
             lblPedidos.Cursor = Cursors.Hand;
         }
 
         private void lblPedidos_MouseLeave(object sender, EventArgs e) {
+            lblPedidos.Text = "Administrar Pedidos";
             lblPedidos.Font = new Font(this.Font, FontStyle.Regular);
             lblPedidos.Cursor = Cursors.Default;
         }
 
         private void lblProductos_MouseHover(object sender, EventArgs e) {
-            //lblProductos.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            lblProductos.Text = "ADMINISTRAR PRODUCTOS";
+            lblProductos.Font = new Font(this.Font, FontStyle.Bold);
             lblProductos.Cursor = Cursors.Hand;
         }
 
         private void lblProductos_MouseLeave(object sender, EventArgs e) {
+            lblProductos.Text = "Administrar Productos";
             lblProductos.Font = new Font(this.Font, FontStyle.Regular);
             lblProductos.Cursor = Cursors.Default;
         }
 
         private void lblProveedores_MouseHover(object sender, EventArgs e) {
-            //lblProveedores.Font = new Font(this.Font, FontStyle.Bold | FontStyle.Italic);
+            lblProveedores.Text = "ADMINISTRAR PROVEEDORES";
+            lblProveedores.Font = new Font(this.Font, FontStyle.Bold);
             lblProveedores.Cursor = Cursors.Hand;
         }
 
         private void lblProveedores_MouseLeave(object sender, EventArgs e) {
+            lblProveedores.Text = "Administrar Proveedores";
             lblProveedores.Font = new Font(this.Font, FontStyle.Regular);
             lblProveedores.Cursor = Cursors.Default;
         }
@@ -106,10 +114,7 @@ namespace Vista.Vista_menu
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            //this.MdiParent.Close();
-            this.Dispose();
-            
-                
+            this.Dispose();   
         }
 
         private void lblProveedores_Click(object sender, EventArgs e)
