@@ -45,7 +45,7 @@
             this.lblClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClientes.Name = "lblClientes";
             this.lblClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblClientes.Size = new System.Drawing.Size(112, 44);
+            this.lblClientes.Size = new System.Drawing.Size(184, 44);
             this.lblClientes.TabIndex = 0;
             this.lblClientes.Text = "Administrar Clientes";
             this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
@@ -61,7 +61,7 @@
             this.lblPedidos.Location = new System.Drawing.Point(27, 149);
             this.lblPedidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPedidos.Name = "lblPedidos";
-            this.lblPedidos.Size = new System.Drawing.Size(112, 44);
+            this.lblPedidos.Size = new System.Drawing.Size(184, 44);
             this.lblPedidos.TabIndex = 1;
             this.lblPedidos.Text = "Administrar Pedidos";
             this.lblPedidos.Click += new System.EventHandler(this.lblPedidos_Click);
@@ -77,7 +77,7 @@
             this.lblProductos.Location = new System.Drawing.Point(27, 227);
             this.lblProductos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(112, 44);
+            this.lblProductos.Size = new System.Drawing.Size(184, 44);
             this.lblProductos.TabIndex = 2;
             this.lblProductos.Text = "Administrar Productos";
             this.lblProductos.Click += new System.EventHandler(this.lblProductos_Click_1);
@@ -93,7 +93,7 @@
             this.lblProveedores.Location = new System.Drawing.Point(27, 305);
             this.lblProveedores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(112, 44);
+            this.lblProveedores.Size = new System.Drawing.Size(184, 44);
             this.lblProveedores.TabIndex = 3;
             this.lblProveedores.Text = "Administrar Proveedores";
             this.lblProveedores.Click += new System.EventHandler(this.lblProveedores_Click);

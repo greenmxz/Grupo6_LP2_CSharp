@@ -30,7 +30,6 @@ namespace Vista.Vista_menu {
         private void btnMenu_MouseClick(object sender, MouseEventArgs e) {
             if (Abierto == false) {
                 MenuInicio = new frmMenuInicio((frmCabecera)this);
-
                 MenuInicio.MdiParent = this.ParentForm;
                 MenuInicio.Show();
                 Abierto = true;
