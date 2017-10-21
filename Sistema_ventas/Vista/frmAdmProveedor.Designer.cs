@@ -123,7 +123,7 @@
             this.gbxBasicoProveedor.Controls.Add(this.lblRUCProveedor);
             this.gbxBasicoProveedor.Controls.Add(this.txtCodigoProveedor);
             this.gbxBasicoProveedor.Controls.Add(this.lblCodigoProveedor);
-            this.gbxBasicoProveedor.Location = new System.Drawing.Point(12, 124);
+            this.gbxBasicoProveedor.Location = new System.Drawing.Point(12, 118);
             this.gbxBasicoProveedor.Name = "gbxBasicoProveedor";
             this.gbxBasicoProveedor.Size = new System.Drawing.Size(416, 102);
             this.gbxBasicoProveedor.TabIndex = 4;
@@ -189,7 +189,7 @@
             this.gbxContactoProveedor.Controls.Add(this.txtTlfProveedores);
             this.gbxContactoProveedor.Controls.Add(this.lblDirElecProveedor);
             this.gbxContactoProveedor.Controls.Add(this.lblTlfProveedor);
-            this.gbxContactoProveedor.Location = new System.Drawing.Point(12, 243);
+            this.gbxContactoProveedor.Location = new System.Drawing.Point(12, 237);
             this.gbxContactoProveedor.Name = "gbxContactoProveedor";
             this.gbxContactoProveedor.Size = new System.Drawing.Size(416, 132);
             this.gbxContactoProveedor.TabIndex = 5;
@@ -277,7 +277,7 @@
             // gbxButton1
             // 
             this.gbxButton1.Controls.Add(this.btnAgregarProveedor);
-            this.gbxButton1.Location = new System.Drawing.Point(453, 126);
+            this.gbxButton1.Location = new System.Drawing.Point(453, 120);
             this.gbxButton1.Name = "gbxButton1";
             this.gbxButton1.Size = new System.Drawing.Size(115, 51);
             this.gbxButton1.TabIndex = 8;
@@ -288,7 +288,7 @@
             this.gbxButton2.Controls.Add(this.btnModificarProveedor);
             this.gbxButton2.Controls.Add(this.btnEliminarProveedor);
             this.gbxButton2.Controls.Add(this.btnLimpiarProveedor);
-            this.gbxButton2.Location = new System.Drawing.Point(453, 188);
+            this.gbxButton2.Location = new System.Drawing.Point(453, 182);
             this.gbxButton2.Name = "gbxButton2";
             this.gbxButton2.Size = new System.Drawing.Size(115, 109);
             this.gbxButton2.TabIndex = 9;
@@ -297,7 +297,7 @@
             // gbxButton3
             // 
             this.gbxButton3.Controls.Add(this.btnBuscarProveedor);
-            this.gbxButton3.Location = new System.Drawing.Point(453, 305);
+            this.gbxButton3.Location = new System.Drawing.Point(453, 299);
             this.gbxButton3.Name = "gbxButton3";
             this.gbxButton3.Size = new System.Drawing.Size(115, 70);
             this.gbxButton3.TabIndex = 10;
@@ -307,7 +307,7 @@
             // 
             this.btnCerrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarProveedor.Location = new System.Drawing.Point(475, 15);
+            this.btnCerrarProveedor.Location = new System.Drawing.Point(476, 65);
             this.btnCerrarProveedor.Name = "btnCerrarProveedor";
             this.btnCerrarProveedor.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarProveedor.TabIndex = 2;
@@ -329,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 400);
+            this.ClientSize = new System.Drawing.Size(580, 390);
             this.Controls.Add(this.btnCerrarProveedor);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbxButton3);

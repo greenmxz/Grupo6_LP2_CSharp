@@ -48,15 +48,14 @@
             // 
             // btnPedidos
             // 
-            this.btnPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedidos.BackgroundImage")));
             this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPedidos.FlatAppearance.BorderSize = 0;
             this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPedidos.Location = new System.Drawing.Point(12, 154);
+            this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
+            this.btnPedidos.Location = new System.Drawing.Point(12, 143);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(165, 39);
             this.btnPedidos.TabIndex = 7;
-            this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPedidos.UseVisualStyleBackColor = true;
             this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
@@ -65,15 +64,14 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductos.BackgroundImage")));
             this.btnProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Location = new System.Drawing.Point(12, 210);
+            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
+            this.btnProductos.Location = new System.Drawing.Point(12, 199);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(165, 39);
             this.btnProductos.TabIndex = 6;
-            this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             this.btnProductos.MouseEnter += new System.EventHandler(this.btnProductos_MouseEnter);
@@ -81,17 +79,16 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.BackgroundImage")));
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Location = new System.Drawing.Point(12, 99);
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            this.btnClientes.Location = new System.Drawing.Point(12, 88);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(165, 39);
+            this.btnClientes.Size = new System.Drawing.Size(165, 40);
             this.btnClientes.TabIndex = 5;
-            this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             this.btnClientes.MouseEnter += new System.EventHandler(this.btnClientes_MouseEnter);
@@ -99,17 +96,16 @@
             // 
             // btnProveedores
             // 
-            this.btnProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.BackgroundImage")));
             this.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProveedores.FlatAppearance.BorderSize = 0;
             this.btnProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Location = new System.Drawing.Point(12, 266);
+            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
+            this.btnProveedores.Location = new System.Drawing.Point(12, 255);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(165, 39);
             this.btnProveedores.TabIndex = 4;
-            this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             this.btnProveedores.MouseEnter += new System.EventHandler(this.btnProveedores_MouseEnter);
