@@ -176,7 +176,6 @@ namespace Vista
             string distrito = cboDistritoProveedor.Text;
             if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
             {
-                i++;
                 string cadena = "¿Está seguro de que desea registrar el siguiente proveedor:";
                 cadena = cadena + Environment.NewLine + "RUC : " + RUC;
                 cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
@@ -185,6 +184,7 @@ namespace Vista
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
                 cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + obtenerCodTemporal(i) ;
+                i++;
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de registro", MessageBoxButtons.YesNo);
                 switch (result)
                 {
@@ -345,6 +345,11 @@ namespace Vista
         }
 
         private void btnBuscarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

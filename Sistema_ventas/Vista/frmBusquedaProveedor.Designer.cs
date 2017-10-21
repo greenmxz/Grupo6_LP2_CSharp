@@ -43,7 +43,7 @@
             // btnSelecProv
             // 
             this.btnSelecProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecProv.Location = new System.Drawing.Point(135, 369);
+            this.btnSelecProv.Location = new System.Drawing.Point(135, 381);
             this.btnSelecProv.Name = "btnSelecProv";
             this.btnSelecProv.Size = new System.Drawing.Size(150, 23);
             this.btnSelecProv.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.dgvProvCod,
             this.dgvProvRUC,
             this.dgvProvRazSoc});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 120);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(390, 247);
             this.dataGridView1.TabIndex = 2;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 400);
+            this.ClientSize = new System.Drawing.Size(420, 420);
             this.Controls.Add(this.btnCerrarBusqProveedor);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);

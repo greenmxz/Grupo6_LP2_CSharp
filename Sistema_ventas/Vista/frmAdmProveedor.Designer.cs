@@ -277,7 +277,7 @@
             // gbxButton1
             // 
             this.gbxButton1.Controls.Add(this.btnAgregarProveedor);
-            this.gbxButton1.Location = new System.Drawing.Point(453, 120);
+            this.gbxButton1.Location = new System.Drawing.Point(453, 118);
             this.gbxButton1.Name = "gbxButton1";
             this.gbxButton1.Size = new System.Drawing.Size(115, 51);
             this.gbxButton1.TabIndex = 8;
@@ -288,7 +288,7 @@
             this.gbxButton2.Controls.Add(this.btnModificarProveedor);
             this.gbxButton2.Controls.Add(this.btnEliminarProveedor);
             this.gbxButton2.Controls.Add(this.btnLimpiarProveedor);
-            this.gbxButton2.Location = new System.Drawing.Point(453, 182);
+            this.gbxButton2.Location = new System.Drawing.Point(453, 180);
             this.gbxButton2.Name = "gbxButton2";
             this.gbxButton2.Size = new System.Drawing.Size(115, 109);
             this.gbxButton2.TabIndex = 9;
@@ -324,6 +324,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmAdmProveedor
             // 
