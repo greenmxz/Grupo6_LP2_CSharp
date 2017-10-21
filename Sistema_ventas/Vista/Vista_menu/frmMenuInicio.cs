@@ -31,7 +31,8 @@ namespace Vista.Vista_menu
         }
 
         private void lblClientes_MouseLeave(object sender, EventArgs e) {
-            lblClientes.Font = new Font(this.Font,FontStyle.Regular);
+
+            //lblClientes.Font = new Font(this.Font,FontStyle.Regular);
             lblClientes.Cursor = Cursors.Default;
         }
 
@@ -46,7 +47,7 @@ namespace Vista.Vista_menu
         }
 
         private void lblPedidos_MouseLeave(object sender, EventArgs e) {
-            lblPedidos.Font = new Font(this.Font, FontStyle.Regular);
+            //lblPedidos.Font = new Font(this.Font, FontStyle.Regular);
             lblPedidos.Cursor = Cursors.Default;
         }
 
@@ -56,7 +57,7 @@ namespace Vista.Vista_menu
         }
 
         private void lblProductos_MouseLeave(object sender, EventArgs e) {
-            lblProductos.Font = new Font(this.Font, FontStyle.Regular);
+            //lblProductos.Font = new Font(this.Font, FontStyle.Regular);
             lblProductos.Cursor = Cursors.Default;
         }
 
@@ -66,7 +67,7 @@ namespace Vista.Vista_menu
         }
 
         private void lblProveedores_MouseLeave(object sender, EventArgs e) {
-            lblProveedores.Font = new Font(this.Font, FontStyle.Regular);
+            //lblProveedores.Font = new Font(this.Font, FontStyle.Regular);
             lblProveedores.Cursor = Cursors.Default;
         }
 
@@ -152,7 +153,43 @@ namespace Vista.Vista_menu
             form.MdiParent = this.MdiParent;
             form.Show();
         }
+        //boton clientes
+        private void btnClientes_Click(object sender, EventArgs e) {
+            if (frmAdmCliente == null || frmAdmCliente.Estado == Vista.estado.Cerrado) {
+                frmAdmCliente = new frmAdmCliente();
+                frmAdmCliente.MdiParent = this.MdiParent;
+                frmAdmCliente.StartPosition = FormStartPosition.Manual;
+                //frmAdmCliente.Left = 244;
+                frmAdmCliente.Left = 0;
+                frmAdmCliente.Top = 112;
+                frmAdmCliente.Show();
+                this.Dispose();
+                cabecera.Abierto = false;
 
 
+            }
+        }
+
+        private void btnClientes_MouseEnter(object sender, EventArgs e) {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void btnClientes_MouseLeave(object sender, EventArgs e) {
+            this.Cursor = Cursors.Default;
+        }
+        //boton pedidos
+        private void btnPedidos_Click(object sender, EventArgs e) {
+            frmAdmPedidoRegistrar form = new frmAdmPedidoRegistrar();
+            form.MdiParent = this.MdiParent;
+            form.Show();
+        }
+
+        private void btnPedidos_MouseEnter(object sender, EventArgs e) {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void btnPedidos_MouseLeave(object sender, EventArgs e) {
+            this.Cursor = Cursors.Default;
+        }
     }
 }
