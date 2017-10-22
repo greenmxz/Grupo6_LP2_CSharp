@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 400);
+            this.ClientSize = new System.Drawing.Size(420, 420);
             this.Controls.Add(this.btnCerrarBusqProveedor);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
