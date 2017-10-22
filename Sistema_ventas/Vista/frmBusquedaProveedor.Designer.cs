@@ -80,9 +80,9 @@
             this.dgvProvCod,
             this.dgvProvRUC,
             this.dgvProvRazSoc});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 153);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 180);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(390, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(390, 241);
             this.dataGridView1.TabIndex = 2;
             // 
             // dgvProvCod
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 420);
+            this.ClientSize = new System.Drawing.Size(420, 544);
             this.Controls.Add(this.btnCerrarBusqProveedor);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);

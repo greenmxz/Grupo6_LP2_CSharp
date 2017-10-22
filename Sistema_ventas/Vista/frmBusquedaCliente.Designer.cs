@@ -67,7 +67,7 @@
             this.dgvBusquedaCliente.Location = new System.Drawing.Point(12, 75);
             this.dgvBusquedaCliente.Name = "dgvBusquedaCliente";
             this.dgvBusquedaCliente.ReadOnly = true;
-            this.dgvBusquedaCliente.Size = new System.Drawing.Size(385, 233);
+            this.dgvBusquedaCliente.Size = new System.Drawing.Size(385, 259);
             this.dgvBusquedaCliente.TabIndex = 1;
             // 
             // Codigo
@@ -100,7 +100,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 137);
+            this.panel1.Size = new System.Drawing.Size(420, 137);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -128,6 +128,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 18);
             this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.Text = "X";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -138,14 +139,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 137);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 407);
+            this.panel2.Size = new System.Drawing.Size(420, 407);
             this.panel2.TabIndex = 3;
             // 
             // frmBusquedaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 544);
+            this.ClientSize = new System.Drawing.Size(420, 544);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
