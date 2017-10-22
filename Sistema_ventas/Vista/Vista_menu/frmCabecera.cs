@@ -11,32 +11,54 @@ using System.Windows.Forms;
 namespace Vista.Vista_menu {
     public partial class frmCabecera : Form {
         private bool abierto=false;
-        private frmMenuInicio menuInicio;
+        private frmMenuInicioAdm menuInicioAdm;
+        private frmMenuInicioVentas menuInicioVentas;
 
         public bool Abierto { get => abierto; set => abierto = value; }
-        public frmMenuInicio MenuInicio { get => menuInicio; set => menuInicio = value; }
+        public frmMenuInicioVentas MenuInicioVentas { get => menuInicioVentas; set => menuInicioVentas = value; }
+        public frmMenuInicioAdm MenuInicioAdm { get => menuInicioAdm; set => menuInicioAdm = value; }
 
         public frmCabecera( string nombreUsuario) {
             InitializeComponent();
             lblNombreUsuario.Text = nombreUsuario;
             btnMenu.FlatAppearance.BorderColor = Color.FromArgb(31, 29, 28);
+            btnMenu.TabStop = false;
+            btnMenu.ForeColor = Color.FromArgb(31, 29, 28);
         }
 
         private void btnMenu_MouseEnter(object sender, EventArgs e) {
             btnMenu.Cursor = Cursors.Hand;
+            btnMenu.FlatStyle = FlatStyle.Popup;
         }
-
+        private void btnMenu_MouseLeave(object sender, EventArgs e) {
+            this.Cursor = Cursors.Default;
+            btnMenu.FlatStyle = FlatStyle.Flat;
+        }
 
         private void btnMenu_MouseClick(object sender, MouseEventArgs e) {
             if (Abierto == false) {
-                MenuInicio = new frmMenuInicio((frmCabecera)this);
-                MenuInicio.MdiParent = this.ParentForm;
-                MenuInicio.Show();
-                Abierto = true;
+                if (lblNombreUsuario.Text != "cyn") {
+                    MenuInicioAdm = new frmMenuInicioAdm((frmCabecera)this);
+                    MenuInicioAdm.MdiParent = this.ParentForm;
+                    MenuInicioAdm.Show();
+                    Abierto = true;
+                }
+                else {
+                    MenuInicioVentas= new frmMenuInicioVentas((frmCabecera)this);
+                    MenuInicioVentas.MdiParent = this.ParentForm;
+                    MenuInicioVentas.Show();
+                    Abierto = true;
+                }
             }
             else {
-                MenuInicio.Dispose();
-                Abierto = false;
+                if (lblNombreUsuario.Text != "cyn") {
+                    MenuInicioAdm.Dispose();
+                    
+                }
+                else {
+                    MenuInicioVentas.Dispose();
+                }
+                Abierto = false; 
             }
         }
 
@@ -49,9 +71,7 @@ namespace Vista.Vista_menu {
             this.Cursor = Cursors.Hand;
         }
 
-        private void btnMenu_MouseLeave(object sender, EventArgs e) {
-            this.Cursor = Cursors.Default;
-        }
+       
 
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e) {
             this.Cursor = Cursors.Default;

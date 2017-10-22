@@ -43,11 +43,11 @@
             // btnSelecProv
             // 
             this.btnSelecProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecProv.Location = new System.Drawing.Point(135, 369);
+            this.btnSelecProv.Location = new System.Drawing.Point(258, 124);
             this.btnSelecProv.Name = "btnSelecProv";
             this.btnSelecProv.Size = new System.Drawing.Size(150, 23);
             this.btnSelecProv.TabIndex = 0;
-            this.btnSelecProv.Text = "Seleccionar proveedor";
+            this.btnSelecProv.Text = "Seleccionar";
             this.btnSelecProv.UseVisualStyleBackColor = true;
             this.btnSelecProv.Click += new System.EventHandler(this.btnSelecProv_Click);
             // 
@@ -80,9 +80,9 @@
             this.dgvProvCod,
             this.dgvProvRUC,
             this.dgvProvRazSoc});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 153);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(390, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(390, 194);
             this.dataGridView1.TabIndex = 2;
             // 
             // dgvProvCod

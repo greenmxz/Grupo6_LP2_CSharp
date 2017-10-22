@@ -61,7 +61,7 @@
             // 
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Location = new System.Drawing.Point(495, 153);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(79, 33);
             this.btnBuscar.TabIndex = 1;
@@ -72,7 +72,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(112, 72);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 20);
             this.txtNombre.TabIndex = 0;
@@ -80,7 +80,7 @@
             // txtMarca
             // 
             this.txtMarca.Location = new System.Drawing.Point(112, 119);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(125, 20);
             this.txtMarca.TabIndex = 1;
@@ -88,7 +88,7 @@
             // txtStockIni
             // 
             this.txtStockIni.Location = new System.Drawing.Point(112, 210);
-            this.txtStockIni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStockIni.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockIni.Name = "txtStockIni";
             this.txtStockIni.Size = new System.Drawing.Size(54, 20);
             this.txtStockIni.TabIndex = 2;
@@ -97,7 +97,7 @@
             // txtPU
             // 
             this.txtPU.Location = new System.Drawing.Point(113, 164);
-            this.txtPU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPU.Margin = new System.Windows.Forms.Padding(2);
             this.txtPU.Name = "txtPU";
             this.txtPU.Size = new System.Drawing.Size(54, 20);
             this.txtPU.TabIndex = 3;
@@ -106,7 +106,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(12, 272);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(300, 69);
@@ -138,9 +138,9 @@
             this.label3.Location = new System.Drawing.Point(10, 213);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Stock Inicial:";
+            this.label3.Text = "Stock:";
             // 
             // label4
             // 
@@ -175,7 +175,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(112, 25);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(76, 20);
             this.txtCodigo.TabIndex = 11;
@@ -195,9 +195,9 @@
             this.groupBox1.Controls.Add(this.txtMarca);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(9, 67);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(323, 350);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -207,7 +207,7 @@
             // 
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Location = new System.Drawing.Point(27, 462);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 25);
             this.btnAgregar.TabIndex = 2;
@@ -218,7 +218,7 @@
             // 
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Location = new System.Drawing.Point(126, 461);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 26);
             this.btnModificar.TabIndex = 3;
@@ -229,7 +229,7 @@
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Location = new System.Drawing.Point(232, 461);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(56, 26);
             this.btnEliminar.TabIndex = 4;
@@ -243,7 +243,7 @@
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Location = new System.Drawing.Point(0, 137);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(341, 544);
             this.panel1.TabIndex = 5;
@@ -264,7 +264,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,7 +274,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Location = new System.Drawing.Point(546, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 19);
             this.btnCerrar.TabIndex = 1;
@@ -304,7 +304,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdmProducto";
             this.Text = "Administrar Producto";
             this.groupBox1.ResumeLayout(false);

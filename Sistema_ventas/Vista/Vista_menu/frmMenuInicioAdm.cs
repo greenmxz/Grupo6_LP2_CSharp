@@ -5,20 +5,16 @@ using System.Windows.Forms;
 namespace Vista.Vista_menu
 {
     public enum estado { Nuevo,Cerrado}
-    public partial class frmMenuInicio : Form {
+    public partial class frmMenuInicioAdm : Form {
         private frmAdmCliente frmAdmCliente;
         private frmAdmProducto frmAdmProducto;
+        private frmAdmPedido frmAdmPedido;
         private frmAdmProveedor frmAdmProv;
         private frmCabecera cabecera;
-        public frmMenuInicio(frmCabecera cabecera) {
+        public frmMenuInicioAdm(frmCabecera cabecera) {
             
             InitializeComponent();
             this.cabecera = cabecera;
-            //lblNombreUsuario.Text = nombreUsuario;
-            //Color cMenu = Color.FromArgb(34, 45, 49);
-            //BackColor = cMenu;
-            //Visible = true;
-            //Size = new Size(150,500);
             this.StartPosition = FormStartPosition.Manual;
             this.Left = 0;
             this.Top = 111;
@@ -42,7 +38,6 @@ namespace Vista.Vista_menu
                 frmAdmCliente = new frmAdmCliente();
                 frmAdmCliente.MdiParent = this.MdiParent;
                 frmAdmCliente.StartPosition = FormStartPosition.Manual;
-                //frmAdmCliente.Left = 244;
                 frmAdmCliente.Left = 0;
                 frmAdmCliente.Top = 112;
                 frmAdmCliente.Show();
@@ -55,32 +50,47 @@ namespace Vista.Vista_menu
 
         private void btnClientes_MouseEnter(object sender, EventArgs e) {
             this.Cursor = Cursors.Hand;
+            btnClientes.FlatStyle = FlatStyle.Popup;
         }
 
         private void btnClientes_MouseLeave(object sender, EventArgs e) {
             this.Cursor = Cursors.Default;
+            btnClientes.FlatStyle = FlatStyle.Flat;
         }
         //boton pedidos
         private void btnPedidos_Click(object sender, EventArgs e) {
-            frmAdmPedidoRegistrar form = new frmAdmPedidoRegistrar();
-            form.MdiParent = this.MdiParent;
-            form.Show();
+            if (frmAdmPedido == null || frmAdmCliente.Estado == Vista.estado.Cerrado) {
+                frmAdmPedido = new frmAdmPedido();
+                frmAdmPedido.MdiParent = this.MdiParent;
+                frmAdmPedido.StartPosition = FormStartPosition.Manual;
+                frmAdmPedido.Left = 0;
+                frmAdmPedido.Top = 112;
+                frmAdmPedido.Show();
+                this.Dispose();
+                cabecera.Abierto = false;
+
+
+            }
         }
 
         private void btnPedidos_MouseEnter(object sender, EventArgs e) {
             this.Cursor = Cursors.Hand;
+            btnPedidos.FlatStyle = FlatStyle.Popup;
         }
 
         private void btnPedidos_MouseLeave(object sender, EventArgs e) {
             this.Cursor = Cursors.Default;
+            btnPedidos.FlatStyle = FlatStyle.Flat;
         }
         //bton productos
         private void btnProductos_MouseEnter(object sender, EventArgs e) {
             this.Cursor = Cursors.Hand;
+            btnProductos.FlatStyle = FlatStyle.Popup;
         }
 
         private void btnProductos_MouseLeave(object sender, EventArgs e) {
             this.Cursor = Cursors.Default;
+            btnProductos.FlatStyle = FlatStyle.Flat;
         }
         private void btnProductos_Click(object sender, EventArgs e) {
             if (frmAdmProducto == null || frmAdmProducto.Estado == Vista.estado.Cerrado) {
@@ -99,10 +109,12 @@ namespace Vista.Vista_menu
         //boton proveedores
         private void btnProveedores_MouseEnter(object sender, EventArgs e) {
             this.Cursor = Cursors.Hand;
+            btnProveedores.FlatStyle = FlatStyle.Popup;
         }
 
         private void btnProveedores_MouseLeave(object sender, EventArgs e) {
             this.Cursor = Cursors.Default;
+            btnProveedores.FlatStyle = FlatStyle.Flat;
         }
 
         private void btnProveedores_Click(object sender, EventArgs e) {

@@ -51,11 +51,11 @@
     <Compile Include="frmAdmCliente.Designer.cs">
       <DependentUpon>frmAdmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdmPedidoRegistrar.cs">
+    <Compile Include="frmAdmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdmPedidoRegistrar.Designer.cs">
-      <DependentUpon>frmAdmPedidoRegistrar.cs</DependentUpon>
+    <Compile Include="frmAdmPedido.Designer.cs">
+      <DependentUpon>frmAdmPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmProducto.cs">
       <SubType>Form</SubType>
@@ -99,6 +99,24 @@
     <Compile Include="frmConfirmacion.Designer.cs">
       <DependentUpon>frmConfirmacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionarAnulacionPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarAnulacionPedido.Designer.cs">
+      <DependentUpon>frmGestionarAnulacionPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarDocumentoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarDocumentoPago.Designer.cs">
+      <DependentUpon>frmGestionarDocumentoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarPagoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarPagoPedido.Designer.cs">
+      <DependentUpon>frmGestionarPagoPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,14 +137,23 @@
     <Compile Include="Vista_menu\frmCabecera.Designer.cs">
       <DependentUpon>frmCabecera.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_menu\frmMenuInicio.cs">
+    <Compile Include="Vista_menu\frmMenuInicioAdm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_menu\frmMenuInicio.Designer.cs">
-      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    <Compile Include="Vista_menu\frmMenuInicioAdm.Designer.cs">
+      <DependentUpon>frmMenuInicioAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista_menu\frmMenuInicioVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista_menu\frmMenuInicioVentas.Designer.cs">
+      <DependentUpon>frmMenuInicioVentas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmAdmCliente.resx">
       <DependentUpon>frmAdmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmPedido.resx">
+      <DependentUpon>frmAdmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmProducto.resx">
       <DependentUpon>frmAdmProducto.cs</DependentUpon>
@@ -149,6 +176,15 @@
     <EmbeddedResource Include="frmConfirmacion.resx">
       <DependentUpon>frmConfirmacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarAnulacionPedido.resx">
+      <DependentUpon>frmGestionarAnulacionPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarDocumentoPago.resx">
+      <DependentUpon>frmGestionarDocumentoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarPagoPedido.resx">
+      <DependentUpon>frmGestionarPagoPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +204,11 @@
     <EmbeddedResource Include="Vista_menu\frmCabecera.resx">
       <DependentUpon>frmCabecera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_menu\frmMenuInicio.resx">
-      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    <EmbeddedResource Include="Vista_menu\frmMenuInicioAdm.resx">
+      <DependentUpon>frmMenuInicioAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista_menu\frmMenuInicioVentas.resx">
+      <DependentUpon>frmMenuInicioVentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
