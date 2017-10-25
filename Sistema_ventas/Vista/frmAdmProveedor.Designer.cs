@@ -50,16 +50,16 @@
             this.lblDirElecProveedor = new System.Windows.Forms.Label();
             this.lblTlfProveedor = new System.Windows.Forms.Label();
             this.btnLimpiarProveedor = new System.Windows.Forms.Button();
-            this.gbxButton1 = new System.Windows.Forms.GroupBox();
-            this.gbxButton2 = new System.Windows.Forms.GroupBox();
-            this.gbxButton3 = new System.Windows.Forms.GroupBox();
+            this.gbxProv1 = new System.Windows.Forms.GroupBox();
+            this.gbxProv2 = new System.Windows.Forms.GroupBox();
+            this.gbxProv3 = new System.Windows.Forms.GroupBox();
             this.btnCerrarProveedor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxBasicoProveedor.SuspendLayout();
             this.gbxContactoProveedor.SuspendLayout();
-            this.gbxButton1.SuspendLayout();
-            this.gbxButton2.SuspendLayout();
-            this.gbxButton3.SuspendLayout();
+            this.gbxProv1.SuspendLayout();
+            this.gbxProv2.SuspendLayout();
+            this.gbxProv3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,9 +123,9 @@
             this.gbxBasicoProveedor.Controls.Add(this.lblRUCProveedor);
             this.gbxBasicoProveedor.Controls.Add(this.txtCodigoProveedor);
             this.gbxBasicoProveedor.Controls.Add(this.lblCodigoProveedor);
-            this.gbxBasicoProveedor.Location = new System.Drawing.Point(12, 118);
+            this.gbxBasicoProveedor.Location = new System.Drawing.Point(9, 118);
             this.gbxBasicoProveedor.Name = "gbxBasicoProveedor";
-            this.gbxBasicoProveedor.Size = new System.Drawing.Size(416, 102);
+            this.gbxBasicoProveedor.Size = new System.Drawing.Size(434, 102);
             this.gbxBasicoProveedor.TabIndex = 4;
             this.gbxBasicoProveedor.TabStop = false;
             this.gbxBasicoProveedor.Text = "Datos básicos";
@@ -134,7 +134,7 @@
             // 
             this.txtRazSocProveedores.Location = new System.Drawing.Point(103, 70);
             this.txtRazSocProveedores.Name = "txtRazSocProveedores";
-            this.txtRazSocProveedores.Size = new System.Drawing.Size(297, 20);
+            this.txtRazSocProveedores.Size = new System.Drawing.Size(313, 20);
             this.txtRazSocProveedores.TabIndex = 5;
             // 
             // lblRazSocProveedor
@@ -189,9 +189,9 @@
             this.gbxContactoProveedor.Controls.Add(this.txtTlfProveedores);
             this.gbxContactoProveedor.Controls.Add(this.lblDirElecProveedor);
             this.gbxContactoProveedor.Controls.Add(this.lblTlfProveedor);
-            this.gbxContactoProveedor.Location = new System.Drawing.Point(12, 237);
+            this.gbxContactoProveedor.Location = new System.Drawing.Point(9, 237);
             this.gbxContactoProveedor.Name = "gbxContactoProveedor";
-            this.gbxContactoProveedor.Size = new System.Drawing.Size(416, 132);
+            this.gbxContactoProveedor.Size = new System.Drawing.Size(434, 132);
             this.gbxContactoProveedor.TabIndex = 5;
             this.gbxContactoProveedor.TabStop = false;
             this.gbxContactoProveedor.Text = "Medios de contacto";
@@ -217,7 +217,7 @@
             // 
             this.txtDirProveedores.Location = new System.Drawing.Point(103, 71);
             this.txtDirProveedores.Name = "txtDirProveedores";
-            this.txtDirProveedores.Size = new System.Drawing.Size(297, 20);
+            this.txtDirProveedores.Size = new System.Drawing.Size(313, 20);
             this.txtDirProveedores.TabIndex = 10;
             // 
             // lblDirProveedor
@@ -233,7 +233,7 @@
             // 
             this.txtDirElecProveedores.Location = new System.Drawing.Point(103, 46);
             this.txtDirElecProveedores.Name = "txtDirElecProveedores";
-            this.txtDirElecProveedores.Size = new System.Drawing.Size(297, 20);
+            this.txtDirElecProveedores.Size = new System.Drawing.Size(313, 20);
             this.txtDirElecProveedores.TabIndex = 8;
             // 
             // txtTlfProveedores
@@ -274,40 +274,40 @@
             this.btnLimpiarProveedor.MouseLeave += new System.EventHandler(this.btnLimpiarProveedor_MouseLeave);
             this.btnLimpiarProveedor.MouseHover += new System.EventHandler(this.btnLimpiarProveedor_MouseHover);
             // 
-            // gbxButton1
+            // gbxProv1
             // 
-            this.gbxButton1.Controls.Add(this.btnAgregarProveedor);
-            this.gbxButton1.Location = new System.Drawing.Point(453, 118);
-            this.gbxButton1.Name = "gbxButton1";
-            this.gbxButton1.Size = new System.Drawing.Size(115, 51);
-            this.gbxButton1.TabIndex = 8;
-            this.gbxButton1.TabStop = false;
+            this.gbxProv1.Controls.Add(this.btnAgregarProveedor);
+            this.gbxProv1.Location = new System.Drawing.Point(461, 118);
+            this.gbxProv1.Name = "gbxProv1";
+            this.gbxProv1.Size = new System.Drawing.Size(115, 51);
+            this.gbxProv1.TabIndex = 8;
+            this.gbxProv1.TabStop = false;
             // 
-            // gbxButton2
+            // gbxProv2
             // 
-            this.gbxButton2.Controls.Add(this.btnModificarProveedor);
-            this.gbxButton2.Controls.Add(this.btnEliminarProveedor);
-            this.gbxButton2.Controls.Add(this.btnLimpiarProveedor);
-            this.gbxButton2.Location = new System.Drawing.Point(453, 180);
-            this.gbxButton2.Name = "gbxButton2";
-            this.gbxButton2.Size = new System.Drawing.Size(115, 109);
-            this.gbxButton2.TabIndex = 9;
-            this.gbxButton2.TabStop = false;
+            this.gbxProv2.Controls.Add(this.btnModificarProveedor);
+            this.gbxProv2.Controls.Add(this.btnEliminarProveedor);
+            this.gbxProv2.Controls.Add(this.btnLimpiarProveedor);
+            this.gbxProv2.Location = new System.Drawing.Point(461, 180);
+            this.gbxProv2.Name = "gbxProv2";
+            this.gbxProv2.Size = new System.Drawing.Size(115, 109);
+            this.gbxProv2.TabIndex = 9;
+            this.gbxProv2.TabStop = false;
             // 
-            // gbxButton3
+            // gbxProv3
             // 
-            this.gbxButton3.Controls.Add(this.btnBuscarProveedor);
-            this.gbxButton3.Location = new System.Drawing.Point(453, 299);
-            this.gbxButton3.Name = "gbxButton3";
-            this.gbxButton3.Size = new System.Drawing.Size(115, 70);
-            this.gbxButton3.TabIndex = 10;
-            this.gbxButton3.TabStop = false;
+            this.gbxProv3.Controls.Add(this.btnBuscarProveedor);
+            this.gbxProv3.Location = new System.Drawing.Point(461, 299);
+            this.gbxProv3.Name = "gbxProv3";
+            this.gbxProv3.Size = new System.Drawing.Size(115, 70);
+            this.gbxProv3.TabIndex = 10;
+            this.gbxProv3.TabStop = false;
             // 
             // btnCerrarProveedor
             // 
             this.btnCerrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarProveedor.Location = new System.Drawing.Point(476, 65);
+            this.btnCerrarProveedor.Location = new System.Drawing.Point(488, 65);
             this.btnCerrarProveedor.Name = "btnCerrarProveedor";
             this.btnCerrarProveedor.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarProveedor.TabIndex = 2;
@@ -331,12 +331,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 531);
+            this.ClientSize = new System.Drawing.Size(585, 400);
             this.Controls.Add(this.btnCerrarProveedor);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.gbxButton3);
-            this.Controls.Add(this.gbxButton2);
-            this.Controls.Add(this.gbxButton1);
+            this.Controls.Add(this.gbxProv3);
+            this.Controls.Add(this.gbxProv2);
+            this.Controls.Add(this.gbxProv1);
             this.Controls.Add(this.gbxContactoProveedor);
             this.Controls.Add(this.gbxBasicoProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -348,9 +348,9 @@
             this.gbxBasicoProveedor.PerformLayout();
             this.gbxContactoProveedor.ResumeLayout(false);
             this.gbxContactoProveedor.PerformLayout();
-            this.gbxButton1.ResumeLayout(false);
-            this.gbxButton2.ResumeLayout(false);
-            this.gbxButton3.ResumeLayout(false);
+            this.gbxProv1.ResumeLayout(false);
+            this.gbxProv2.ResumeLayout(false);
+            this.gbxProv3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -379,9 +379,9 @@
         private System.Windows.Forms.Label lblDirElecProveedor;
         private System.Windows.Forms.Button btnLimpiarProveedor;
         private System.Windows.Forms.ComboBox cboDistritoProveedor;
-        private System.Windows.Forms.GroupBox gbxButton1;
-        private System.Windows.Forms.GroupBox gbxButton2;
-        private System.Windows.Forms.GroupBox gbxButton3;
+        private System.Windows.Forms.GroupBox gbxProv1;
+        private System.Windows.Forms.GroupBox gbxProv2;
+        private System.Windows.Forms.GroupBox gbxProv3;
         private System.Windows.Forms.Button btnCerrarProveedor;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

@@ -18,13 +18,14 @@ namespace Vista
             InitializeComponent();
             Estado = estado.Nuevo;
         }
-
-
-
-
         public estado Estado { get => _estado; set => _estado = value; }
-
-        private void btnCerrar_Click(object sender, EventArgs e) {
+        private void btnCerrarBusqPedido_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Estado = estado.Cerrado;
+        }
+        private void btnSelecPed_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.Estado = estado.Cerrado;
         }

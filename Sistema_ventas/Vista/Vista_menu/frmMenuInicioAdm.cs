@@ -131,5 +131,20 @@ namespace Vista.Vista_menu
                 cabecera.Abierto = false;
             }
         }
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            this.MdiParent.Close();
+        }
+        private void btnCerrarSesion_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            btnCerrarSesion.FlatStyle = FlatStyle.Popup;
+        }
+        private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+        }
+
     }
 }

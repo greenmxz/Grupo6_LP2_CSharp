@@ -43,11 +43,12 @@
             // btnSelecProv
             // 
             this.btnSelecProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecProv.Location = new System.Drawing.Point(258, 124);
+            this.btnSelecProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecProv.Location = new System.Drawing.Point(135, 366);
             this.btnSelecProv.Name = "btnSelecProv";
             this.btnSelecProv.Size = new System.Drawing.Size(150, 23);
             this.btnSelecProv.TabIndex = 0;
-            this.btnSelecProv.Text = "Seleccionar";
+            this.btnSelecProv.Text = "SELECCIONAR";
             this.btnSelecProv.UseVisualStyleBackColor = true;
             this.btnSelecProv.Click += new System.EventHandler(this.btnSelecProv_Click);
             // 
@@ -55,7 +56,7 @@
             // 
             this.btnCerrarBusqProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarBusqProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarBusqProveedor.Location = new System.Drawing.Point(315, 15);
+            this.btnCerrarBusqProveedor.Location = new System.Drawing.Point(323, 65);
             this.btnCerrarBusqProveedor.Name = "btnCerrarBusqProveedor";
             this.btnCerrarBusqProveedor.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarBusqProveedor.TabIndex = 2;
@@ -75,38 +76,44 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvProvCod,
             this.dgvProvRUC,
             this.dgvProvRazSoc});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 180);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 117);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(390, 241);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(390, 233);
             this.dataGridView1.TabIndex = 2;
             // 
             // dgvProvCod
             // 
             this.dgvProvCod.HeaderText = "Código";
             this.dgvProvCod.Name = "dgvProvCod";
+            this.dgvProvCod.ReadOnly = true;
             this.dgvProvCod.Width = 60;
             // 
             // dgvProvRUC
             // 
             this.dgvProvRUC.HeaderText = "RUC";
             this.dgvProvRUC.Name = "dgvProvRUC";
+            this.dgvProvRUC.ReadOnly = true;
             // 
             // dgvProvRazSoc
             // 
             this.dgvProvRazSoc.HeaderText = "Razón Social";
             this.dgvProvRazSoc.Name = "dgvProvRazSoc";
+            this.dgvProvRazSoc.ReadOnly = true;
             this.dgvProvRazSoc.Width = 185;
             // 
             // frmBusquedaProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 544);
+            this.ClientSize = new System.Drawing.Size(420, 400);
             this.Controls.Add(this.btnCerrarBusqProveedor);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);

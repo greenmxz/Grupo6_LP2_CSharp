@@ -22,12 +22,14 @@ namespace Vista
             Estado = estado.Nuevo;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnCerrarBusqCliente_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.Estado = estado.Cerrado;
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e) {
+        private void btnSelecCli_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.Estado = estado.Cerrado;
         }

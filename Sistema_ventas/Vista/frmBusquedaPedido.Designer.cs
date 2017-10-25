@@ -28,36 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaPedido));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCerrarBusqPedido = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSelecPed = new System.Windows.Forms.Button();
             this.NumeroPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 137);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(375, 12);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(27, 18);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // dataGridView1
             // 
@@ -69,30 +51,66 @@
             this.TotalVenta,
             this.RUC,
             this.NombreCliente});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 216);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 117);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(390, 233);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // btnCerrarBusqPedido
+            // 
+            this.btnCerrarBusqPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrarBusqPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarBusqPedido.Location = new System.Drawing.Point(323, 65);
+            this.btnCerrarBusqPedido.Name = "btnCerrarBusqPedido";
+            this.btnCerrarBusqPedido.Size = new System.Drawing.Size(80, 20);
+            this.btnCerrarBusqPedido.TabIndex = 3;
+            this.btnCerrarBusqPedido.Text = "CERRAR";
+            this.btnCerrarBusqPedido.UseVisualStyleBackColor = true;
+            this.btnCerrarBusqPedido.Click += new System.EventHandler(this.btnCerrarBusqPedido_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(420, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSelecPed
+            // 
+            this.btnSelecPed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecPed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecPed.Location = new System.Drawing.Point(135, 365);
+            this.btnSelecPed.Name = "btnSelecPed";
+            this.btnSelecPed.Size = new System.Drawing.Size(150, 23);
+            this.btnSelecPed.TabIndex = 5;
+            this.btnSelecPed.Text = "SELECCIONAR";
+            this.btnSelecPed.UseVisualStyleBackColor = true;
+            this.btnSelecPed.Click += new System.EventHandler(this.btnSelecPed_Click);
             // 
             // NumeroPedido
             // 
             this.NumeroPedido.HeaderText = "Numero de pedido";
             this.NumeroPedido.Name = "NumeroPedido";
             this.NumeroPedido.ReadOnly = true;
+            this.NumeroPedido.Width = 90;
             // 
             // TotalVenta
             // 
             this.TotalVenta.HeaderText = "Total";
             this.TotalVenta.Name = "TotalVenta";
             this.TotalVenta.ReadOnly = true;
+            this.TotalVenta.Width = 60;
             // 
             // RUC
             // 
             this.RUC.HeaderText = "RUC";
             this.RUC.Name = "RUC";
             this.RUC.ReadOnly = true;
-            this.RUC.Width = 50;
+            this.RUC.Width = 90;
             // 
             // NombreCliente
             // 
@@ -100,41 +118,32 @@
             this.NombreCliente.Name = "NombreCliente";
             this.NombreCliente.ReadOnly = true;
             // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(327, 143);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
-            this.btnSeleccionar.TabIndex = 2;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
-            // 
             // frmBusquedaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 544);
-            this.Controls.Add(this.btnSeleccionar);
+            this.ClientSize = new System.Drawing.Size(420, 400);
+            this.Controls.Add(this.btnSelecPed);
+            this.Controls.Add(this.btnCerrarBusqPedido);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBusquedaPedido";
             this.Text = "frmBusquedaPedido";
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnCerrarBusqPedido;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSelecPed;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
-        private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.Button btnCerrar;
     }
 }

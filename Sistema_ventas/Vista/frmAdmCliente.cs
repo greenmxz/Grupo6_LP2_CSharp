@@ -38,10 +38,31 @@ namespace Vista {
             }
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e) {
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarCliente_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.frmState = estado.Cerrado;
             if (frmBusquedaCliente != null) { frmBusquedaCliente.Dispose(); }
+        }
+
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiarCliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

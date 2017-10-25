@@ -42,15 +42,10 @@ namespace Vista {
                 e.Handled = true;
             }
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e) {
-            this.Dispose();
-            this.Estado = estado.Cerrado;
-            if (frmBPROD != null) { frmBPROD.Dispose(); }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e) {
-            if (frmBPROD == null || frmBPROD.Estado == estado.Cerrado) {
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            if (frmBPROD == null || frmBPROD.Estado == estado.Cerrado)
+            {
                 frmBPROD = new frmBusquedaProducto();
                 frmBPROD.Estado = estado.Nuevo;
                 frmBPROD.MdiParent = this.MdiParent;
@@ -58,8 +53,17 @@ namespace Vista {
                 frmBPROD.Left = 588;
                 frmBPROD.Top = 112;
                 frmBPROD.Visible = true;
-
             }
+        }
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnCerrarProducto_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Estado = estado.Cerrado;
+            if (frmBPROD != null) { frmBPROD.Dispose(); }
         }
     }
 }

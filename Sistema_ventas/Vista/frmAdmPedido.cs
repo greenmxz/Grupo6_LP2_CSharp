@@ -37,8 +37,8 @@ namespace Vista
                 frmBusquedaPedido.Visible = true;
             }
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e) {
+        private void btnCerrarPedido_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.Estado = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
