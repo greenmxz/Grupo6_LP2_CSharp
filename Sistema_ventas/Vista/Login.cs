@@ -7,26 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Vista {
     public partial class Login : Form {
-        private string _nombreUsuario;
+        Usuario usuario;
         public Login() {
             InitializeComponent();
+            usuario = new Usuario();
             
         }
 
-        public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
+        public Usuario Usuario { get => usuario; set => usuario = value; }
+
+        //public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
 
         //public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
 
         private void btnIngresar_Click(object sender, EventArgs e) {
-            NombreUsuario = txtUsuario.Text;
-            this.DialogResult = DialogResult.OK;
-            //Principal principal = new Principal(txtUsuario.Text);
- 
-            //principal.Show();
+            usuario.Nombre = txtUsuario.Text;
+            usuario.Contraseña = txtContraseña.Text;
             
+            //Principal principal = new Principal(txtUsuario.Text);
+            //while (true)
+            //{
+                if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
+            {
+                    MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Ingreso Correcto");
+                    this.DialogResult = DialogResult.OK;
+                
+                
+                }
+            //}
         }
 
         private void btnSalir_Click(object sender, EventArgs e) {
@@ -37,7 +54,7 @@ namespace Vista {
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                NombreUsuario = txtUsuario.Text;
+                usuario.Nombre = txtUsuario.Text;
                 this.DialogResult = DialogResult.OK;
             }
         }
