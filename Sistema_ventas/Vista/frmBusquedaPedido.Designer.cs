@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaPedido));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCerrarBusqPedido = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSelecPed = new System.Windows.Forms.Button();
             this.NumeroPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCerrarBusqPedido = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSelecPed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,11 +57,38 @@
             this.dataGridView1.Size = new System.Drawing.Size(390, 233);
             this.dataGridView1.TabIndex = 1;
             // 
+            // NumeroPedido
+            // 
+            this.NumeroPedido.HeaderText = "Numero de pedido";
+            this.NumeroPedido.Name = "NumeroPedido";
+            this.NumeroPedido.ReadOnly = true;
+            this.NumeroPedido.Width = 90;
+            // 
+            // TotalVenta
+            // 
+            this.TotalVenta.HeaderText = "Total";
+            this.TotalVenta.Name = "TotalVenta";
+            this.TotalVenta.ReadOnly = true;
+            this.TotalVenta.Width = 60;
+            // 
+            // RUC
+            // 
+            this.RUC.HeaderText = "RUC";
+            this.RUC.Name = "RUC";
+            this.RUC.ReadOnly = true;
+            this.RUC.Width = 90;
+            // 
+            // NombreCliente
+            // 
+            this.NombreCliente.HeaderText = "Nombre cliente";
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
+            // 
             // btnCerrarBusqPedido
             // 
             this.btnCerrarBusqPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarBusqPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarBusqPedido.Location = new System.Drawing.Point(323, 65);
+            this.btnCerrarBusqPedido.Location = new System.Drawing.Point(330, 70);
             this.btnCerrarBusqPedido.Name = "btnCerrarBusqPedido";
             this.btnCerrarBusqPedido.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarBusqPedido.TabIndex = 3;
@@ -90,33 +117,6 @@
             this.btnSelecPed.Text = "SELECCIONAR";
             this.btnSelecPed.UseVisualStyleBackColor = true;
             this.btnSelecPed.Click += new System.EventHandler(this.btnSelecPed_Click);
-            // 
-            // NumeroPedido
-            // 
-            this.NumeroPedido.HeaderText = "Numero de pedido";
-            this.NumeroPedido.Name = "NumeroPedido";
-            this.NumeroPedido.ReadOnly = true;
-            this.NumeroPedido.Width = 90;
-            // 
-            // TotalVenta
-            // 
-            this.TotalVenta.HeaderText = "Total";
-            this.TotalVenta.Name = "TotalVenta";
-            this.TotalVenta.ReadOnly = true;
-            this.TotalVenta.Width = 60;
-            // 
-            // RUC
-            // 
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            this.RUC.ReadOnly = true;
-            this.RUC.Width = 90;
-            // 
-            // NombreCliente
-            // 
-            this.NombreCliente.HeaderText = "Nombre cliente";
-            this.NombreCliente.Name = "NombreCliente";
-            this.NombreCliente.ReadOnly = true;
             // 
             // frmBusquedaPedido
             // 

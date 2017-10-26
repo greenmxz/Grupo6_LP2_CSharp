@@ -93,6 +93,12 @@
     <Compile Include="frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnvioCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnvioCorreo.Designer.cs">
+      <DependentUpon>frmEnvioCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionarAnulacionPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnvioCorreo.resx">
+      <DependentUpon>frmEnvioCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarAnulacionPedido.resx">
       <DependentUpon>frmGestionarAnulacionPedido.cs</DependentUpon>

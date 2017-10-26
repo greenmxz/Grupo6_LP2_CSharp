@@ -56,7 +56,7 @@
             // 
             this.btnCerrarBusqProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarBusqProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarBusqProveedor.Location = new System.Drawing.Point(323, 65);
+            this.btnCerrarBusqProveedor.Location = new System.Drawing.Point(330, 70);
             this.btnCerrarBusqProveedor.Name = "btnCerrarBusqProveedor";
             this.btnCerrarBusqProveedor.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarBusqProveedor.TabIndex = 2;

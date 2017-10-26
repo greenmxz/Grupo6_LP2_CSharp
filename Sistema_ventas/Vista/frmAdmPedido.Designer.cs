@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmPedido));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnQuitarClienteXPedido = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -316,7 +317,7 @@
             // 
             this.btnCerrarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarPedido.Location = new System.Drawing.Point(488, 72);
+            this.btnCerrarPedido.Location = new System.Drawing.Point(495, 70);
             this.btnCerrarPedido.Name = "btnCerrarPedido";
             this.btnCerrarPedido.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarPedido.TabIndex = 13;
@@ -327,6 +328,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(585, 100);
@@ -350,7 +352,7 @@
             this.btnBuscarPedido.Name = "btnBuscarPedido";
             this.btnBuscarPedido.Size = new System.Drawing.Size(91, 39);
             this.btnBuscarPedido.TabIndex = 3;
-            this.btnBuscarPedido.Text = "Busca a un proveedor aquí";
+            this.btnBuscarPedido.Text = "Busca a un pedido aquí";
             this.btnBuscarPedido.UseVisualStyleBackColor = true;
             this.btnBuscarPedido.Click += new System.EventHandler(this.btnBuscarPedido_Click);
             // 

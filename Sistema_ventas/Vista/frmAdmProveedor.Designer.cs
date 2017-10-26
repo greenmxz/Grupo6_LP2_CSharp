@@ -307,7 +307,7 @@
             // 
             this.btnCerrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarProveedor.Location = new System.Drawing.Point(488, 65);
+            this.btnCerrarProveedor.Location = new System.Drawing.Point(495, 70);
             this.btnCerrarProveedor.Name = "btnCerrarProveedor";
             this.btnCerrarProveedor.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarProveedor.TabIndex = 2;

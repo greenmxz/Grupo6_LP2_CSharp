@@ -23,89 +23,104 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarDocumentoPago));
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarDocum = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscarPedido = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.gbxAnula2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarDocum = new System.Windows.Forms.Button();
+            this.gbxAnula1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarDocum = new System.Windows.Forms.Button();
+            this.btnEnviarDocum = new System.Windows.Forms.Button();
+            this.btnGuardarDocum = new System.Windows.Forms.Button();
+            this.btnCancelarDocum = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.gbxAnula2.SuspendLayout();
+            this.gbxAnula1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // label7
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 137);
-            this.panel1.TabIndex = 0;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(232, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Fecha de emisión:";
             // 
-            // label5
+            // dateTimePicker1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 469);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Total Venta:";
+            this.dateTimePicker1.Location = new System.Drawing.Point(331, 113);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(242, 20);
+            this.dateTimePicker1.TabIndex = 37;
             // 
-            // label4
+            // pictureBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(299, 471);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "IGV:";
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(585, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
             // 
-            // textBox5
+            // btnCerrarDocum
             // 
-            this.textBox5.Location = new System.Drawing.Point(110, 466);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 31;
+            this.btnCerrarDocum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrarDocum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarDocum.Location = new System.Drawing.Point(495, 70);
+            this.btnCerrarDocum.Name = "btnCerrarDocum";
+            this.btnCerrarDocum.Size = new System.Drawing.Size(80, 20);
+            this.btnCerrarDocum.TabIndex = 46;
+            this.btnCerrarDocum.Text = "CERRAR";
+            this.btnCerrarDocum.UseVisualStyleBackColor = false;
+            this.btnCerrarDocum.Click += new System.EventHandler(this.btnCerrarDocum_Click);
             // 
-            // textBox4
+            // textBox1
             // 
-            this.textBox4.Location = new System.Drawing.Point(356, 466);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 30;
+            this.textBox1.Location = new System.Drawing.Point(111, 113);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(85, 20);
+            this.textBox1.TabIndex = 48;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Número de pedido:";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 282);
+            this.groupBox2.Location = new System.Drawing.Point(13, 230);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(492, 184);
-            this.groupBox2.TabIndex = 29;
+            this.groupBox2.Size = new System.Drawing.Size(426, 184);
+            this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle de pedido";
             // 
@@ -121,7 +136,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(20, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(440, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(387, 150);
             this.dataGridView1.TabIndex = 4;
             // 
             // NombreProd
@@ -129,12 +144,14 @@
             this.NombreProd.HeaderText = "Nombre del producto";
             this.NombreProd.Name = "NombreProd";
             this.NombreProd.ReadOnly = true;
+            this.NombreProd.Width = 150;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 70;
             // 
             // Subtotal
             // 
@@ -143,33 +160,16 @@
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
             // 
-            // btnBuscarPedido
-            // 
-            this.btnBuscarPedido.Location = new System.Drawing.Point(458, 144);
-            this.btnBuscarPedido.Name = "btnBuscarPedido";
-            this.btnBuscarPedido.Size = new System.Drawing.Size(84, 33);
-            this.btnBuscarPedido.TabIndex = 28;
-            this.btnBuscarPedido.Text = "Buscar Pedido";
-            this.btnBuscarPedido.UseVisualStyleBackColor = true;
-            this.btnBuscarPedido.Click += new System.EventHandler(this.btnBuscarPedido_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(105, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 27;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 196);
+            this.groupBox1.Location = new System.Drawing.Point(13, 144);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 80);
-            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
             // 
@@ -205,167 +205,173 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "RUC:";
             // 
-            // label1
+            // gbxAnula2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Numero Pedido";
+            this.gbxAnula2.Controls.Add(this.btnBuscarDocum);
+            this.gbxAnula2.Location = new System.Drawing.Point(458, 230);
+            this.gbxAnula2.Name = "gbxAnula2";
+            this.gbxAnula2.Size = new System.Drawing.Size(115, 70);
+            this.gbxAnula2.TabIndex = 56;
+            this.gbxAnula2.TabStop = false;
             // 
-            // label7
+            // btnBuscarDocum
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "Fecha emisión:";
+            this.btnBuscarDocum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarDocum.Location = new System.Drawing.Point(12, 18);
+            this.btnBuscarDocum.Name = "btnBuscarDocum";
+            this.btnBuscarDocum.Size = new System.Drawing.Size(91, 39);
+            this.btnBuscarDocum.TabIndex = 3;
+            this.btnBuscarDocum.Text = "Busca a un pedido aquí";
+            this.btnBuscarDocum.UseVisualStyleBackColor = true;
+            this.btnBuscarDocum.Click += new System.EventHandler(this.btnBuscarDocum_Click);
             // 
-            // dateTimePicker1
+            // gbxAnula1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 176);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 37;
+            this.gbxAnula1.Controls.Add(this.btnLimpiarDocum);
+            this.gbxAnula1.Controls.Add(this.btnEnviarDocum);
+            this.gbxAnula1.Controls.Add(this.btnGuardarDocum);
+            this.gbxAnula1.Controls.Add(this.btnCancelarDocum);
+            this.gbxAnula1.Location = new System.Drawing.Point(356, 140);
+            this.gbxAnula1.Name = "gbxAnula1";
+            this.gbxAnula1.Size = new System.Drawing.Size(217, 84);
+            this.gbxAnula1.TabIndex = 55;
+            this.gbxAnula1.TabStop = false;
             // 
-            // button1
+            // btnLimpiarDocum
             // 
-            this.button1.Location = new System.Drawing.Point(59, 496);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Enviar por correo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLimpiarDocum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarDocum.Location = new System.Drawing.Point(114, 45);
+            this.btnLimpiarDocum.Name = "btnLimpiarDocum";
+            this.btnLimpiarDocum.Size = new System.Drawing.Size(91, 23);
+            this.btnLimpiarDocum.TabIndex = 7;
+            this.btnLimpiarDocum.Text = "Limpiar";
+            this.btnLimpiarDocum.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEnviarDocum
             // 
-            this.button2.Location = new System.Drawing.Point(235, 496);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "Guardar Documento";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEnviarDocum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarDocum.Location = new System.Drawing.Point(12, 16);
+            this.btnEnviarDocum.Name = "btnEnviarDocum";
+            this.btnEnviarDocum.Size = new System.Drawing.Size(91, 23);
+            this.btnEnviarDocum.TabIndex = 1;
+            this.btnEnviarDocum.Text = "Enviar";
+            this.btnEnviarDocum.UseVisualStyleBackColor = true;
+            this.btnEnviarDocum.Click += new System.EventHandler(this.btnEnviarDocum_Click);
             // 
-            // button3
+            // btnGuardarDocum
             // 
-            this.button3.Location = new System.Drawing.Point(408, 496);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnGuardarDocum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarDocum.Location = new System.Drawing.Point(12, 45);
+            this.btnGuardarDocum.Name = "btnGuardarDocum";
+            this.btnGuardarDocum.Size = new System.Drawing.Size(91, 23);
+            this.btnGuardarDocum.TabIndex = 2;
+            this.btnGuardarDocum.Text = "Guardar";
+            this.btnGuardarDocum.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // btnCancelarDocum
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(308, 207);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Correo:";
+            this.btnCancelarDocum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarDocum.Location = new System.Drawing.Point(114, 16);
+            this.btnCancelarDocum.Name = "btnCancelarDocum";
+            this.btnCancelarDocum.Size = new System.Drawing.Size(91, 23);
+            this.btnCancelarDocum.TabIndex = 6;
+            this.btnCancelarDocum.Text = "Cancelar";
+            this.btnCancelarDocum.UseVisualStyleBackColor = true;
+            this.btnCancelarDocum.Click += new System.EventHandler(this.btnCancelarDocum_Click);
             // 
-            // textBox6
+            // label9
             // 
-            this.textBox6.Location = new System.Drawing.Point(356, 204);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(186, 20);
-            this.textBox6.TabIndex = 42;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(479, 325);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Total de Venta";
             // 
-            // label8
+            // label10
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(311, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 13);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Tipo de documento:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(504, 371);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 13);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "IGV";
             // 
-            // comboBox1
+            // textBox7
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(419, 236);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
-            this.comboBox1.TabIndex = 44;
+            this.textBox7.Location = new System.Drawing.Point(458, 342);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(115, 20);
+            this.textBox7.TabIndex = 52;
             // 
-            // btnCerrar
+            // textBox8
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(549, 12);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(24, 15);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.textBox8.Location = new System.Drawing.Point(458, 387);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(115, 20);
+            this.textBox8.TabIndex = 51;
             // 
             // frmGestionarDocumentoPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 531);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(585, 430);
+            this.Controls.Add(this.gbxAnula2);
+            this.Controls.Add(this.gbxAnula1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCerrarDocum);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnBuscarPedido);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarDocumentoPago";
             this.Text = "frmGestionarDocumentoPago";
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbxAnula2.ResumeLayout(false);
+            this.gbxAnula1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCerrarDocum;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.Button btnBuscarPedido;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.GroupBox gbxAnula2;
+        private System.Windows.Forms.Button btnBuscarDocum;
+        private System.Windows.Forms.GroupBox gbxAnula1;
+        private System.Windows.Forms.Button btnEnviarDocum;
+        private System.Windows.Forms.Button btnGuardarDocum;
+        private System.Windows.Forms.Button btnCancelarDocum;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btnLimpiarDocum;
     }
 }

@@ -18,8 +18,16 @@ namespace Vista {
 
         public estado Estado { get => frmState; set => frmState = value; }
 
-        private void btnBuscarPedido_Click(object sender, EventArgs e) {
-            if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado) {
+        private void btnCerrarPago_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.frmState = estado.Cerrado;
+            if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
+        }
+        private void btnBuscarPago_Click(object sender, EventArgs e)
+        {
+            if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado)
+            {
                 frmBusquedaPedido = new frmBusquedaPedido();
                 frmBusquedaPedido.MdiParent = this.ParentForm;
                 frmBusquedaPedido.Show();
@@ -29,14 +37,8 @@ namespace Vista {
                 frmBusquedaPedido.Top = 112;
             }
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            this.Dispose();
-            this.frmState = estado.Cerrado;
-            if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e) {
+        private void btnCancelarPago_Click(object sender, EventArgs e)
+        {
             this.Dispose();
             this.frmState = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmCliente));
             this.txtDistritoClientes = new System.Windows.Forms.TextBox();
             this.lblDistrito = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
@@ -179,6 +180,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(585, 100);
@@ -274,7 +276,7 @@
             // 
             this.btnCerrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarCliente.Location = new System.Drawing.Point(488, 72);
+            this.btnCerrarCliente.Location = new System.Drawing.Point(495, 70);
             this.btnCerrarCliente.Name = "btnCerrarCliente";
             this.btnCerrarCliente.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarCliente.TabIndex = 14;

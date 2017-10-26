@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmProducto));
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtStockIni = new System.Windows.Forms.TextBox();
@@ -201,6 +202,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -225,7 +227,7 @@
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(91, 39);
             this.btnBuscarProducto.TabIndex = 3;
-            this.btnBuscarProducto.Text = "Busca a un proveedor aquí";
+            this.btnBuscarProducto.Text = "Busca a un producto aquí";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
             this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
@@ -294,7 +296,7 @@
             // 
             this.btnCerrarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarProducto.Location = new System.Drawing.Point(488, 65);
+            this.btnCerrarProducto.Location = new System.Drawing.Point(495, 70);
             this.btnCerrarProducto.Name = "btnCerrarProducto";
             this.btnCerrarProducto.Size = new System.Drawing.Size(80, 20);
             this.btnCerrarProducto.TabIndex = 14;

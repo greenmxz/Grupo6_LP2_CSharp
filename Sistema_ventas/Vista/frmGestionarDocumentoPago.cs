@@ -18,7 +18,22 @@ namespace Vista {
 
         public estado Estado { get => frmState; set => frmState = value; }
 
-        private void btnBuscarPedido_Click(object sender, EventArgs e) {
+        private void btnCerrarDocum_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.frmState = estado.Cerrado;
+            if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
+        }
+
+        private void btnCancelarDocum_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.frmState = estado.Cerrado;
+            if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
+        }
+
+        private void btnBuscarDocum_Click(object sender, EventArgs e)
+        {
             frmBusquedaPedido = new frmBusquedaPedido();
             frmBusquedaPedido.MdiParent = this.ParentForm;
             frmBusquedaPedido.Show();
@@ -28,16 +43,15 @@ namespace Vista {
             frmBusquedaPedido.Top = 112;
         }
 
-        private void button3_Click(object sender, EventArgs e) {
-            this.Dispose();
-            this.frmState = estado.Cerrado;
-            if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
-        }
+        private void btnEnviarDocum_Click(object sender, EventArgs e)
+        {
+            frmEnvioCorreo envio = new frmEnvioCorreo();
+            envio.MdiParent = this.ParentForm;
+            envio.Show();
+            envio.StartPosition = FormStartPosition.Manual;
+            envio.Left = 588;
 
-        private void btnCerrar_Click(object sender, EventArgs e) {
-            this.Dispose();
-            this.frmState = estado.Cerrado;
-            if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
+            envio.Top = 112;
         }
     }
 }
