@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmCliente));
-            this.txtDistritoClientes = new System.Windows.Forms.TextBox();
             this.lblDistrito = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.btnCerrarCliente = new System.Windows.Forms.Button();
             this.gbxBasicoProveedor = new System.Windows.Forms.GroupBox();
             this.gbxContactoProveedor = new System.Windows.Forms.GroupBox();
+            this.cboDistritoClientes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxCli3.SuspendLayout();
             this.gbxCli2.SuspendLayout();
@@ -57,14 +57,6 @@
             this.gbxBasicoProveedor.SuspendLayout();
             this.gbxContactoProveedor.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtDistritoClientes
-            // 
-            this.txtDistritoClientes.Location = new System.Drawing.Point(103, 100);
-            this.txtDistritoClientes.Name = "txtDistritoClientes";
-            this.txtDistritoClientes.Size = new System.Drawing.Size(152, 20);
-            this.txtDistritoClientes.TabIndex = 14;
-            this.txtDistritoClientes.Text = "San Juan de Lurigancho";
             // 
             // lblDistrito
             // 
@@ -108,7 +100,6 @@
             this.txtRazSocClientes.Name = "txtRazSocClientes";
             this.txtRazSocClientes.Size = new System.Drawing.Size(312, 20);
             this.txtRazSocClientes.TabIndex = 2;
-            this.txtRazSocClientes.Text = "Compañia de Transformadores S.A.C";
             // 
             // lblCoreroElectronico
             // 
@@ -144,7 +135,6 @@
             this.txtTlfClientes.Name = "txtTlfClientes";
             this.txtTlfClientes.Size = new System.Drawing.Size(86, 20);
             this.txtTlfClientes.TabIndex = 5;
-            this.txtTlfClientes.Text = "2543762";
             // 
             // txtDirClientes
             // 
@@ -152,7 +142,6 @@
             this.txtDirClientes.Name = "txtDirClientes";
             this.txtDirClientes.Size = new System.Drawing.Size(312, 20);
             this.txtDirClientes.TabIndex = 4;
-            this.txtDirClientes.Text = "Av. Zarumilla #153";
             // 
             // txtDirElecClientes
             // 
@@ -160,7 +149,6 @@
             this.txtDirElecClientes.Name = "txtDirElecClientes";
             this.txtDirElecClientes.Size = new System.Drawing.Size(312, 20);
             this.txtDirElecClientes.TabIndex = 3;
-            this.txtDirElecClientes.Text = "moises-ng@hotmail.com";
             // 
             // txtRUCClientes
             // 
@@ -168,7 +156,6 @@
             this.txtRUCClientes.Name = "txtRUCClientes";
             this.txtRUCClientes.Size = new System.Drawing.Size(110, 20);
             this.txtRUCClientes.TabIndex = 1;
-            this.txtRUCClientes.Text = "20524468647";
             // 
             // txtCodigoClientes
             // 
@@ -301,7 +288,7 @@
             // 
             // gbxContactoProveedor
             // 
-            this.gbxContactoProveedor.Controls.Add(this.txtDistritoClientes);
+            this.gbxContactoProveedor.Controls.Add(this.cboDistritoClientes);
             this.gbxContactoProveedor.Controls.Add(this.txtTlfClientes);
             this.gbxContactoProveedor.Controls.Add(this.lblDistrito);
             this.gbxContactoProveedor.Controls.Add(this.txtDirElecClientes);
@@ -315,6 +302,14 @@
             this.gbxContactoProveedor.TabIndex = 16;
             this.gbxContactoProveedor.TabStop = false;
             this.gbxContactoProveedor.Text = "Medios de contacto";
+            // 
+            // cboDistritoClientes
+            // 
+            this.cboDistritoClientes.FormattingEnabled = true;
+            this.cboDistritoClientes.Location = new System.Drawing.Point(103, 100);
+            this.cboDistritoClientes.Name = "cboDistritoClientes";
+            this.cboDistritoClientes.Size = new System.Drawing.Size(179, 21);
+            this.cboDistritoClientes.TabIndex = 13;
             // 
             // frmAdmCliente
             // 
@@ -358,7 +353,6 @@
         private System.Windows.Forms.TextBox txtTlfClientes;
         private System.Windows.Forms.TextBox txtDirClientes;
         private System.Windows.Forms.TextBox txtDirElecClientes;
-        private System.Windows.Forms.TextBox txtDistritoClientes;
         private System.Windows.Forms.Label lblDistrito;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gbxCli3;
@@ -372,5 +366,6 @@
         private System.Windows.Forms.Button btnCerrarCliente;
         private System.Windows.Forms.GroupBox gbxBasicoProveedor;
         private System.Windows.Forms.GroupBox gbxContactoProveedor;
+        private System.Windows.Forms.ComboBox cboDistritoClientes;
     }
 }

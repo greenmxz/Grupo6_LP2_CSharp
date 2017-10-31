@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,6 @@ namespace Vista
     {
         private estado estBusquedaProv;
         private frmBusquedaProveedor frmBusqProv;
-        //private BindingList
         private static int i=1;
         string obtenerCodTemporal(int i)
         {
@@ -28,55 +28,17 @@ namespace Vista
         public frmAdmProveedor()
         {
             InitializeComponent();
-            cboDistritoProveedor.Items.Insert(0, "Cercado de Lima");
-            cboDistritoProveedor.Items.Insert(1, "Cercado de Callao");
-            cboDistritoProveedor.Items.Insert(2, "Ancón");
-            cboDistritoProveedor.Items.Insert(3, "Ate");
-            cboDistritoProveedor.Items.Insert(4, "Barranco");
-            cboDistritoProveedor.Items.Insert(5, "Bellavista");
-            cboDistritoProveedor.Items.Insert(6, "Breña");
-            cboDistritoProveedor.Items.Insert(7, "Carabayllo");
-            cboDistritoProveedor.Items.Insert(8, "Carmen de la Legua Reynoso");
-            cboDistritoProveedor.Items.Insert(9, "Cieneguilla");
-            cboDistritoProveedor.Items.Insert(10, "Comas");
-            cboDistritoProveedor.Items.Insert(11, "Chorrillos");
-            cboDistritoProveedor.Items.Insert(12, "El Agustino");
-            cboDistritoProveedor.Items.Insert(13, "Independencia");
-            cboDistritoProveedor.Items.Insert(14, "Jesús María");
-            cboDistritoProveedor.Items.Insert(15, "La Molina");
-            cboDistritoProveedor.Items.Insert(16, "La Perla");
-            cboDistritoProveedor.Items.Insert(17, "La Punta");
-            cboDistritoProveedor.Items.Insert(18, "La Victoria");
-            cboDistritoProveedor.Items.Insert(19, "Lince");
-            cboDistritoProveedor.Items.Insert(20, "Los Olivos");
-            cboDistritoProveedor.Items.Insert(21, "Lurigancho");
-            cboDistritoProveedor.Items.Insert(22, "Lurín");
-            cboDistritoProveedor.Items.Insert(23, "Magdalena del Mar");
-            cboDistritoProveedor.Items.Insert(24, "Mi Perú");
-            cboDistritoProveedor.Items.Insert(25, "Miraflores");
-            cboDistritoProveedor.Items.Insert(26, "Pachacamac");
-            cboDistritoProveedor.Items.Insert(27, "Pucusana");
-            cboDistritoProveedor.Items.Insert(28, "Pueblo Libre");
-            cboDistritoProveedor.Items.Insert(29, "Puente Piedra");
-            cboDistritoProveedor.Items.Insert(30, "Punta Hermosa");
-            cboDistritoProveedor.Items.Insert(31, "Punta Negra");
-            cboDistritoProveedor.Items.Insert(32, "Rímac");
-            cboDistritoProveedor.Items.Insert(33, "San Bartolo");
-            cboDistritoProveedor.Items.Insert(34, "San Borja");
-            cboDistritoProveedor.Items.Insert(35, "San Isidro");
-            cboDistritoProveedor.Items.Insert(36, "San Juan de Lurigancho");
-            cboDistritoProveedor.Items.Insert(37, "San Juan de Miraflores");
-            cboDistritoProveedor.Items.Insert(38, "San Luis");
-            cboDistritoProveedor.Items.Insert(39, "San Martín de Porres");
-            cboDistritoProveedor.Items.Insert(40, "San Miguel");
-            cboDistritoProveedor.Items.Insert(41, "Santa Anita");
-            cboDistritoProveedor.Items.Insert(42, "Santa María del Mar");
-            cboDistritoProveedor.Items.Insert(43, "Santa Rosa");
-            cboDistritoProveedor.Items.Insert(44, "Santiago de Surco");
-            cboDistritoProveedor.Items.Insert(45, "Surquillo");
-            cboDistritoProveedor.Items.Insert(46, "Ventanilla");
-            cboDistritoProveedor.Items.Insert(47, "Villa el Salvador");
-            cboDistritoProveedor.Items.Insert(48, "Villa María del Triunfo");
+            /* Manipulación de ComboBox */
+            /* INICIO */
+            FileStream fs = new FileStream("documents//distritos.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default);
+            while (true)
+            {
+                string distrito = sr.ReadLine();
+                if (distrito == null) { break; }
+                cboDistritoProveedor.Items.Add(distrito);
+            }
+            /* FIN */
             estBusquedaProv = estado.Nuevo;
             txtCodigoProveedor.Text = obtenerCodTemporal(i);
         }
@@ -100,7 +62,7 @@ namespace Vista
                 frmBusqProv = new frmBusquedaProveedor();
                 frmBusqProv.Estado = estado.Nuevo;
                 frmBusqProv.MdiParent = this.MdiParent;
-                
+
                 frmBusqProv.StartPosition = FormStartPosition.Manual;
                 frmBusqProv.Left = 588;
                 frmBusqProv.Top = 112;
@@ -128,6 +90,24 @@ namespace Vista
             if (RUC[0] != '1' && RUC[0] != '2') { return false; }
             return true;
         }
+        bool correoValido(string correo)
+        {
+            if (correo == "") { return false; }
+            string[] div1 = correo.Split('@');
+            if (div1[0].Length == correo.Length) { return false; }
+            string[] div2 = div1[1].Split('.');
+            int num = 0;
+            foreach (string val in div2)
+            {
+                num++;
+            }
+            string[] validadores = { "com", "es", "pe", "org" };
+            foreach (string val in validadores)
+            {
+                if (val == div2[num - 1]) { return true; }
+            }
+            return false;
+        }
         void imprimirMessageBox(string RUC, string razSoc, string telef, string correo, string direc, string distrito)
         {
             string cadError = " errorres en el proceso";
@@ -148,10 +128,11 @@ namespace Vista
                 contError++;
                 cadError = cadError + Environment.NewLine + "- No ha proporcionado una razón social";
             }
-            if (correo == "")
+            if (!correoValido(RUC))
             {
                 contError++;
-                cadError = cadError + Environment.NewLine + "- No ha proporcionado una correo electrónico";
+                if (correo == "") { cadError = cadError + Environment.NewLine + "- No ha proporcionado un correo electrónico"; }
+                else { cadError = cadError + Environment.NewLine + "- El correo proporcionado no es válido"; }
             }
             if (direc == "")
             {
@@ -174,7 +155,7 @@ namespace Vista
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
+            if (rucValido(RUC) && razSoc != "" && telef != "" && correoValido(correo) && direc != "" && distrito != "")
             {
                 string cadena = "¿Está seguro de que desea registrar el siguiente proveedor:";
                 cadena = cadena + Environment.NewLine + "RUC : " + RUC;
@@ -189,8 +170,12 @@ namespace Vista
                 switch (result)
                 {
                     case DialogResult.Yes:
+                        /* MySqlCommand cmdProv = new MySqlCommand();
+                         * cmdCli.CommandText = "INSERT INTO PROVEEDOR(ID,RUC,RazonSocial,Telefono,CorreoElect,Direccion,Distrito) 
+                         * values (obtenerCodTemporal(i),RUC,razSoc,telef,correo,direc,distrito)";
+                         */
                         MessageBox.Show("Proveedor registrado exitosamente");
-                        txtCodigoProveedor.Text = "PROV000" + Convert.ToString(i);
+                        txtCodigoProveedor.Text = obtenerCodTemporal(i);
                         txtRUCProveedores.Text = "";
                         txtRazSocProveedores.Text = "";
                         txtTlfProveedores.Text = "";
@@ -218,7 +203,7 @@ namespace Vista
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
+            if (rucValido(RUC) && razSoc != "" && telef != "" && correoValido(correo) && direc != "" && distrito != "")
             {
                 string cadena = "¿Está seguro de que desea modificar la información del siguiente proveedor:";
                 cadena = cadena + Environment.NewLine + "Código : " + id;
@@ -228,12 +213,17 @@ namespace Vista
                 cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el proveedor con código : " + obtenerCodTemporal(i) + "NO serán reversibles";
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el proveedor con código " + obtenerCodTemporal(i) + " NO serán reversibles";
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de modificación de registro", MessageBoxButtons.YesNo);
 
                 switch (result)
                 {
                     case DialogResult.Yes:
+                        /* MySqlCommand cmdCli = new MySqlCommand();
+                         * cmdCli.CommandText = "UPDATE PROVEEDOR
+                         * SET RUC = RUC, RazonSocial = razSoc, Telefono=telef, CorreoElect=correo, Direccion=direc, Distrito=distrito 
+                         * WHERE ID=i";
+                         */
                         MessageBox.Show("Proveedor modificado exitosamente");
                         txtCodigoProveedor.Text = "";
                         txtRUCProveedores.Text = "";
@@ -263,7 +253,7 @@ namespace Vista
             string correo = txtDirElecProveedores.Text;
             string direc = txtDirProveedores.Text;
             string distrito = cboDistritoProveedor.Text;
-            if (rucValido(RUC) && razSoc != "" && telef != "" && correo != "" && direc != "" && distrito != "")
+            if (rucValido(RUC) && razSoc != "" && telef != "" && correoValido(correo) && direc != "" && distrito != "")
             {
                 string cadena = "¿Está seguro de que desea eliminar el siguiente proveedor:";
                 cadena = cadena + Environment.NewLine + "Código : " + id;
@@ -273,12 +263,16 @@ namespace Vista
                 cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correo;
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + distrito;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código : " + obtenerCodTemporal(i) + "NO serán reversibles";
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código " + obtenerCodTemporal(i) + " NO serán reversibles";
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de eliminación de registro", MessageBoxButtons.YesNo);
 
                 switch (result)
                 {
                     case DialogResult.Yes:
+                        /* MySqlCommand cmdCli = new MySqlCommand();
+                         * cmdCli.CommandText = "DELETE FROM PROVEEDOR
+                         * WHERE ID=i";
+                         */
                         MessageBox.Show("Proveedor eliminado exitosamente");
                         txtCodigoProveedor.Text = "";
                         txtRUCProveedores.Text = "";

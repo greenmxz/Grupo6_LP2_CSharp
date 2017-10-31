@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using Modelo;
 
@@ -38,7 +38,8 @@ namespace Vista {
                 }
                 else
                 {
-                    MessageBox.Show("Ingreso Correcto");
+                    MessageBoxTemporal.Show("Ingreso correcto", "Validación de ingreso", 3, true);
+                    //MessageBox.Show("Ingreso Correcto");
                     this.DialogResult = DialogResult.OK;
                 
                 
