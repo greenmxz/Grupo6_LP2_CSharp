@@ -46,9 +46,9 @@
             this.btnLimpiarAnulacion = new System.Windows.Forms.Button();
             this.btnCerrarAnula = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,7 @@
             // 
             // cboEstadoPedido
             // 
+            this.cboEstadoPedido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstadoPedido.FormattingEnabled = true;
             this.cboEstadoPedido.Location = new System.Drawing.Point(297, 114);
             this.cboEstadoPedido.Name = "cboEstadoPedido";
@@ -268,12 +269,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(387, 150);
             this.dataGridView1.TabIndex = 4;
             // 
-            // Subtotal
+            // NombreProd
             // 
-            this.Subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
+            this.NombreProd.HeaderText = "Nombre del producto";
+            this.NombreProd.Name = "NombreProd";
+            this.NombreProd.ReadOnly = true;
+            this.NombreProd.Width = 150;
             // 
             // Cantidad
             // 
@@ -282,12 +283,12 @@
             this.Cantidad.ReadOnly = true;
             this.Cantidad.Width = 70;
             // 
-            // NombreProd
+            // Subtotal
             // 
-            this.NombreProd.HeaderText = "Nombre del producto";
-            this.NombreProd.Name = "NombreProd";
-            this.NombreProd.ReadOnly = true;
-            this.NombreProd.Width = 150;
+            this.Subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
             // 
             // groupBox2
             // 

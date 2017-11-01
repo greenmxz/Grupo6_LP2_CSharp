@@ -14,6 +14,7 @@ namespace Vista {
         private estado frmState;
         public frmGestionarPagoPedido() {
             InitializeComponent();
+            AdmComboBox.manipCombo("EstadoPedido", "nombre", cboEstadoPedido);
         }
 
         public estado Estado { get => frmState; set => frmState = value; }

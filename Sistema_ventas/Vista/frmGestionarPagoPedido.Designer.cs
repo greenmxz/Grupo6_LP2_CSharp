@@ -83,6 +83,7 @@
             // 
             // cboEstadoPedido
             // 
+            this.cboEstadoPedido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstadoPedido.FormattingEnabled = true;
             this.cboEstadoPedido.Location = new System.Drawing.Point(297, 116);
             this.cboEstadoPedido.Name = "cboEstadoPedido";

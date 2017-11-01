@@ -164,6 +164,7 @@
             this.txtCodigoClientes.ReadOnly = true;
             this.txtCodigoClientes.Size = new System.Drawing.Size(77, 20);
             this.txtCodigoClientes.TabIndex = 0;
+            this.txtCodigoClientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pictureBox1
             // 

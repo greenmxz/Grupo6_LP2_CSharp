@@ -1,33 +1,36 @@
 ﻿using System;
-
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Vista {
     public enum estado { Nuevo, Cerrado }
     public partial class frmAdmCliente : Form {
         private estado frmState;
         private frmBusquedaCliente frmBusquedaCliente;
-        private static int i = 1;
-        string obtenerCodTemporal(int i)
-        {
-            string codTemporal = "CLI";
-            if (i < 10) { codTemporal = codTemporal + "0"; }
-            if (i < 100) { codTemporal = codTemporal + "0"; }
-            codTemporal = codTemporal + Convert.ToString(i);
-            return codTemporal;
-        }
+        //int obtenerLastCodigo()
+        //{
+        //    try
+        //    {
+        //        MySqlCommand cmd = new MySqlCommand();
+        //        cmd.CommandText = "SELECT MAX(idCliente) AS MaxDist FROM Cliente";
+        //        Conexion.cast(cmd);
+        //        MySqlDataReader reader = cmd.ExecuteReader();
+        //        reader.Read();
+        //        int mayor = reader.GetInt32("MaxDist");
+        //        reader.Close();
+        //        return mayor;
+        //    }
+        //    catch
+        //    {
+        //        return 0;
+        //    }
+        //}
         public frmAdmCliente() {
             InitializeComponent();
             this.frmState = estado.Nuevo;
-            AdmComboBox.manipCombo("distritos.txt", cboDistritoClientes);
-            txtCodigoClientes.Text = obtenerCodTemporal(i);
+            AdmComboBox.manipCombo("Distrito", "nombreDistrito", cboDistritoClientes);
+            //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo()+1);
+            txtCodigoClientes.Text = Convert.ToString(1);
         }
         public estado Estado { get => frmState; set => frmState = value; }
         private void btnBuscarCliente_Click(object sender, EventArgs e) {
@@ -41,10 +44,13 @@ namespace Vista {
                 frmBusquedaCliente.Top = 112;
                 frmBusquedaCliente.Visible = true;
             }
-            txtCodigoClientes.Text = obtenerCodTemporal(i);
+            //txtCodigoClientes.Text = obtenerLastCodigo();
         }
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
+            //int id = obtenerLastCodigo()+1;
+            int id = 1;
+            txtCodigoClientes.Text = Convert.ToString(id);
             string RUC = txtRUCClientes.Text;
             string razSoc = txtRazSocClientes.Text;
             string telef = txtTlfClientes.Text;
@@ -60,27 +66,36 @@ namespace Vista {
                 cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correoElec;
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + dist;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + obtenerCodTemporal(i);
-                i++;
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + Convert.ToString(id);
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de registro", MessageBoxButtons.YesNo);
                 switch (result)
                 {
                     case DialogResult.Yes:
-                        /* MySqlCommand cmdCli = new MySqlCommand();
-                         * cmdCli.CommandText = "INSERT INTO CLIENTE(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito) 
-                         * values (i,RUC,razSoc,telef,correoElec,direc,dist)";
-                         */
-                        MessageBox.Show("Cliente registrado exitosamente", "Registro exitoso");
-                        txtCodigoClientes.Text = obtenerCodTemporal(i);
-                        txtRUCClientes.Text = "";
-                        txtRazSocClientes.Text = "";
-                        txtTlfClientes.Text = "";
-                        txtDirElecClientes.Text = "";
-                        txtDirClientes.Text = "";
-                        cboDistritoClientes.Text = "";
+                        try
+                        {
+                            MySqlCommand cmdCli = new MySqlCommand();
+                            cmdCli.CommandText = "INSERT INTO Cliente(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito,estadoRegistro,idAdministradorSistema)" +
+                                " VALUES (" + Convert.ToString(id) + ",'" + RUC + "','" + razSoc + "','" + telef +
+                                "','" + correoElec + "','" + direc + "','" + dist + "',1,1)";
+                            Conexion.cast(cmdCli);
+                            cmdCli.ExecuteNonQuery();
+                            MessageBox.Show("Cliente registrado exitosamente", "Registro exitoso");
+                            //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo());
+                            txtRUCClientes.Text = "";
+                            txtRazSocClientes.Text = "";
+                            txtTlfClientes.Text = "";
+                            txtDirElecClientes.Text = "";
+                            txtDirClientes.Text = "";
+                            cboDistritoClientes.Text = "";
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error");
+                            //MessageBox.Show("Ha ocurrido un error en el registro", "Error en el proceso");
+                        }
                         break;
                     case DialogResult.No:
-                        MessageBox.Show("La operación ha sido cancelada");
+                        MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
                         break;
                 }
             }
@@ -91,7 +106,8 @@ namespace Vista {
         }
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {
-            string id = obtenerCodTemporal(i);
+            //int id = obtenerLastCodigo();
+            int id = 1;
             string RUC = txtRUCClientes.Text;
             string razSoc = txtRazSocClientes.Text;
             string telef = txtTlfClientes.Text;
@@ -108,7 +124,7 @@ namespace Vista {
                 cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correoElec;
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + dist;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el cliente con código " + obtenerCodTemporal(i) + " NO serán reversibles";
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Los cambios en el cliente con código " + Convert.ToString(id) + " NO serán reversibles";
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de modificación", MessageBoxButtons.YesNo);
 
                 switch (result)
@@ -148,7 +164,8 @@ namespace Vista {
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
-            string id = obtenerCodTemporal(i);
+            //int id = obtenerLastCodigo();
+            int id = 1;
             string RUC = txtRUCClientes.Text;
             string razSoc = txtRazSocClientes.Text;
             string telef = txtTlfClientes.Text;
@@ -165,7 +182,7 @@ namespace Vista {
                 cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correoElec;
                 cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
                 cadena = cadena + Environment.NewLine + "Distrito : " + dist;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código " + obtenerCodTemporal(i) + " NO serán reversibles";
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "La eliminación del proveedor con código " + Convert.ToString(id) + " NO serán reversibles";
                 DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de eliminación", MessageBoxButtons.YesNo);
 
                 switch (result)
