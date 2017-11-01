@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuInicioAdm));
-            this.btnProveedores = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
@@ -33,28 +32,13 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnProveedores
-            // 
-            this.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
-            this.btnProveedores.Location = new System.Drawing.Point(12, 231);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(165, 40);
-            this.btnProveedores.TabIndex = 4;
-            this.btnProveedores.UseVisualStyleBackColor = true;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
-            this.btnProveedores.MouseEnter += new System.EventHandler(this.btnProveedores_MouseEnter);
-            this.btnProveedores.MouseLeave += new System.EventHandler(this.btnProveedores_MouseLeave);
-            // 
             // btnClientes
             // 
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.Location = new System.Drawing.Point(12, 81);
+            this.btnClientes.Location = new System.Drawing.Point(12, 25);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(165, 40);
             this.btnClientes.TabIndex = 5;
@@ -69,7 +53,7 @@
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
-            this.btnProductos.Location = new System.Drawing.Point(12, 181);
+            this.btnProductos.Location = new System.Drawing.Point(12, 125);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(165, 40);
             this.btnProductos.TabIndex = 6;
@@ -84,7 +68,7 @@
             this.btnPedidos.FlatAppearance.BorderSize = 0;
             this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
-            this.btnPedidos.Location = new System.Drawing.Point(12, 131);
+            this.btnPedidos.Location = new System.Drawing.Point(12, 75);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(165, 40);
             this.btnPedidos.TabIndex = 7;
@@ -102,11 +86,10 @@
             this.panel1.Controls.Add(this.btnPedidos);
             this.panel1.Controls.Add(this.btnProductos);
             this.panel1.Controls.Add(this.btnClientes);
-            this.panel1.Controls.Add(this.btnProveedores);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 412);
+            this.panel1.Size = new System.Drawing.Size(189, 250);
             this.panel1.TabIndex = 4;
             // 
             // btnCerrarSesion
@@ -115,12 +98,12 @@
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 281);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 175);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(165, 40);
             this.btnCerrarSesion.TabIndex = 8;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             this.btnCerrarSesion.MouseEnter += new System.EventHandler(this.btnCerrarSesion_MouseEnter);
             this.btnCerrarSesion.MouseLeave += new System.EventHandler(this.btnCerrarSesion_MouseLeave);
             // 
@@ -129,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(189, 412);
+            this.ClientSize = new System.Drawing.Size(189, 250);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -141,8 +124,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnPedidos;

@@ -305,6 +305,7 @@
             // 
             // cboDistritoClientes
             // 
+            this.cboDistritoClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDistritoClientes.FormattingEnabled = true;
             this.cboDistritoClientes.Location = new System.Drawing.Point(103, 100);
             this.cboDistritoClientes.Name = "cboDistritoClientes";

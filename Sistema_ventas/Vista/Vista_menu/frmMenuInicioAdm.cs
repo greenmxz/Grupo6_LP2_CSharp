@@ -9,8 +9,8 @@ namespace Vista.Vista_menu
         private frmAdmCliente frmAdmCliente;
         private frmAdmProducto frmAdmProducto;
         private frmAdmPedido frmAdmPedido;
-        private frmAdmProveedor frmAdmProv;
         private frmCabecera cabecera;
+        /* INICIO */
         public frmMenuInicioAdm(frmCabecera cabecera) {
             
             InitializeComponent();
@@ -20,19 +20,7 @@ namespace Vista.Vista_menu
             this.Top = 111;
 
         }
-
-
-
-
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Dispose();   
-        }
-
-
-
-        //boton clientes
+        /* CLIENTES */
         private void btnClientes_Click(object sender, EventArgs e) {
             if (frmAdmCliente == null || frmAdmCliente.Estado == Vista.estado.Cerrado) {
                 frmAdmCliente = new frmAdmCliente();
@@ -57,7 +45,7 @@ namespace Vista.Vista_menu
             this.Cursor = Cursors.Default;
             btnClientes.FlatStyle = FlatStyle.Flat;
         }
-        //boton pedidos
+        /* PEDIDOS */
         private void btnPedidos_Click(object sender, EventArgs e) {
             if (frmAdmPedido == null || frmAdmCliente.Estado == Vista.estado.Cerrado) {
                 frmAdmPedido = new frmAdmPedido();
@@ -82,7 +70,7 @@ namespace Vista.Vista_menu
             this.Cursor = Cursors.Default;
             btnPedidos.FlatStyle = FlatStyle.Flat;
         }
-        //bton productos
+        /* PRODUCTOS */
         private void btnProductos_MouseEnter(object sender, EventArgs e) {
             this.Cursor = Cursors.Hand;
             btnProductos.FlatStyle = FlatStyle.Popup;
@@ -106,32 +94,8 @@ namespace Vista.Vista_menu
 
             }
         }
-        //boton proveedores
-        private void btnProveedores_MouseEnter(object sender, EventArgs e) {
-            this.Cursor = Cursors.Hand;
-            btnProveedores.FlatStyle = FlatStyle.Popup;
-        }
-
-        private void btnProveedores_MouseLeave(object sender, EventArgs e) {
-            this.Cursor = Cursors.Default;
-            btnProveedores.FlatStyle = FlatStyle.Flat;
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e) {
-            if (frmAdmCliente == null || frmAdmCliente.Estado == Vista.estado.Cerrado) {
-                frmAdmProv = new frmAdmProveedor();
-                frmAdmProv.MdiParent = this.MdiParent;
-
-                frmAdmProv.StartPosition = FormStartPosition.Manual;
-                //frmAdmProv.Left = 244;
-                frmAdmProv.Left = 0;
-                frmAdmProv.Top = 112;
-                frmAdmProv.Show();
-                this.Dispose();
-                cabecera.Abierto = false;
-            }
-        }
-        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        /* CERRAR SESIÓN */
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.MdiParent.Close();
         }

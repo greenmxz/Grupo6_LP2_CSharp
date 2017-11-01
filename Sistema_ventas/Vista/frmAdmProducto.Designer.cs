@@ -68,7 +68,7 @@
             this.txtMarca.Location = new System.Drawing.Point(103, 140);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(125, 20);
+            this.txtMarca.Size = new System.Drawing.Size(233, 20);
             this.txtMarca.TabIndex = 1;
             // 
             // txtStockIni
@@ -251,6 +251,7 @@
             this.btnModificarProducto.TabIndex = 1;
             this.btnModificarProducto.Text = "Modificar";
             this.btnModificarProducto.UseVisualStyleBackColor = true;
+            this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click);
             // 
             // btnEliminarProducto
             // 
@@ -261,6 +262,7 @@
             this.btnEliminarProducto.TabIndex = 2;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // btnLimpiarProducto
             // 
@@ -271,6 +273,7 @@
             this.btnLimpiarProducto.TabIndex = 6;
             this.btnLimpiarProducto.Text = "Limpiar";
             this.btnLimpiarProducto.UseVisualStyleBackColor = true;
+            this.btnLimpiarProducto.Click += new System.EventHandler(this.btnLimpiarProducto_Click);
             // 
             // gbxProd1
             // 

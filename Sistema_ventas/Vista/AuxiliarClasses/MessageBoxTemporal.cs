@@ -23,7 +23,7 @@ namespace Vista
             TextoMessageBox = texto;
             MostrarContador = contador;
 
-            if (TiempoMaximo > 99) return; //Máximo 99 segundos
+            if (TiempoMaximo > 9) return; //Máximo 99 segundos
             IntervaloTiempo = new System.Threading.Timer(EjecutaCada1Segundo,
                     null, 1000, 1000);
             if (contador)
