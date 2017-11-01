@@ -31,29 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmPedido));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnQuitarClienteXPedido = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNombProd = new System.Windows.Forms.TextBox();
+            this.txtCodigoProd = new System.Windows.Forms.TextBox();
             this.btnAgregarClienteXPedido = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCantProd = new System.Windows.Forms.TextBox();
             this.btnModificarClienteXPedido = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscarProdXPedido = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRazSocCliente = new System.Windows.Forms.TextBox();
+            this.txtRUCCliente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePedido = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarClienteXPedido = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnCerrarPedido = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxPed2.SuspendLayout();
@@ -75,10 +75,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnQuitarClienteXPedido);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtNombProd);
+            this.groupBox1.Controls.Add(this.txtCodigoProd);
             this.groupBox1.Controls.Add(this.btnAgregarClienteXPedido);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtCantProd);
             this.groupBox1.Controls.Add(this.btnModificarClienteXPedido);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnBuscarProdXPedido);
@@ -101,19 +101,21 @@
             this.btnQuitarClienteXPedido.Text = "Quitar";
             this.btnQuitarClienteXPedido.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // txtNombProd
             // 
-            this.textBox6.Location = new System.Drawing.Point(103, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(351, 20);
-            this.textBox6.TabIndex = 8;
+            this.txtNombProd.Enabled = false;
+            this.txtNombProd.Location = new System.Drawing.Point(103, 45);
+            this.txtNombProd.Name = "txtNombProd";
+            this.txtNombProd.Size = new System.Drawing.Size(351, 20);
+            this.txtNombProd.TabIndex = 8;
             // 
-            // textBox5
+            // txtCodigoProd
             // 
-            this.textBox5.Location = new System.Drawing.Point(103, 20);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(116, 20);
-            this.textBox5.TabIndex = 7;
+            this.txtCodigoProd.Enabled = false;
+            this.txtCodigoProd.Location = new System.Drawing.Point(103, 20);
+            this.txtCodigoProd.Name = "txtCodigoProd";
+            this.txtCodigoProd.Size = new System.Drawing.Size(116, 20);
+            this.txtCodigoProd.TabIndex = 7;
             // 
             // btnAgregarClienteXPedido
             // 
@@ -124,13 +126,14 @@
             this.btnAgregarClienteXPedido.TabIndex = 6;
             this.btnAgregarClienteXPedido.Text = "Agregar";
             this.btnAgregarClienteXPedido.UseVisualStyleBackColor = true;
+            this.btnAgregarClienteXPedido.Click += new System.EventHandler(this.btnAgregarClienteXPedido_Click);
             // 
-            // textBox3
+            // txtCantProd
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(97, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtCantProd.Location = new System.Drawing.Point(103, 70);
+            this.txtCantProd.Name = "txtCantProd";
+            this.txtCantProd.Size = new System.Drawing.Size(97, 20);
+            this.txtCantProd.TabIndex = 6;
             // 
             // btnModificarClienteXPedido
             // 
@@ -160,6 +163,7 @@
             this.btnBuscarProdXPedido.TabIndex = 2;
             this.btnBuscarProdXPedido.Text = "Buscar";
             this.btnBuscarProdXPedido.UseVisualStyleBackColor = true;
+            this.btnBuscarProdXPedido.Click += new System.EventHandler(this.btnBuscarProdXPedido_Click);
             // 
             // label3
             // 
@@ -181,7 +185,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvPedido);
             this.groupBox2.Location = new System.Drawing.Point(10, 313);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(429, 122);
@@ -189,18 +193,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle del pedido";
             // 
-            // dataGridView1
+            // dgvPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Cantidad,
             this.PrecioUnitario,
             this.SubTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(404, 85);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvPedido.Location = new System.Drawing.Point(14, 24);
+            this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.Size = new System.Drawing.Size(404, 85);
+            this.dgvPedido.TabIndex = 0;
             // 
             // Nombre
             // 
@@ -225,12 +229,14 @@
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.Width = 90;
             // 
-            // textBox2
+            // txtTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(454, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(454, 110);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(90, 20);
+            this.txtTotal.TabIndex = 5;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -259,19 +265,21 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "RUC:";
             // 
-            // textBox1
+            // txtRazSocCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtRazSocCliente.Enabled = false;
+            this.txtRazSocCliente.Location = new System.Drawing.Point(103, 45);
+            this.txtRazSocCliente.Name = "txtRazSocCliente";
+            this.txtRazSocCliente.Size = new System.Drawing.Size(210, 20);
+            this.txtRazSocCliente.TabIndex = 5;
             // 
-            // textBox4
+            // txtRUCCliente
             // 
-            this.textBox4.Location = new System.Drawing.Point(103, 20);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 20);
-            this.textBox4.TabIndex = 6;
+            this.txtRUCCliente.Enabled = false;
+            this.txtRUCCliente.Location = new System.Drawing.Point(103, 20);
+            this.txtRUCCliente.Name = "txtRUCCliente";
+            this.txtRUCCliente.Size = new System.Drawing.Size(115, 20);
+            this.txtRUCCliente.TabIndex = 6;
             // 
             // label8
             // 
@@ -282,12 +290,12 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Fecha:";
             // 
-            // dateTimePicker1
+            // dateTimePedido
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(56, 110);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(337, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePedido.Location = new System.Drawing.Point(56, 110);
+            this.dateTimePedido.Name = "dateTimePedido";
+            this.dateTimePedido.Size = new System.Drawing.Size(337, 20);
+            this.dateTimePedido.TabIndex = 8;
             // 
             // btnBuscarClienteXPedido
             // 
@@ -298,14 +306,15 @@
             this.btnBuscarClienteXPedido.TabIndex = 9;
             this.btnBuscarClienteXPedido.Text = "Buscar";
             this.btnBuscarClienteXPedido.UseVisualStyleBackColor = true;
+            this.btnBuscarClienteXPedido.Click += new System.EventHandler(this.btnBuscarClienteXPedido_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.btnBuscarClienteXPedido);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txtRazSocCliente);
+            this.groupBox3.Controls.Add(this.txtRUCCliente);
             this.groupBox3.Location = new System.Drawing.Point(10, 137);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(565, 72);
@@ -374,6 +383,7 @@
             this.btnAgregarPedido.TabIndex = 0;
             this.btnAgregarPedido.Text = "Registrar";
             this.btnAgregarPedido.UseVisualStyleBackColor = true;
+            this.btnAgregarPedido.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // label1
             // 
@@ -396,8 +406,8 @@
             this.Controls.Add(this.btnCerrarPedido);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.dateTimePedido);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
@@ -408,7 +418,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -425,21 +435,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnModificarClienteXPedido;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridView dgvPedido;
+        private System.Windows.Forms.TextBox txtCantProd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAgregarClienteXPedido;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNombProd;
+        private System.Windows.Forms.TextBox txtCodigoProd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtRazSocCliente;
+        private System.Windows.Forms.TextBox txtRUCCliente;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePedido;
         private System.Windows.Forms.Button btnBuscarClienteXPedido;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnQuitarClienteXPedido;

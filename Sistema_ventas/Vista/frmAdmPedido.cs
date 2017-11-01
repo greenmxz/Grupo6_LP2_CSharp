@@ -14,9 +14,15 @@ namespace Vista
     {
         private estado frmState;
         private frmBusquedaPedido frmBusquedaPedido;
+        private frmBusquedaCliente frmBusqCli;
+        private frmBusquedaProducto frmBusqProd;
+
+        private double total = 0;
         public frmAdmPedido()
         {
             InitializeComponent();
+            
+            txtTotal.Text = string.Format("{0:0.00}", total);
         }
 
         public estado Estado { get => frmState; set => frmState = value; }
@@ -42,6 +48,46 @@ namespace Vista
             this.Dispose();
             this.Estado = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
+        }
+
+        private void btnBuscarClienteXPedido_Click(object sender, EventArgs e)
+        {
+            if (frmBusqCli == null || frmBusqCli.Estado == estado.Cerrado)
+            {
+                frmBusqCli = new frmBusquedaCliente();
+                frmBusqCli.Estado = estado.Nuevo;
+                frmBusqCli.MdiParent = this.MdiParent;
+
+                frmBusqCli.StartPosition = FormStartPosition.Manual;
+                frmBusqCli.Left = 588;
+                frmBusqCli.Top = 112;
+                frmBusqCli.Visible = true;
+            }
+        }
+
+        private void btnBuscarProdXPedido_Click(object sender, EventArgs e)
+        {
+            if (frmBusqProd == null || frmBusqProd.Estado == estado.Cerrado)
+            {
+                frmBusqProd = new frmBusquedaProducto();
+                frmBusqProd.Estado = estado.Nuevo;
+                frmBusqProd.MdiParent = this.MdiParent;
+
+                frmBusqProd.StartPosition = FormStartPosition.Manual;
+                frmBusqProd.Left = 588;
+                frmBusqProd.Top = 112;
+                frmBusqProd.Visible = true;
+            }
+        }
+
+        private void btnAgregarClienteXPedido_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAgregarPedido_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

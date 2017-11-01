@@ -15,6 +15,7 @@ namespace Vista
         public frmEnvioCorreo()
         {
             InitializeComponent();
+            AdmComboBox.manipCombo("formato.txt", cboTipo);
         }
 
         private void btnCerrarEnvioCorreo_Click(object sender, EventArgs e)
@@ -24,7 +25,9 @@ namespace Vista
 
         private void btnSelecProd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El documento solicitado ha sido enviado a la(s) dirección(es) indicada(s)", "Éxito de operación");
+
+            EnvioCorreo c = new EnvioCorreo();
+            c.enviarCorreo("nrcteam.xd@gmail.com", txtCC.Text, txtCCO.Text, "xd1234562014", txtDetalle.Text, txtAsunto.Text, txtPara.Text, "distritos.txt");
             this.Dispose();
         }
     }

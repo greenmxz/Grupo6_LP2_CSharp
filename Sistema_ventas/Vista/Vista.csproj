@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuxiliarClasses\AdmComboBox.cs" />
+    <Compile Include="AuxiliarClasses\EnvioCorreo.cs" />
     <Compile Include="frmAdmCliente.cs">
       <SubType>Form</SubType>
     </Compile>

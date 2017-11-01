@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnvioCorreo));
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPrinc = new System.Windows.Forms.TextBox();
+            this.txtPara = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCerrarEnvioCorreo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -66,12 +66,12 @@
             this.label8.TabIndex = 47;
             this.label8.Text = "Tipo de documento:";
             // 
-            // txtPrinc
+            // txtPara
             // 
-            this.txtPrinc.Location = new System.Drawing.Point(67, 20);
-            this.txtPrinc.Name = "txtPrinc";
-            this.txtPrinc.Size = new System.Drawing.Size(290, 20);
-            this.txtPrinc.TabIndex = 46;
+            this.txtPara.Location = new System.Drawing.Point(67, 20);
+            this.txtPara.Name = "txtPara";
+            this.txtPara.Size = new System.Drawing.Size(290, 20);
+            this.txtPara.TabIndex = 46;
             // 
             // label6
             // 
@@ -129,7 +129,7 @@
             this.gbxCorreo.Controls.Add(this.label3);
             this.gbxCorreo.Controls.Add(this.txtCC);
             this.gbxCorreo.Controls.Add(this.label2);
-            this.gbxCorreo.Controls.Add(this.txtPrinc);
+            this.gbxCorreo.Controls.Add(this.txtPara);
             this.gbxCorreo.Controls.Add(this.txtAsunto);
             this.gbxCorreo.Controls.Add(this.label6);
             this.gbxCorreo.Controls.Add(this.label1);
@@ -227,7 +227,7 @@
 
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPrinc;
+        private System.Windows.Forms.TextBox txtPara;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCerrarEnvioCorreo;
         private System.Windows.Forms.PictureBox pictureBox1;

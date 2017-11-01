@@ -23,9 +23,6 @@ namespace Vista {
         private void btnIngresar_Click(object sender, EventArgs e) {
             usuario.Nombre = txtUsuario.Text;
             usuario.Contraseña = txtContraseña.Text;
-            //Principal principal = new Principal(txtUsuario.Text);
-            //while (true)
-            //{
                 if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
                 {
                     MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -33,10 +30,8 @@ namespace Vista {
                 else
                 {
                     MessageBoxTemporal.Show("Ingreso correcto", "Validación de ingreso", 3, true);
-                    //MessageBox.Show("Ingreso Correcto");
                     this.DialogResult = DialogResult.OK;
                 }
-            //}
         }
         private void btnSalir_Click(object sender, EventArgs e) {
             this.Close();
@@ -47,6 +42,17 @@ namespace Vista {
             {
                 usuario.Nombre = txtUsuario.Text;
                 this.DialogResult = DialogResult.OK;
+                usuario.Nombre = txtUsuario.Text;
+                usuario.Contraseña = txtContraseña.Text;
+                if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
+                {
+                    MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBoxTemporal.Show("Ingreso correcto", "Validación de ingreso", 3, true);
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
     }
