@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 
 namespace Modelo
@@ -15,12 +11,10 @@ namespace Modelo
         private string _estado;
         private double _total;
         private DateTime _dateReg;
-
         public Pedido()
         {
             this._lProductos = new BindingList<Producto>();
         }
-
         public Pedido(int idPedido, Cliente datoCliente, BindingList<Producto> lProductos, string estado,
                       double total, DateTime dateReg)
         {
@@ -31,7 +25,6 @@ namespace Modelo
             _total = total;
             _dateReg = dateReg;
         }
-
         public int IdPedido { get => _idPedido; set => _idPedido = value; }
         public Cliente DatoCliente { get => _datoCliente; set => _datoCliente = value; }
         public string Estado { get => _estado; set => _estado = value; }

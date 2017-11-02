@@ -38,7 +38,7 @@
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.Location = new System.Drawing.Point(12, 25);
+            this.btnClientes.Location = new System.Drawing.Point(10, 10);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(165, 40);
             this.btnClientes.TabIndex = 5;
@@ -53,7 +53,7 @@
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
-            this.btnProductos.Location = new System.Drawing.Point(12, 125);
+            this.btnProductos.Location = new System.Drawing.Point(10, 100);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(165, 40);
             this.btnProductos.TabIndex = 6;
@@ -68,7 +68,7 @@
             this.btnPedidos.FlatAppearance.BorderSize = 0;
             this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
-            this.btnPedidos.Location = new System.Drawing.Point(12, 75);
+            this.btnPedidos.Location = new System.Drawing.Point(10, 55);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(165, 40);
             this.btnPedidos.TabIndex = 7;
@@ -89,7 +89,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 250);
+            this.panel1.Size = new System.Drawing.Size(185, 200);
             this.panel1.TabIndex = 4;
             // 
             // btnCerrarSesion
@@ -98,7 +98,7 @@
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 175);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(10, 145);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(165, 40);
             this.btnCerrarSesion.TabIndex = 8;
@@ -112,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(189, 250);
+            this.ClientSize = new System.Drawing.Size(185, 200);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista {
@@ -31,7 +24,6 @@ namespace Vista {
             this.frmState = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
         }
-
         private void btnBuscarDocum_Click(object sender, EventArgs e)
         {
             frmBusquedaPedido = new frmBusquedaPedido();
@@ -42,7 +34,6 @@ namespace Vista {
 
             frmBusquedaPedido.Top = 112;
         }
-
         private void btnEnviarDocum_Click(object sender, EventArgs e)
         {
             frmEnvioCorreo envio = new frmEnvioCorreo();
@@ -50,7 +41,6 @@ namespace Vista {
             envio.Show();
             envio.StartPosition = FormStartPosition.Manual;
             envio.Left = 588;
-
             envio.Top = 112;
         }
     }

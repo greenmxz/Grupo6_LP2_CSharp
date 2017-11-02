@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista
@@ -21,13 +14,11 @@ namespace Vista
             InitializeComponent();
             Estado = estado.Nuevo;
         }
-
         private void btnCerrarBusqCliente_Click(object sender, EventArgs e)
         {
             this.Dispose();
             this.Estado = estado.Cerrado;
         }
-
         private void btnSelecCli_Click(object sender, EventArgs e)
         {
             this.Dispose();

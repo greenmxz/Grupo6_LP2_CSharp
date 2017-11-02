@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista {
@@ -99,7 +92,6 @@ namespace Vista {
             this.Estado = estado.Cerrado;
             if (frmBPROD != null) { frmBPROD.Dispose(); }
         }
-
         private void btnLimpiarProducto_Click(object sender, EventArgs e)
         {
             txtCodigo.Text = "";
@@ -109,7 +101,6 @@ namespace Vista {
             txtPU.Text = "";
             txtStockIni.Text = "";
         }
-
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
@@ -154,7 +145,6 @@ namespace Vista {
                 Verificador.imprimirMessageBoxProducto(nombre, descrip, marca, precUnit, stock);
             }
         }
-
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Modelo
+﻿namespace Modelo
 {
-    
     public class Producto
     {
         private string _nombre;
@@ -14,7 +7,6 @@ namespace Modelo
         private float _precio;
         private string _descripcion;
         private int _id;
-
         public Producto(string nombre, string marca, float precio, string descripcion)
         {
             Nombre = nombre;
@@ -22,7 +14,6 @@ namespace Modelo
             Precio = precio;
             Descripcion = descripcion;
         }
-
         public Producto(string nombre, string marca, float precio, string descripcion, int id)
         {
             _nombre = nombre;
@@ -31,14 +22,10 @@ namespace Modelo
             _descripcion = descripcion;
             _id = id;
         }
-
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Marca { get => _marca; set => _marca = value; }
         public float Precio { get => _precio; set => _precio = value; }
         public string Descripcion { get => _descripcion; set => _descripcion = value; }
         public int Id { get => _id; set => _id = value; }
-        
-
-
     }
 }

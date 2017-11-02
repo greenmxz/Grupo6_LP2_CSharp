@@ -37,7 +37,8 @@
             this.btnDocumentoPago.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDocumentoPago.BackgroundImage")));
             this.btnDocumentoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDocumentoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocumentoPago.Location = new System.Drawing.Point(12, 97);
+            this.btnDocumentoPago.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentoPago.Image")));
+            this.btnDocumentoPago.Location = new System.Drawing.Point(10, 10);
             this.btnDocumentoPago.Name = "btnDocumentoPago";
             this.btnDocumentoPago.Size = new System.Drawing.Size(165, 40);
             this.btnDocumentoPago.TabIndex = 0;
@@ -51,7 +52,8 @@
             this.btnAnulacionPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAnulacionPedido.BackgroundImage")));
             this.btnAnulacionPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAnulacionPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnulacionPedido.Location = new System.Drawing.Point(12, 147);
+            this.btnAnulacionPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnAnulacionPedido.Image")));
+            this.btnAnulacionPedido.Location = new System.Drawing.Point(10, 55);
             this.btnAnulacionPedido.Name = "btnAnulacionPedido";
             this.btnAnulacionPedido.Size = new System.Drawing.Size(165, 40);
             this.btnAnulacionPedido.TabIndex = 1;
@@ -65,7 +67,8 @@
             this.btnPagoPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPagoPedido.BackgroundImage")));
             this.btnPagoPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPagoPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagoPedido.Location = new System.Drawing.Point(12, 197);
+            this.btnPagoPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnPagoPedido.Image")));
+            this.btnPagoPedido.Location = new System.Drawing.Point(10, 100);
             this.btnPagoPedido.Name = "btnPagoPedido";
             this.btnPagoPedido.Size = new System.Drawing.Size(165, 40);
             this.btnPagoPedido.TabIndex = 2;
@@ -84,7 +87,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 412);
+            this.panel1.Size = new System.Drawing.Size(185, 200);
             this.panel1.TabIndex = 3;
             // 
             // btnCerrarSesion
@@ -92,7 +95,7 @@
             this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 247);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(10, 145);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(165, 40);
             this.btnCerrarSesion.TabIndex = 3;
@@ -106,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(189, 412);
+            this.ClientSize = new System.Drawing.Size(185, 200);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenuInicioVentas";

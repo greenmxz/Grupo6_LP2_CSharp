@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista
@@ -24,9 +17,7 @@ namespace Vista
             
             txtTotal.Text = string.Format("{0:0.00}", total);
         }
-
         public estado Estado { get => frmState; set => frmState = value; }
-
         private void btnBuscarPedido_Click(object sender, EventArgs e) {
             if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado) {
 
@@ -49,7 +40,6 @@ namespace Vista
             this.Estado = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
         }
-
         private void btnBuscarClienteXPedido_Click(object sender, EventArgs e)
         {
             if (frmBusqCli == null || frmBusqCli.Estado == estado.Cerrado)
@@ -64,7 +54,6 @@ namespace Vista
                 frmBusqCli.Visible = true;
             }
         }
-
         private void btnBuscarProdXPedido_Click(object sender, EventArgs e)
         {
             if (frmBusqProd == null || frmBusqProd.Estado == estado.Cerrado)
@@ -79,12 +68,10 @@ namespace Vista
                 frmBusqProd.Visible = true;
             }
         }
-
         private void btnAgregarClienteXPedido_Click(object sender, EventArgs e)
         {
             
         }
-
         private void btnAgregarPedido_Click(object sender, EventArgs e)
         {
 

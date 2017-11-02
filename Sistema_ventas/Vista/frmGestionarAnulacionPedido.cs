@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista {
@@ -23,7 +16,6 @@ namespace Vista {
             this.frmState = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
         }
-
         private void btnBuscarAnulacion_Click(object sender, EventArgs e)
         {
             if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado)
@@ -37,14 +29,12 @@ namespace Vista {
                 frmBusquedaPedido.Top = 112;
             }
         }
-
         private void btnCancelarAnulacion_Click(object sender, EventArgs e)
         {
             this.Dispose();
             this.frmState = estado.Cerrado;
             if (frmBusquedaPedido != null) { frmBusquedaPedido.Dispose(); }
         }
-
         private void btnCerrarProveedor_Click(object sender, EventArgs e)
         {
             this.Dispose();

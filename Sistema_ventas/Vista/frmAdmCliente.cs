@@ -130,22 +130,29 @@ namespace Vista {
                 switch (result)
                 {
                     case DialogResult.Yes:
-                        /* MySqlCommand cmdCli = new MySqlCommand();
-                         * cmdCli.CommandText = "UPDATE CLIENTE
-                         * SET ruc = RUC, razonSocial = razSoc, telefono=telef, correo=correoElec, direccion=direc, distrito=dist 
-                         * WHERE ID=i";
-                         */
-                        MessageBox.Show("Cliente modificado exitosamente", "Modificación exitosa");
-                        txtCodigoClientes.Text = "";
-                        txtRUCClientes.Text = "";
-                        txtRazSocClientes.Text = "";
-                        txtTlfClientes.Text = "";
-                        txtDirElecClientes.Text = "";
-                        txtDirClientes.Text = "";
-                        cboDistritoClientes.Text = "";
+                        try
+                        {
+                            MySqlCommand cmdCli = new MySqlCommand();
+                            cmdCli.CommandText = "UPDATE Cliente SET ruc='" + RUC + "',razonSocial='" + razSoc +
+                                "',telefono='" + telef + "',correo='" + correoElec + "',direccion='" + direc +
+                                "',distrito='" + dist + "' WHERE idCliente=" + Convert.ToString(id) + ";";
+                            Conexion.cast(cmdCli);
+                            cmdCli.ExecuteNonQuery();
+                            MessageBox.Show("Cliente modificado exitosamente", "Modificación exitosa");
+                            txtCodigoClientes.Text = "";
+                            txtRUCClientes.Text = "";
+                            txtRazSocClientes.Text = "";
+                            txtTlfClientes.Text = "";
+                            txtDirElecClientes.Text = "";
+                            txtDirClientes.Text = "";
+                            cboDistritoClientes.Text = "";
+                        }catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error");
+                        }
                         break;
                     case DialogResult.No:
-                        MessageBox.Show("La operación ha sido cancelada");
+                        MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
                         break;
                 }
             }
@@ -188,21 +195,26 @@ namespace Vista {
                 switch (result)
                 {
                     case DialogResult.Yes:
-                        /* MySqlCommand cmdCli = new MySqlCommand();
-                         * cmdCli.CommandText = "DELETE FROM CLIENTE
-                         * WHERE ID=i";
-                         */
-                        MessageBox.Show("Cliente eliminado exitosamente", "Eliminación exitosa");
-                        txtCodigoClientes.Text = "";
-                        txtRUCClientes.Text = "";
-                        txtRazSocClientes.Text = "";
-                        txtTlfClientes.Text = "";
-                        txtDirElecClientes.Text = "";
-                        txtDirClientes.Text = "";
-                        cboDistritoClientes.Text = "";
+                        try
+                        {
+                            MySqlCommand cmdCli = new MySqlCommand();
+                            cmdCli.CommandText = "DELETE FROM Cliente WHERE idCliente=" + Convert.ToString(id) + ";";
+                            MessageBox.Show("Cliente eliminado exitosamente", "Eliminación exitosa");
+                            txtCodigoClientes.Text = "";
+                            txtRUCClientes.Text = "";
+                            txtRazSocClientes.Text = "";
+                            txtTlfClientes.Text = "";
+                            txtDirElecClientes.Text = "";
+                            txtDirClientes.Text = "";
+                            cboDistritoClientes.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error");
+                        }
                         break;
                     case DialogResult.No:
-                        MessageBox.Show("La operación ha sido cancelada");
+                        MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
                         break;
                 }
             }

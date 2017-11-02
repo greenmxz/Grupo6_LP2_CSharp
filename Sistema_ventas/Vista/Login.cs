@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 using Modelo;
 
@@ -23,15 +16,15 @@ namespace Vista {
         private void btnIngresar_Click(object sender, EventArgs e) {
             usuario.Nombre = txtUsuario.Text;
             usuario.Contraseña = txtContraseña.Text;
-                if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
-                {
-                    MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBoxTemporal.Show("Ingreso correcto", "Validación de ingreso", 3, true);
-                    this.DialogResult = DialogResult.OK;
-                }
+            if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
+            {
+                MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBoxTemporal.Show("Ingreso correcto", "Validación de ingreso", 3, true);
+                this.DialogResult = DialogResult.OK;
+            }
         }
         private void btnSalir_Click(object sender, EventArgs e) {
             this.Close();

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista.Vista_menu;
+
 namespace Vista
 {
     public partial class Principal : Form
@@ -24,16 +18,13 @@ namespace Vista
             fCabecera.MdiParent = this;
             fCabecera.Show();
         }
-
         public frmCabecera FCabecera { get => fCabecera; set => fCabecera = value; }
-
         private void Principal_MouseClick(object sender, MouseEventArgs e) {
             if (fCabecera.Abierto == true) {
                 fCabecera.Dispose();
                 fCabecera.Abierto = false;
             }
         }
-
         private void Principal_Click(object sender, EventArgs e) {
             if (fCabecera.Abierto == true) {
             fCabecera.Close();
