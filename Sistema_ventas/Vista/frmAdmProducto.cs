@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Vista {
     //public enum estado { Nuevo, Cerrado }
@@ -64,17 +66,34 @@ namespace Vista {
                 switch (result)
                 {
                     case DialogResult.Yes:
-                        /* MySqlCommand cmdCli = new MySqlCommand();
-                         * cmdCli.CommandText = "INSERT INTO CLIENTE(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito) 
-                         * values (i,RUC,razSoc,telef,correoElec,direc,dist)";
-                         */
-                        MessageBox.Show("Producto registrado exitosamente", "Registro exitoso");
+                        
+                        
+                            string url = "server=200.16.7.96;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=ta1RQx6flDXdiTpr;";
+                            MySqlConnection conn = new MySqlConnection(url);
+                            conn.Open();
+                            //MessageBox("Conexión exitosa","Conexiones");
+                            //MySqlCommand com = new MySqlCommand();
+                            MySqlCommand mysqlcom = new MySqlCommand();
+                            string sqlquery = "INSERT INTO Producto" + "(idProducto,nombre,descripcion,precioUnitario,peso,estadoRegistro,idAdministradorSistema)" + "values(" +
+                                            "1" + ",'" + txtNombre.Text + "','" + txtDescripcion.Text + "','" + txtPU.Text + "','" + "1.1" + "'No'" + "123";
+                            mysqlcom.Connection = conn;
+                            mysqlcom.CommandText = sqlquery;
+                            mysqlcom.ExecuteNonQuery();
+
+                            /*MySqlCommand cmdCli = new MySqlCommand();
+                            * cmdCli.CommandText = "INSERT INTO CLIENTE(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito) 
+                            * values (i,RUC,razSoc,telef,correoElec,direc,dist)";
+                            */
+                            MessageBox.Show("Producto registrado exitosamente", "Registro exitoso");
+                            txtNombre.Text = "";
+                            txtDescripcion.Text = "";
+                            txtMarca.Text = "";
+                            txtPU.Text = "";
+                            txtStockIni.Text = "";
+                            conn.Close();
+                            
+                        
                         //txtCodigoClientes.Text = obtenerCodTemporal(i);
-                        txtNombre.Text = "";
-                        txtDescripcion.Text = "";
-                        txtMarca.Text = "";
-                        txtPU.Text = "";
-                        txtStockIni.Text = "";
                         break;
                     case DialogResult.No:
                         MessageBox.Show("La operación ha sido cancelada");

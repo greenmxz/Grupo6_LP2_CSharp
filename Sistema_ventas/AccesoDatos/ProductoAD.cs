@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controlador
+namespace AccesoDatos
 {
-    public class Class1
+    public class ProductoAD
     {
+
     }
 }
