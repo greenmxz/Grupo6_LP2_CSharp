@@ -7,28 +7,10 @@ namespace Vista {
     public partial class frmAdmCliente : Form {
         private estado frmState;
         private frmBusquedaCliente frmBusquedaCliente;
-        //int obtenerLastCodigo()
-        //{
-        //    try
-        //    {
-        //        MySqlCommand cmd = new MySqlCommand();
-        //        cmd.CommandText = "SELECT MAX(idCliente) AS MaxDist FROM Cliente";
-        //        Conexion.cast(cmd);
-        //        MySqlDataReader reader = cmd.ExecuteReader();
-        //        reader.Read();
-        //        int mayor = reader.GetInt32("MaxDist");
-        //        reader.Close();
-        //        return mayor;
-        //    }
-        //    catch
-        //    {
-        //        return 0;
-        //    }
-        //}
         public frmAdmCliente() {
             InitializeComponent();
             this.frmState = estado.Nuevo;
-            AdmComboBox.manipCombo("Distrito", "nombreDistrito", cboDistritoClientes);
+            AdmComboBox.manipCombo("Distrito", "nombre", cboDistritoClientes);
             //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo()+1);
             txtCodigoClientes.Text = Convert.ToString(1);
         }
@@ -48,8 +30,14 @@ namespace Vista {
         }
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            //int id = obtenerLastCodigo()+1;
-            int id = 1;
+            ConexionVista.conectar();
+            MySqlCommand cmdCons = new MySqlCommand();
+            cmdCons.CommandText = "obtener_idCliente";
+            cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdCons.Parameters["id"].Direction = System.Data.ParameterDirection.Output;
+            MySqlDataReader dr = cmdCons.ExecuteReader();
+            int id = Convert.ToInt32(cmdCons.Parameters["id"].Value.ToString());
+            ConexionVista.cerrar();
             txtCodigoClientes.Text = Convert.ToString(id);
             string RUC = txtRUCClientes.Text;
             string razSoc = txtRazSocClientes.Text;
@@ -73,11 +61,12 @@ namespace Vista {
                     case DialogResult.Yes:
                         try
                         {
+                            ConexionVista.conectar();
                             MySqlCommand cmdCli = new MySqlCommand();
                             cmdCli.CommandText = "INSERT INTO Cliente(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito,estadoRegistro,idAdministradorSistema)" +
                                 " VALUES (" + Convert.ToString(id) + ",'" + RUC + "','" + razSoc + "','" + telef +
                                 "','" + correoElec + "','" + direc + "','" + dist + "',1,1)";
-                            Conexion.cast(cmdCli);
+                            ConexionVista.cast(cmdCli);
                             cmdCli.ExecuteNonQuery();
                             MessageBox.Show("Cliente registrado exitosamente", "Registro exitoso");
                             //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo());
@@ -87,6 +76,7 @@ namespace Vista {
                             txtDirElecClientes.Text = "";
                             txtDirClientes.Text = "";
                             cboDistritoClientes.Text = "";
+                            ConexionVista.cerrar();
                         }
                         catch(Exception ex)
                         {
@@ -132,11 +122,12 @@ namespace Vista {
                     case DialogResult.Yes:
                         try
                         {
+                            ConexionVista.conectar();
                             MySqlCommand cmdCli = new MySqlCommand();
                             cmdCli.CommandText = "UPDATE Cliente SET ruc='" + RUC + "',razonSocial='" + razSoc +
                                 "',telefono='" + telef + "',correo='" + correoElec + "',direccion='" + direc +
                                 "',distrito='" + dist + "' WHERE idCliente=" + Convert.ToString(id) + ";";
-                            Conexion.cast(cmdCli);
+                            ConexionVista.cast(cmdCli);
                             cmdCli.ExecuteNonQuery();
                             MessageBox.Show("Cliente modificado exitosamente", "Modificación exitosa");
                             txtCodigoClientes.Text = "";
@@ -146,7 +137,9 @@ namespace Vista {
                             txtDirElecClientes.Text = "";
                             txtDirClientes.Text = "";
                             cboDistritoClientes.Text = "";
-                        }catch(Exception ex)
+                            ConexionVista.cerrar();
+                        }
+                        catch(Exception ex)
                         {
                             MessageBox.Show(ex.Message, "Error");
                         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Modelo;
 
 namespace Vista {
@@ -16,7 +17,20 @@ namespace Vista {
         private void btnIngresar_Click(object sender, EventArgs e) {
             usuario.Nombre = txtUsuario.Text;
             usuario.Contraseña = txtContraseña.Text;
-            if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
+            ConexionVista.conectar();
+            MySqlCommand cmdCons = new MySqlCommand();
+            ConexionVista.cast(cmdCons);
+            cmdCons.CommandText = "validarUsuario";
+            cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
+
+            //cmdCons.Parameters.AddWithValue("user", usuario.Nombre);
+            //cmdCons.Parameters.AddWithValue("passwd", usuario.Contraseña);
+            //cmdCons.Parameters.Add(new MySqlParameter(user));
+            cmdCons.Parameters["eval"].Direction = System.Data.ParameterDirection.Output;
+            cmdCons.ExecuteNonQuery();
+            int id = Convert.ToInt32(cmdCons.Parameters["id"].Value.ToString());
+            ConexionVista.cerrar();
+            if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, "") || id == 0)
             {
                 MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

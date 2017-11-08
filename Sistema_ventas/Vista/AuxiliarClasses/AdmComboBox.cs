@@ -9,9 +9,10 @@ namespace Vista
         {
             /* Manipulación de ComboBox */
             /* INICIO */
+            ConexionVista.conectar();
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = "SELECT * FROM " + tabla;
-            Conexion.cast(cmd);
+            ConexionVista.cast(cmd);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -19,6 +20,7 @@ namespace Vista
                 cboManip.Items.Add(distrito);
             }
             reader.Close();
+            ConexionVista.cerrar();
             /* FIN */
         }
     }

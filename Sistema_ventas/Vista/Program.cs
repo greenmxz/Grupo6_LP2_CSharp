@@ -12,7 +12,6 @@ namespace Vista
         [STAThread]
         static void Main()
         {
-            Conexion.conectar();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Login login = new Login();
@@ -20,7 +19,6 @@ namespace Vista
             {
                Application.Run(new Principal(login.Usuario.Nombre));
             }
-            Conexion.cerrar();
         }
     }
 }

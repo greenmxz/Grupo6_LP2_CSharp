@@ -33,23 +33,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\DRIVERS .NET para MYSQL\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.4\Assemblies\v4.5.2\MySql.Data.Entity.EF6.dll</HintPath>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>..\..\..\..\..\Downloads\DRIVERS .NET para MYSQL\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
-    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.4\Assemblies\v4.5.2\MySQL.Data.EntityFrameworkCore.dll</HintPath>
+    <Reference Include="MySQL.Data.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\Downloads\DRIVERS .NET para MYSQL\MySQL.Data.EntityFrameworkCore.dll</HintPath>
     </Reference>
-    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.4\Assemblies\v4.5.2\MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design">
+      <HintPath>..\..\..\..\..\Downloads\DRIVERS .NET para MYSQL\MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Web, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.4\Assemblies\v4.5.2\MySql.Web.dll</HintPath>
+    <Reference Include="MySql.Web">
+      <HintPath>..\..\..\..\..\Downloads\DRIVERS .NET para MYSQL\MySql.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuxiliarClasses\AdmComboBox.cs" />
-    <Compile Include="AuxiliarClasses\Conexion.cs" />
+    <Compile Include="AuxiliarClasses\ConexionVista.cs" />
     <Compile Include="AuxiliarClasses\EnvioCorreo.cs" />
     <Compile Include="frmAdmCliente.cs">
       <SubType>Form</SubType>
@@ -230,8 +226,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{ad72a60b-32f7-4b89-ae95-091359e61b53}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{69c060f6-9dc2-4122-94f1-0cc9fa2f29ab}</Project>
+      <Project>{8109417b-9067-4427-b2e2-5e90f06ac0d1}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public class Conexion
+    public class ConexionVista
     {
         public static MySqlConnection conect;
         public static void conectar()
