@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaProducto));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBuscProducto = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrarBusqProducto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecProd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvBuscProducto
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBuscProducto.AllowUserToAddRows = false;
+            this.dgvBuscProducto.AllowUserToDeleteRows = false;
+            this.dgvBuscProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuscProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Nombre,
             this.Stock});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 118);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(396, 230);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBuscProducto.Location = new System.Drawing.Point(13, 118);
+            this.dgvBuscProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvBuscProducto.Name = "dgvBuscProducto";
+            this.dgvBuscProducto.ReadOnly = true;
+            this.dgvBuscProducto.RowTemplate.Height = 24;
+            this.dgvBuscProducto.Size = new System.Drawing.Size(396, 230);
+            this.dgvBuscProducto.TabIndex = 0;
             // 
             // Código
             // 
@@ -119,19 +119,19 @@
             this.Controls.Add(this.btnCerrarBusqProducto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSelecProd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvBuscProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBusquedaProducto";
             this.Text = "frmBusquedaProducto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBuscProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;

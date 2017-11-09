@@ -27,10 +27,10 @@ namespace Vista {
                 frmCli.Top = 112;
                 frmCli.Visible = true;
             }
-            if (frmCli.ShowDialog() == DialogResult.OK)
-            {
-               // Cliente selec = frmCli.
-            }
+            //if (frmCli.ShowDialog() == DialogResult.OK)
+            //{
+            //   Cliente selec = frmCli.
+            //}
         }
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {

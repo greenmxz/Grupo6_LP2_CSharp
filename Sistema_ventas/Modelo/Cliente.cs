@@ -1,6 +1,6 @@
 ﻿namespace Modelo {
     public class Cliente {
-        private int _id;
+        private static int _id;
         private string _ruc;//verificar si es long int o string
         private string _razonSocial;
         private string _telefono;
@@ -9,8 +9,8 @@
         private int _idDistrito;
         public Cliente() {
         }
-        public Cliente(int i, string ruc, string razonSocial, string telefono, string correo, string direccion, int distrito) {
-            Id = i;
+        public Cliente(string ruc, string razonSocial, string telefono, string correo, string direccion, int distrito) {
+            _id+=1;
             _ruc = ruc;
             _razonSocial = razonSocial;
             _telefono = telefono;

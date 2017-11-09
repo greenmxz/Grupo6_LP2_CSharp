@@ -2,27 +2,30 @@
 {
     public class Producto
     {
+        private static int _id = 0;
         private string _nombre;
         private string _marca;
         private float _precio;
         //private string _descripcion;
-        private int _id;
+        
         private double _peso;
         public Producto(string nombre, string marca, float precio, string descripcion,double peso)
         {
+            _id += 1;
             _nombre = nombre;
             _marca = marca;
             _precio = precio;
             _peso = peso;
             
         }
-        public Producto(string nombre, string marca, float precio, int id)
+        public Producto(string nombre, string marca, float precio, double peso)
         {
+            _id += 1;
             _nombre = nombre;
             _marca = marca;
             _precio = precio;
             //_descripcion = descripcion;
-            _id = id;
+            _peso = peso;
         }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Marca { get => _marca; set => _marca = value; }
