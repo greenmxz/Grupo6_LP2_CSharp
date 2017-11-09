@@ -8,7 +8,7 @@ namespace Vista
         public frmEnvioCorreo()
         {
             InitializeComponent();
-            AdmComboBox.manipCombo("TipoDocumento", "nombreTipo", cboTipo);
+            AdminDB.manipCombo("TipoDocumento", "nombreTipo", cboTipo);
         }
         private void btnCerrarEnvioCorreo_Click(object sender, EventArgs e)
         {

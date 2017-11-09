@@ -1,10 +1,9 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 
-namespace Vista
+namespace AccesoDatos.Auxiliar
 {
-    public class ConexionVista
+    public class ConexionAD
     {
         public static MySqlConnection conect;
         public static void conectar()
@@ -18,7 +17,6 @@ namespace Vista
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Error de conexión");
             }
         }
         public static void cerrar()

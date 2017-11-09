@@ -258,7 +258,7 @@
             this.btnAgregarCliente.TabIndex = 0;
             this.btnAgregarCliente.Text = "Registrar";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnCerrarCliente
             // 

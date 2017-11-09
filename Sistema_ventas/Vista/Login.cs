@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.ComponentModel;
 using MySql.Data.MySqlClient;
 using Modelo;
 
@@ -12,27 +13,49 @@ namespace Vista {
             
         }
         public Usuario Usuario { get => usuario; set => usuario = value; }
-        //public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
-        //public string NombreUsuario { get => _nombreUsuario; set => _nombreUsuario = value; }
+
         private void btnIngresar_Click(object sender, EventArgs e) {
             usuario.Nombre = txtUsuario.Text;
             usuario.Contraseña = txtContraseña.Text;
-            ConexionVista.conectar();
-            MySqlCommand cmdCons = new MySqlCommand();
-            ConexionVista.cast(cmdCons);
-            cmdCons.CommandText = "validarUsuario";
-            cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
 
-            //cmdCons.Parameters.AddWithValue("user", usuario.Nombre);
-            //cmdCons.Parameters.AddWithValue("passwd", usuario.Contraseña);
-            //cmdCons.Parameters.Add(new MySqlParameter(user));
-            cmdCons.Parameters["eval"].Direction = System.Data.ParameterDirection.Output;
-            cmdCons.ExecuteNonQuery();
-            int id = Convert.ToInt32(cmdCons.Parameters["id"].Value.ToString());
-            ConexionVista.cerrar();
+            //ConexionVista.conectar();
+            //MySqlCommand cmdCons = new MySqlCommand();
+            //ConexionVista.cast(cmdCons);
+            //cmdCons.CommandText = "validarUsuario";
+            //cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
+
+            //MySqlParameter user = new MySqlParameter();
+            //user.Value = usuario.Nombre;
+            //user.Direction = System.Data.ParameterDirection.Input;
+            //user.ParameterName = "user";
+            //cmdCons.Parameters.Add(user);
+            //MySqlParameter passwd = new MySqlParameter();
+            //passwd.Value = usuario.Contraseña;
+            //passwd.Direction = System.Data.ParameterDirection.Input;
+            //passwd.ParameterName = "passwd";
+            //cmdCons.Parameters.Add(passwd);
+
+            //MySqlParameter resp = new MySqlParameter();
+            //resp.Direction = System.Data.ParameterDirection.ReturnValue;
+            //cmdCons.Parameters.Add(resp);
+
+            //cmdCons.ExecuteNonQuery();
+            //int id = Convert.ToInt32(resp.Value.ToString());
+
+            //ConexionVista.cerrar();
+            BindingList<string> param = new BindingList<string>();
+            param.Add("user");
+            param.Add("passwd");
+            BindingList<string> values = new BindingList<string>();
+            values.Add(usuario.Nombre);
+            values.Add(usuario.Contraseña);
+
+
+            int id = AdminDB.executeFunction("validarUsuario", param, values);
+
             if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, "") || id == 0)
             {
-                MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El usuario y/o la contraseña ingresadas no son válidas", "Error en el inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -47,19 +70,7 @@ namespace Vista {
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                usuario.Nombre = txtUsuario.Text;
-                this.DialogResult = DialogResult.OK;
-                usuario.Nombre = txtUsuario.Text;
-                usuario.Contraseña = txtContraseña.Text;
-                if (string.ReferenceEquals(usuario.Nombre, "") || string.ReferenceEquals(usuario.Contraseña, ""))
-                {
-                    MessageBox.Show("Error", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBoxTemporal.Show("Ingreso correcto", "Validación de ingreso", 3, true);
-                    this.DialogResult = DialogResult.OK;
-                }
+                btnIngresar_Click(sender, e);
             }
         }
     }

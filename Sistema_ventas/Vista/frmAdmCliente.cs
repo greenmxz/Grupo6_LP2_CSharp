@@ -1,97 +1,35 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Modelo;
 
 namespace Vista {
     public enum estado { Nuevo, Cerrado }
     public partial class frmAdmCliente : Form {
         private estado frmState;
-        private frmBusquedaCliente frmBusquedaCliente;
+        private frmBusquedaCliente frmCli;
         public frmAdmCliente() {
             InitializeComponent();
             this.frmState = estado.Nuevo;
-            AdmComboBox.manipCombo("Distrito", "nombre", cboDistritoClientes);
-            //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo()+1);
-            txtCodigoClientes.Text = Convert.ToString(1);
+            AdminDB.manipCombo("Distrito", "nombre", cboDistritoClientes);
+            int id = AdminDB.executeFunction("obtener_idCliente", null, null);
+            txtCodigoClientes.Text = Convert.ToString(id);
         }
         public estado Estado { get => frmState; set => frmState = value; }
         private void btnBuscarCliente_Click(object sender, EventArgs e) {
-            if (frmBusquedaCliente == null || frmBusquedaCliente.Estado == estado.Cerrado) {
-                frmBusquedaCliente = new frmBusquedaCliente();
-                frmBusquedaCliente.Estado = estado.Nuevo;
-                frmBusquedaCliente.MdiParent = this.MdiParent;
+            if (frmCli == null || frmCli.Estado == estado.Cerrado) {
+                frmCli = new frmBusquedaCliente();
+                frmCli.Estado = estado.Nuevo;
+                frmCli.MdiParent = this.MdiParent;
 
-                frmBusquedaCliente.StartPosition = FormStartPosition.Manual;
-                frmBusquedaCliente.Left = 588;
-                frmBusquedaCliente.Top = 112;
-                frmBusquedaCliente.Visible = true;
+                frmCli.StartPosition = FormStartPosition.Manual;
+                frmCli.Left = 588;
+                frmCli.Top = 112;
+                frmCli.Visible = true;
             }
-            //txtCodigoClientes.Text = obtenerLastCodigo();
-        }
-        private void btnAgregarProveedor_Click(object sender, EventArgs e)
-        {
-            ConexionVista.conectar();
-            MySqlCommand cmdCons = new MySqlCommand();
-            cmdCons.CommandText = "obtener_idCliente";
-            cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdCons.Parameters["id"].Direction = System.Data.ParameterDirection.Output;
-            MySqlDataReader dr = cmdCons.ExecuteReader();
-            int id = Convert.ToInt32(cmdCons.Parameters["id"].Value.ToString());
-            ConexionVista.cerrar();
-            txtCodigoClientes.Text = Convert.ToString(id);
-            string RUC = txtRUCClientes.Text;
-            string razSoc = txtRazSocClientes.Text;
-            string telef = txtTlfClientes.Text;
-            string correoElec = txtDirElecClientes.Text;
-            string direc = txtDirClientes.Text;
-            string dist = cboDistritoClientes.Text;
-            if (Verificador.rucValido(RUC) && razSoc != "" && telef != "" && Verificador.correoValido(correoElec) && direc != "" && dist != "")
+            if (frmCli.ShowDialog() == DialogResult.OK)
             {
-                string cadena = "¿Está seguro de que desea registrar el siguiente cliente:";
-                cadena = cadena + Environment.NewLine + "RUC : " + RUC;
-                cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
-                cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
-                cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correoElec;
-                cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
-                cadena = cadena + Environment.NewLine + "Distrito : " + dist;
-                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + Convert.ToString(id);
-                DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de registro", MessageBoxButtons.YesNo);
-                switch (result)
-                {
-                    case DialogResult.Yes:
-                        try
-                        {
-                            ConexionVista.conectar();
-                            MySqlCommand cmdCli = new MySqlCommand();
-                            cmdCli.CommandText = "INSERT INTO Cliente(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito,estadoRegistro,idAdministradorSistema)" +
-                                " VALUES (" + Convert.ToString(id) + ",'" + RUC + "','" + razSoc + "','" + telef +
-                                "','" + correoElec + "','" + direc + "','" + dist + "',1,1)";
-                            ConexionVista.cast(cmdCli);
-                            cmdCli.ExecuteNonQuery();
-                            MessageBox.Show("Cliente registrado exitosamente", "Registro exitoso");
-                            //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo());
-                            txtRUCClientes.Text = "";
-                            txtRazSocClientes.Text = "";
-                            txtTlfClientes.Text = "";
-                            txtDirElecClientes.Text = "";
-                            txtDirClientes.Text = "";
-                            cboDistritoClientes.Text = "";
-                            ConexionVista.cerrar();
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Error");
-                            //MessageBox.Show("Ha ocurrido un error en el registro", "Error en el proceso");
-                        }
-                        break;
-                    case DialogResult.No:
-                        MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
-                        break;
-                }
-            }
-            else
-            {
-                Verificador.imprimirMessageBoxCliente(RUC, razSoc, telef, correoElec, direc, dist);
+               // Cliente selec = frmCli.
             }
         }
         private void btnModificarCliente_Click(object sender, EventArgs e)
@@ -159,7 +97,7 @@ namespace Vista {
         {
             this.Dispose();
             this.frmState = estado.Cerrado;
-            if (frmBusquedaCliente != null) { frmBusquedaCliente.Dispose(); }
+            if (frmCli != null) { frmCli.Dispose(); }
         }
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
@@ -225,6 +163,83 @@ namespace Vista {
             txtDirElecClientes.Text = "";
             txtDirClientes.Text = "";
             cboDistritoClientes.Text = "";
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+
+            //ConexionVista.conectar();
+
+            //MySqlCommand cmdCons = new MySqlCommand();
+            //ConexionVista.cast(cmdCons);
+            //cmdCons.CommandText = "obtener_idCliente";
+            //cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
+
+            //MySqlParameter resp = new MySqlParameter();
+            //resp.Direction = System.Data.ParameterDirection.ReturnValue;
+            //cmdCons.Parameters.Add(resp);
+
+            //cmdCons.ExecuteNonQuery();
+            //int id = Convert.ToInt32(resp.Value.ToString());
+
+            //ConexionVista.cerrar();
+            int id = AdminDB.executeFunction("obtener_idCliente", null, null);
+            txtCodigoClientes.Text = Convert.ToString(id);
+            string RUC = txtRUCClientes.Text;
+            string razSoc = txtRazSocClientes.Text;
+            string telef = txtTlfClientes.Text;
+            string correoElec = txtDirElecClientes.Text;
+            string direc = txtDirClientes.Text;
+            string dist = cboDistritoClientes.Text;
+            if (Verificador.rucValido(RUC) && razSoc != "" && telef != "" && Verificador.correoValido(correoElec) && direc != "" && dist != "")
+            {
+                string cadena = "¿Está seguro de que desea registrar el siguiente cliente:";
+                cadena = cadena + Environment.NewLine + "RUC : " + RUC;
+                cadena = cadena + Environment.NewLine + "Razón social : " + razSoc;
+                cadena = cadena + Environment.NewLine + "Teléfono : " + telef;
+                cadena = cadena + Environment.NewLine + "Dirección electrónica : " + correoElec;
+                cadena = cadena + Environment.NewLine + "Dirección física : " + direc;
+                cadena = cadena + Environment.NewLine + "Distrito : " + dist;
+                cadena = cadena + Environment.NewLine + Environment.NewLine + "Se almacenará con código : " + Convert.ToString(id);
+                DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de registro", MessageBoxButtons.YesNo);
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        try
+                        {
+                            ConexionVista.conectar();
+                            MySqlCommand cmdCli = new MySqlCommand();
+                            //string distNomb = cboDistritoClientes.Items.;
+                            cmdCli.CommandText = "INSERT INTO Cliente(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito,estadoRegistro,idAdministradorSistema)" +
+                                " VALUES (" + Convert.ToString(id) + ",'" + RUC + "','" + razSoc + "','" + telef +
+                                "','" + correoElec + "','" + direc + "','" + dist + "',1,1)";
+                            ConexionVista.cast(cmdCli);
+                            cmdCli.ExecuteNonQuery();
+                            MessageBox.Show("Cliente registrado exitosamente", "Registro exitoso");
+                            //txtCodigoClientes.Text = Convert.ToString(obtenerLastCodigo());
+                            txtRUCClientes.Text = "";
+                            txtRazSocClientes.Text = "";
+                            txtTlfClientes.Text = "";
+                            txtDirElecClientes.Text = "";
+                            txtDirClientes.Text = "";
+                            cboDistritoClientes.Text = "";
+                            ConexionVista.cerrar();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error");
+                            //MessageBox.Show("Ha ocurrido un error en el registro", "Error en el proceso");
+                        }
+                        break;
+                    case DialogResult.No:
+                        MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
+                        break;
+                }
+            }
+            else
+            {
+                Verificador.imprimirMessageBoxCliente(RUC, razSoc, telef, correoElec, direc, dist);
+            }
         }
     }
 }
