@@ -34,24 +34,19 @@ namespace Vista
         }
         private void btnSelecCli_Click(object sender, EventArgs e)
         {
-            int id = (int) dgvBusquedaCliente.CurrentRow.Cells[0].Value;
+            int id = (int) dgvBusquedaCliente.CurrentRow.Index;
             BindingList<Cliente> lista = new BindingList<Cliente>();
             lista = logNegCli.devolverLista();
+            int i = 0;
             foreach (Cliente c in lista)
             {
-                if(c.Id == id)
+                if(i == id)
                 {
-                    ClienteSelecc = c;
+                    clienteSelecc = c;
                     break;
                 }
+                i++;
             }
-
-            //foreach (DataGridViewRow row in dgvBusquedaCliente.SelectedRows)
-            //{
-            //    int id = (int) row.Cells[0].Value;
-            //    string 
-
-            //}
             this.DialogResult = DialogResult.OK;
             this.Estado = estado.Cerrado;
         }

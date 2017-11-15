@@ -21,17 +21,12 @@ namespace Vista {
                 frmCli = new frmBusquedaCliente();
                 frmCli.Estado = estado.Nuevo;
                 frmCli.MdiParent = this.MdiParent;
-
                 frmCli.StartPosition = FormStartPosition.Manual;
                 frmCli.Left = 588;
                 frmCli.Top = 112;
                 frmCli.Visible = true;
             }
-            //if (frmCli.ShowDialog() == DialogResult.OK)
-            //{
-            //   Cliente selec = frmCli.
-            //}
-        }
+        } 
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {
             //int id = obtenerLastCodigo();
@@ -210,7 +205,7 @@ namespace Vista {
                             ConexionVista.conectar();
                             MySqlCommand cmdCli = new MySqlCommand();
                             //string distNomb = cboDistritoClientes.Items.;
-                            cmdCli.CommandText = "INSERT INTO Cliente(idCliente,ruc,razonSocial,telefono,correo,direccion,distrito,estadoRegistro,idAdministradorSistema)" +
+                            cmdCli.CommandText = "INSERT INTO Cliente" +
                                 " VALUES (" + Convert.ToString(id) + ",'" + RUC + "','" + razSoc + "','" + telef +
                                 "','" + correoElec + "','" + direc + "','" + dist + "',1,1)";
                             ConexionVista.cast(cmdCli);
