@@ -134,21 +134,21 @@
             this.txtTlfClientes.Location = new System.Drawing.Point(103, 25);
             this.txtTlfClientes.Name = "txtTlfClientes";
             this.txtTlfClientes.Size = new System.Drawing.Size(86, 20);
-            this.txtTlfClientes.TabIndex = 5;
+            this.txtTlfClientes.TabIndex = 3;
             // 
             // txtDirClientes
             // 
             this.txtDirClientes.Location = new System.Drawing.Point(103, 75);
             this.txtDirClientes.Name = "txtDirClientes";
             this.txtDirClientes.Size = new System.Drawing.Size(312, 20);
-            this.txtDirClientes.TabIndex = 4;
+            this.txtDirClientes.TabIndex = 5;
             // 
             // txtDirElecClientes
             // 
             this.txtDirElecClientes.Location = new System.Drawing.Point(103, 50);
             this.txtDirElecClientes.Name = "txtDirElecClientes";
             this.txtDirElecClientes.Size = new System.Drawing.Size(312, 20);
-            this.txtDirElecClientes.TabIndex = 3;
+            this.txtDirElecClientes.TabIndex = 4;
             // 
             // txtRUCClientes
             // 
@@ -236,7 +236,7 @@
             this.btnLimpiarCliente.Name = "btnLimpiarCliente";
             this.btnLimpiarCliente.Size = new System.Drawing.Size(91, 23);
             this.btnLimpiarCliente.TabIndex = 6;
-            this.btnLimpiarCliente.Text = "Limpiar";
+            this.btnLimpiarCliente.Text = "Cancelar";
             this.btnLimpiarCliente.UseVisualStyleBackColor = true;
             this.btnLimpiarCliente.Click += new System.EventHandler(this.btnLimpiarCliente_Click);
             // 
@@ -256,7 +256,7 @@
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(91, 23);
             this.btnAgregarCliente.TabIndex = 0;
-            this.btnAgregarCliente.Text = "Registrar";
+            this.btnAgregarCliente.Text = "Nuevo";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 

@@ -18,38 +18,12 @@ namespace Vista {
             usuario.Nombre = txtUsuario.Text;
             usuario.Contraseña = txtContraseña.Text;
 
-            //ConexionVista.conectar();
-            //MySqlCommand cmdCons = new MySqlCommand();
-            //ConexionVista.cast(cmdCons);
-            //cmdCons.CommandText = "validarUsuario";
-            //cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
-
-            //MySqlParameter user = new MySqlParameter();
-            //user.Value = usuario.Nombre;
-            //user.Direction = System.Data.ParameterDirection.Input;
-            //user.ParameterName = "user";
-            //cmdCons.Parameters.Add(user);
-            //MySqlParameter passwd = new MySqlParameter();
-            //passwd.Value = usuario.Contraseña;
-            //passwd.Direction = System.Data.ParameterDirection.Input;
-            //passwd.ParameterName = "passwd";
-            //cmdCons.Parameters.Add(passwd);
-
-            //MySqlParameter resp = new MySqlParameter();
-            //resp.Direction = System.Data.ParameterDirection.ReturnValue;
-            //cmdCons.Parameters.Add(resp);
-
-            //cmdCons.ExecuteNonQuery();
-            //int id = Convert.ToInt32(resp.Value.ToString());
-
-            //ConexionVista.cerrar();
             BindingList<string> param = new BindingList<string>();
             param.Add("user");
             param.Add("passwd");
             BindingList<string> values = new BindingList<string>();
             values.Add(usuario.Nombre);
             values.Add(usuario.Contraseña);
-
 
             int id = AdminDB.executeFunction("validarUsuario", param, values);
 

@@ -31,7 +31,7 @@ namespace AccesoDatos
                     string correo = reader.GetString("correo");
                     string direc = reader.GetString("direccion");
                     int dist = reader.GetInt32("idDistrito");
-                    Cliente c = new Cliente(ruc, razSoc, telef, correo, direc, dist);
+                    Cliente c = new Cliente(id, ruc, razSoc, telef, correo, direc, dist);
                     lista.Add(c);
                 }
             }
