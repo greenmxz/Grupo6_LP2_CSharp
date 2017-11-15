@@ -60,8 +60,7 @@ namespace Vista {
         }
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {
-            //int id = obtenerLastCodigo();
-            int id = 1;
+            int id = Int32.Parse(txtCodigoClientes.Text);
             string RUC = txtRUCClientes.Text;
             string razSoc = txtRazSocClientes.Text;
             string telef = txtTlfClientes.Text;
@@ -86,11 +85,16 @@ namespace Vista {
                     case DialogResult.Yes:
                         try
                         {
+                            BindingList<string> param = new BindingList<string>();
+                            BindingList<string> values = new BindingList<string>();
+                            param.Add("dist");
+                            values.Add(dist);
+                            string sentencia = "UPDATE Cliente SET ruc='" + RUC + "',razonSocial='" + razSoc +
+                                "',telefono='" + telef + "',correo='" + correoElec + "',direccion='" + direc +
+                                "',distrito='" + AdminDB.executeFunction("obtener_idDistrito", param, values) + "' WHERE idCliente=" + id + ";";
                             ConexionVista.conectar();
                             MySqlCommand cmdCli = new MySqlCommand();
-                            cmdCli.CommandText = "UPDATE Cliente SET ruc='" + RUC + "',razonSocial='" + razSoc +
-                                "',telefono='" + telef + "',correo='" + correoElec + "',direccion='" + direc +
-                                "',distrito='" + dist + "' WHERE idCliente=" + Convert.ToString(id) + ";";
+                            cmdCli.CommandText = sentencia;
                             ConexionVista.cast(cmdCli);
                             cmdCli.ExecuteNonQuery();
                             MessageBox.Show("Cliente modificado exitosamente", "Modificación exitosa");
@@ -129,7 +133,7 @@ namespace Vista {
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
 
-            int id = 1;
+            int id = Int32.Parse(txtCodigoClientes.Text);
             string RUC = txtRUCClientes.Text;
             string razSoc = txtRazSocClientes.Text;
             string telef = txtTlfClientes.Text;
@@ -155,15 +159,8 @@ namespace Vista {
                         try
                         {
                             MySqlCommand cmdCli = new MySqlCommand();
-                            cmdCli.CommandText = "DELETE FROM Cliente WHERE idCliente=" + Convert.ToString(id) + ";";
+                            cmdCli.CommandText = "UPDATE Cliente SET estadoRegistro=2 WHERE idCliente=" + id + ";";
                             MessageBox.Show("Cliente eliminado exitosamente", "Eliminación exitosa");
-                            txtCodigoClientes.Text = "";
-                            txtRUCClientes.Text = "";
-                            txtRazSocClientes.Text = "";
-                            txtTlfClientes.Text = "";
-                            txtDirElecClientes.Text = "";
-                            txtDirClientes.Text = "";
-                            cboDistritoClientes.Text = "";
                         }
                         catch (Exception ex)
                         {
@@ -174,6 +171,7 @@ namespace Vista {
                         MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
                         break;
                 }
+                btnLimpiarCliente_Click(sender, e);
             }
             else
             {
@@ -232,7 +230,7 @@ namespace Vista {
                                 values.Add(dist);
                                 string sentencia = "INSERT INTO Cliente" +
                                     " VALUES (" + id + ",'" + RUC + "','" + razSoc + "','" + telef +
-                                    "','" + correoElec + "','" + direc + "',1,1," + AdminDB.executeFunction("obtener_idDistrito", param, values) + ")"; ;
+                                    "','" + correoElec + "','" + direc + "',1,1," + AdminDB.executeFunction("obtener_idDistrito", param, values) + ")";
                                 ConexionVista.conectar();
                                 MySqlCommand cmdCli = new MySqlCommand();
                                 cmdCli.CommandText = sentencia;
