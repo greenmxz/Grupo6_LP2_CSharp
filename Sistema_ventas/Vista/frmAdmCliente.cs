@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.ComponentModel;
+using Modelo;
 
 namespace Vista {
     public enum estado { Nuevo, Registrar, Cerrado }
@@ -29,6 +30,7 @@ namespace Vista {
                     txtDirElecClientes.Enabled = false;
                     txtDirClientes.Enabled = false;
                     cboDistritoClientes.Enabled = false;
+                    gbxCli1.Enabled = true;
                     gbxCli2.Enabled = false;
                     gbxCli3.Enabled = true;
                     break;
@@ -40,6 +42,7 @@ namespace Vista {
                     txtDirElecClientes.Enabled = true;
                     txtDirClientes.Enabled = true;
                     cboDistritoClientes.Enabled = true;
+                    gbxCli1.Enabled = false;
                     gbxCli2.Enabled = true;
                     gbxCli3.Enabled = false;
                     break;
@@ -51,11 +54,24 @@ namespace Vista {
             if (frmCli == null || frmCli.Estado == estado.Cerrado) {
                 frmCli = new frmBusquedaCliente();
                 frmCli.Estado = estado.Nuevo;
-                frmCli.MdiParent = this.MdiParent;
+                //frmCli.MdiParent = this.MdiParent;
                 frmCli.StartPosition = FormStartPosition.Manual;
                 frmCli.Left = 588;
                 frmCli.Top = 112;
-                frmCli.Visible = true;
+                frmCli.ShowDialog();
+                //frmCli.Visible = true;
+            }
+            if (frmCli.DialogResult == DialogResult.OK)
+            {
+                Cliente c = frmCli.ClienteSelecc;
+                txtCodigoClientes.Text = Convert.ToString(c.Id);
+                txtRUCClientes.Text = c.Ruc;
+                txtRazSocClientes.Text = c.RazonSocial;
+                txtDirElecClientes.Text = c.Correo;
+                txtDirClientes.Text = c.Direccion;
+                txtTlfClientes.Text = c.Telefono;
+                cboDistritoClientes.SelectedIndex = c.Distrito-1;
+                definirEstado(estado.Registrar);
             }
         }
         private void btnModificarCliente_Click(object sender, EventArgs e)
@@ -91,20 +107,14 @@ namespace Vista {
                             values.Add(dist);
                             string sentencia = "UPDATE Cliente SET ruc='" + RUC + "',razonSocial='" + razSoc +
                                 "',telefono='" + telef + "',correo='" + correoElec + "',direccion='" + direc +
-                                "',distrito='" + AdminDB.executeFunction("obtener_idDistrito", param, values) + "' WHERE idCliente=" + id + ";";
+                                "',idDistrito=" + AdminDB.executeFunction("obtener_idDistrito", param, values) +
+                                " WHERE idCliente=" + id + ";";
                             ConexionVista.conectar();
                             MySqlCommand cmdCli = new MySqlCommand();
                             cmdCli.CommandText = sentencia;
                             ConexionVista.cast(cmdCli);
                             cmdCli.ExecuteNonQuery();
                             MessageBox.Show("Cliente modificado exitosamente", "Modificación exitosa");
-                            txtCodigoClientes.Text = "";
-                            txtRUCClientes.Text = "";
-                            txtRazSocClientes.Text = "";
-                            txtTlfClientes.Text = "";
-                            txtDirElecClientes.Text = "";
-                            txtDirClientes.Text = "";
-                            cboDistritoClientes.Text = "";
                             ConexionVista.cerrar();
                         }
                         catch(Exception ex)
@@ -116,6 +126,7 @@ namespace Vista {
                         MessageBox.Show("La operación ha sido cancelada", "Operación cancelada");
                         break;
                 }
+                btnLimpiarCliente_Click(sender, e);
             }
             else
             {
@@ -158,9 +169,13 @@ namespace Vista {
                     case DialogResult.Yes:
                         try
                         {
+                            ConexionVista.conectar();
                             MySqlCommand cmdCli = new MySqlCommand();
                             cmdCli.CommandText = "UPDATE Cliente SET estadoRegistro=2 WHERE idCliente=" + id + ";";
+                            ConexionVista.cast(cmdCli);
+                            cmdCli.ExecuteNonQuery();
                             MessageBox.Show("Cliente eliminado exitosamente", "Eliminación exitosa");
+                            ConexionVista.cerrar();
                         }
                         catch (Exception ex)
                         {
@@ -237,12 +252,6 @@ namespace Vista {
                                 ConexionVista.cast(cmdCli);
                                 cmdCli.ExecuteNonQuery();
                                 MessageBox.Show("Cliente registrado exitosamente", "Registro exitoso");
-                                txtRUCClientes.Text = "";
-                                txtRazSocClientes.Text = "";
-                                txtTlfClientes.Text = "";
-                                txtDirElecClientes.Text = "";
-                                txtDirClientes.Text = "";
-                                cboDistritoClientes.Text = "";
                                 ConexionVista.cerrar();
                             }
                             catch (Exception ex)

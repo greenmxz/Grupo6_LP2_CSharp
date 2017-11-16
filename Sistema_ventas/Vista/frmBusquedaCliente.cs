@@ -49,6 +49,7 @@ namespace Vista
             }
             this.DialogResult = DialogResult.OK;
             this.Estado = estado.Cerrado;
+            this.Dispose();
         }
     }
 }
