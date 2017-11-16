@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmProducto));
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtStockIni = new System.Windows.Forms.TextBox();
             this.txtPU = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -63,13 +63,13 @@
             this.txtNombre.Size = new System.Drawing.Size(125, 20);
             this.txtNombre.TabIndex = 0;
             // 
-            // txtMarca
+            // txtPeso
             // 
-            this.txtMarca.Location = new System.Drawing.Point(103, 140);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(233, 20);
-            this.txtMarca.TabIndex = 1;
+            this.txtPeso.Location = new System.Drawing.Point(103, 140);
+            this.txtPeso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(76, 20);
+            this.txtPeso.TabIndex = 1;
             // 
             // txtStockIni
             // 
@@ -114,9 +114,9 @@
             this.label2.Location = new System.Drawing.Point(60, 143);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Marca:";
+            this.label2.Text = "Peso";
             // 
             // label3
             // 
@@ -179,7 +179,7 @@
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.txtPU);
             this.groupBox1.Controls.Add(this.txtStockIni);
-            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.txtPeso);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(10, 128);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -335,7 +335,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtStockIni;
         private System.Windows.Forms.TextBox txtPU;
         private System.Windows.Forms.TextBox txtDescripcion;

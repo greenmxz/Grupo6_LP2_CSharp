@@ -40,7 +40,8 @@ namespace AccesoDatos
                 string descripcion = reader.GetString("descripcion");
                 float pu = reader.GetFloat("precioUnitario");
                 double peso = reader.GetDouble("peso");
-                Producto p = new Producto(nombre, descripcion, pu, peso);
+                
+                Producto p = new Producto(nombre, descripcion,pu, peso);
                 p.Id = id;
                 listaproducto.Add(p);
             }

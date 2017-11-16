@@ -72,7 +72,7 @@ namespace Vista
             }
             MessageBox.Show("Se han encontrado " + contError + cadError, "Error en el proceso");
         }
-        public static void imprimirMessageBoxProducto(string nombre, string descrip, string marca, string precUnit, string stock)
+        public static void imprimirMessageBoxProducto(string nombre, string descrip, string marca, string precUnit)
         {
             string cadError = " errorres en el proceso";
             int contError = 0;
@@ -104,7 +104,7 @@ namespace Vista
                     cadError = cadError + Environment.NewLine + "- El precio unitario proporcionado no es válido.";
                 }
             }
-            if (stock == "")
+            /*if (stock == "")
             {
                 contError++;
                 cadError = cadError + Environment.NewLine + "- No ha proporcionado el stock del producto.";
@@ -116,7 +116,7 @@ namespace Vista
                     contError++;
                     cadError = cadError + Environment.NewLine + "- El stock proporcionado no es válido.";
                 }
-            }
+            }*/
             MessageBox.Show("Se han encontrado " + contError + cadError, "Error en el proceso");
         }
     }
