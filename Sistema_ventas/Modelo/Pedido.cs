@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 
+
 namespace Modelo
 {
-    class Pedido
+    public class Pedido
     {
+        private static int i = 2;
         private int _idPedido;
         private Cliente _datoCliente;
         private BindingList<Producto> _lProductos;
@@ -13,6 +15,7 @@ namespace Modelo
         private DateTime _dateReg;
         public Pedido()
         {
+            _datoCliente = new Cliente();
             this._lProductos = new BindingList<Producto>();
         }
         public Pedido(int idPedido, Cliente datoCliente, BindingList<Producto> lProductos, string estado,
