@@ -1,5 +1,6 @@
 ﻿namespace Modelo {
     public class Cliente {
+
         private int _id;
         private string _ruc;//verificar si es long int o string
         private string _razonSocial;

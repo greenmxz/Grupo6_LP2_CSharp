@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaProducto));
             this.dgvBuscProducto = new System.Windows.Forms.DataGridView();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrarBusqProducto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecProd = new System.Windows.Forms.Button();
@@ -45,10 +42,6 @@
             this.dgvBuscProducto.AllowUserToAddRows = false;
             this.dgvBuscProducto.AllowUserToDeleteRows = false;
             this.dgvBuscProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBuscProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Código,
-            this.Nombre,
-            this.Stock});
             this.dgvBuscProducto.Location = new System.Drawing.Point(13, 118);
             this.dgvBuscProducto.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBuscProducto.Name = "dgvBuscProducto";
@@ -56,26 +49,6 @@
             this.dgvBuscProducto.RowTemplate.Height = 24;
             this.dgvBuscProducto.Size = new System.Drawing.Size(396, 230);
             this.dgvBuscProducto.TabIndex = 0;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Width = 80;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 170;
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
             // 
             // btnCerrarBusqProducto
             // 
@@ -132,9 +105,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvBuscProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.Button btnCerrarBusqProducto;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSelecProd;

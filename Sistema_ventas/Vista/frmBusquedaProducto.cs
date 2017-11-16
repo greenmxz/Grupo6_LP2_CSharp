@@ -17,12 +17,15 @@ namespace Vista
         public frmBusquedaProducto()
         {
             InitializeComponent();
+            producto = new Producto();
             productocl = new ProductoCL();
             listaproducto = productocl.devolverlista();
             dgvBuscProducto.DataSource = listaproducto;
+
         }
 
         public estado Estado { get => _estado; set => _estado = value; }
+        public Producto Producto { get => producto; set => producto = value; }
 
         private void btnCerrarBusqProducto_Click(object sender, EventArgs e)
         {
@@ -31,8 +34,11 @@ namespace Vista
         }
         private void btnSelecProd_Click(object sender, EventArgs e)
         {
+            producto = (Producto)dgvBuscProducto.CurrentRow.DataBoundItem;
+            
+            this.Estado = estado.Cerrado;            
+            this.DialogResult = DialogResult.OK;
             this.Dispose();
-            this.Estado = estado.Cerrado;
         }
     }
 }
