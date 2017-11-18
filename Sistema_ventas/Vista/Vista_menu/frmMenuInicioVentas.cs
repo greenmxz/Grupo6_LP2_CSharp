@@ -20,7 +20,7 @@ namespace Vista.Vista_menu {
         //boton documento de pago
         private void btnDocumentoPago_Click(object sender, EventArgs e) {
             if (frmGestionarDocumentoPago == null || frmGestionarDocumentoPago.Estado == Vista.estado.Cerrado) {
-                frmGestionarDocumentoPago = new frmGestionarDocumentoPago();
+                frmGestionarDocumentoPago = new frmGestionarDocumentoPago(login);
                 frmGestionarDocumentoPago.MdiParent = this.ParentForm;
                 frmGestionarDocumentoPago.Show();
 
@@ -45,7 +45,7 @@ namespace Vista.Vista_menu {
         //boton anulacion pedido
         private void btnAnulacionPedido_Click(object sender, EventArgs e) {
             if (frmAnulacionPedido == null || frmAnulacionPedido.Estado == Vista.estado.Cerrado) {
-                frmAnulacionPedido = new frmGestionarAnulacionPedido();
+                frmAnulacionPedido = new frmGestionarAnulacionPedido(login);
                 frmAnulacionPedido.MdiParent = this.ParentForm;
                 frmAnulacionPedido.Show();
 
@@ -69,7 +69,7 @@ namespace Vista.Vista_menu {
 
         private void btnPagoPedido_Click(object sender, EventArgs e) {
             if (frmGestionarPagoPedido == null || frmGestionarPagoPedido.Estado == Vista.estado.Cerrado) {
-                frmGestionarPagoPedido = new frmGestionarPagoPedido();
+                frmGestionarPagoPedido = new frmGestionarPagoPedido(login);
                 frmGestionarPagoPedido.MdiParent = this.ParentForm;
                 frmGestionarPagoPedido.Show();
 

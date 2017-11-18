@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Vista {
     public partial class frmGestionarDocumentoPago : Form {
         private estado frmState;
         private frmBusquedaPedido frmBusquedaPedido;
-        public frmGestionarDocumentoPago() {
+        private Usuario login;
+        public frmGestionarDocumentoPago(Usuario user) {
             InitializeComponent();
+            login = user;
         }
 
         public estado Estado { get => frmState; set => frmState = value; }

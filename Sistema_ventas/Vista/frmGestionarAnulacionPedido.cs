@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Vista {
     public partial class frmGestionarAnulacionPedido : Form {
         private frmBusquedaPedido frmBusquedaPedido;
         private estado frmState;
-        public frmGestionarAnulacionPedido() {
+        private Usuario login;
+        public frmGestionarAnulacionPedido(Usuario user) {
             InitializeComponent();
             AdminDB.manipCombo("EstadoPedido", "nombre", cboEstadoPedido);
+            login = user;
         }
 
         public estado Estado { get => frmState; set => frmState = value; }
