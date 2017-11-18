@@ -17,7 +17,7 @@ namespace Vista
             Login login = new Login();
             if (login.ShowDialog() == DialogResult.OK)
             {
-               Application.Run(new Principal(login.Usuario.Nombre));
+               Application.Run(new Principal(login.Usuario));
             }
         }
     }

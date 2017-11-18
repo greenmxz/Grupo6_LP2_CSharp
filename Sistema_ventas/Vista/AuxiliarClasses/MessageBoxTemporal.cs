@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Vista
 {
@@ -7,36 +8,36 @@ namespace Vista
     {
         System.Threading.Timer IntervaloTiempo;
         string TituloMessageBox;
-        string TextoMessageBox;
         int TiempoMaximo;
         IntPtr hndLabel = IntPtr.Zero;
         bool MostrarContador;
 
-        MessageBoxTemporal(string texto, string titulo, int tiempo, bool contador)
+        MessageBoxTemporal(Usuario user, string titulo, int tiempo, bool contador)
         {
             TituloMessageBox = titulo;
             TiempoMaximo = tiempo;
-            TextoMessageBox = texto;
             MostrarContador = contador;
 
-            if (TiempoMaximo > 9) return; //Máximo 99 segundos
-            IntervaloTiempo = new System.Threading.Timer(EjecutaCada1Segundo,
+            if (TiempoMaximo > 9) return; //Máximo 9 segundos
+                IntervaloTiempo = new System.Threading.Timer(EjecutaCada1Segundo,
                     null, 1000, 1000);
             if (contador)
             {
-                DialogResult ResultadoMensaje = MessageBox.Show(texto + "\r\nEste mensaje se cerrará dentro de " +
-                        TiempoMaximo.ToString("00") + " segundos ...", titulo);
+                //DialogResult ResultadoMensaje = MessageBox.Show(texto + "\r\nEste mensaje se cerrará dentro de " +
+                    //TiempoMaximo.ToString("00") + " segundos ...", titulo);
+                DialogResult ResultadoMensaje = MessageBox.Show("¡Bienvenido (a):" + Environment.NewLine + user.Paterno.ToUpper() + " " +
+                    user.Materno.ToUpper() + ", " + user.Nombre, titulo);
                 if (ResultadoMensaje == DialogResult.OK) IntervaloTiempo.Dispose();
             }
             else
             {
-                DialogResult ResultadoMensaje = MessageBox.Show(texto + "...", titulo);
+                DialogResult ResultadoMensaje = MessageBox.Show("¡Bienvenido (a) " + "...", titulo);
                 if (ResultadoMensaje == DialogResult.OK) IntervaloTiempo.Dispose();
             }
         }
-        public static void Show(string texto, string titulo, int tiempo, bool contador)
+        public static void Show(Usuario user, string titulo, int tiempo, bool contador)
         {
-            new MessageBoxTemporal(texto, titulo, tiempo, contador);
+            new MessageBoxTemporal(user, titulo, tiempo, contador);
         }
         void EjecutaCada1Segundo(object state)
         {
@@ -55,9 +56,9 @@ namespace Vista
                 // Ha pasado un intervalo de 1 seg:
                 if (hndLabel != IntPtr.Zero)
                 {
-                    SetWindowText(hndLabel, TextoMessageBox +
-                        "\r\nEste mensaje se cerrará dentro de " +
-                        TiempoMaximo.ToString("00") + " segundos");
+                    //SetWindowText(hndLabel, TextoMessageBox +
+                     //   "\r\nEste mensaje se cerrará dentro de " +
+                        //TiempoMaximo.ToString("00") + " segundos");
                 }
                 else
                 {
@@ -70,9 +71,9 @@ namespace Vista
                         {
                             // Ha encontrado el texto porque el MessageBox
                             // solo tiene un control "Static".
-                            SetWindowText(hndLabel, TextoMessageBox +
-                                "\r\nEste mensaje se cerrará dentro de " +
-                                TiempoMaximo.ToString("00") + " segundos");
+                            //SetWindowText(hndLabel, TextoMessageBox +
+                             //   "\r\nEste mensaje se cerrará dentro de " +
+                              //  TiempoMaximo.ToString("00") + " segundos");
                         }
                     }
                 }

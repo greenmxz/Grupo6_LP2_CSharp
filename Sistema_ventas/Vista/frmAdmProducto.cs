@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Modelo;
-using Controlador;
-
 
 namespace Vista {
     //public enum estado { Nuevo, Cerrado }
@@ -18,14 +9,16 @@ namespace Vista {
         private estado _estado;
         private frmBusquedaProducto frmBPROD;
         private Producto prodSeleccionado;
+        private Usuario login;
         public estado Estado { get => _estado; set => _estado = value; }
         public Producto ProdSeleccionado { get => prodSeleccionado; set => prodSeleccionado = value; }
 
-        public frmAdmProducto() {
+        public frmAdmProducto(Usuario user) {
             prodSeleccionado = new Producto();
             InitializeComponent();
             txtCodigo.Enabled = false;
-            this.Estado = estado.Cerrado;
+            Estado = estado.Cerrado;
+            tip1.SetToolTip(pBoxI1, "Coloque el peso en kilogramos");
         }
         public frmAdmProducto(Form padre) {
             InitializeComponent();
@@ -33,7 +26,7 @@ namespace Vista {
             MdiParent = padre;
             Visible = true;
             txtCodigo.Enabled = false;
-            this.Estado = estado.Cerrado;
+            Estado = estado.Cerrado;
 
         }
         private void txtStockIni_KeyPress(object sender, KeyPressEventArgs e) {
@@ -135,8 +128,8 @@ namespace Vista {
         }
         private void btnCerrarProducto_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            this.Estado = estado.Cerrado;
+            Dispose();
+            Estado = estado.Cerrado;
             if (frmBPROD != null) { frmBPROD.Dispose(); }
         }
         private void btnLimpiarProducto_Click(object sender, EventArgs e)

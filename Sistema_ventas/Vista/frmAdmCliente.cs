@@ -9,12 +9,17 @@ namespace Vista {
     public partial class frmAdmCliente : Form {
         private estado frmState;
         private frmBusquedaCliente frmCli;
-        public frmAdmCliente() {
+        private Usuario login;
+        public frmAdmCliente(Usuario user) {
             InitializeComponent();
             definirEstado(estado.Nuevo);
             AdminDB.manipCombo("Distrito", "nombre", cboDistritoClientes);
             int id = AdminDB.executeFunction("obtener_idCliente", null, null);
             txtCodigoClientes.Text = Convert.ToString(id);
+            tip1.SetToolTip(pBoxI1, "Un Registro Único de Contribuyente es" + Environment.NewLine + "válido si tiene 11 dígitos y empieza en '20'");
+            tip1.SetToolTip(pBoxI2, "Un correo es válido si pertenece" + Environment.NewLine + "a los siguientes dominios:" + Environment.NewLine + 
+                "'com', 'es', 'pe', 'org'");
+            login = user;
         }
         public estado Estado { get => frmState; set => frmState = value; }
         public void definirEstado(estado e)
@@ -245,7 +250,7 @@ namespace Vista {
                                 values.Add(dist);
                                 string sentencia = "INSERT INTO Cliente" +
                                     " VALUES (" + id + ",'" + RUC + "','" + razSoc + "','" + telef +
-                                    "','" + correoElec + "','" + direc + "',1,1," + AdminDB.executeFunction("obtener_idDistrito", param, values) + ")";
+                                    "','" + correoElec + "','" + direc + "',1," + login.IdUsuario +"," + AdminDB.executeFunction("obtener_idDistrito", param, values) + ")";
                                 ConexionVista.conectar();
                                 MySqlCommand cmdCli = new MySqlCommand();
                                 cmdCli.CommandText = sentencia;

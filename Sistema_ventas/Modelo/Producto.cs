@@ -7,8 +7,6 @@
         private string _nombre;
         private string _descripcion;
         private float _precio;
-        private double peso;
-        
         private double _peso;
         public Producto()
         {

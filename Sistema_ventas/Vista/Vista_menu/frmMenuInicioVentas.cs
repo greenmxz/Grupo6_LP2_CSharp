@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Vista.Vista_menu {
     public partial class frmMenuInicioVentas : Form {
@@ -7,12 +8,14 @@ namespace Vista.Vista_menu {
         private frmGestionarPagoPedido frmGestionarPagoPedido;
         private frmGestionarAnulacionPedido frmAnulacionPedido;
         private frmCabecera cabecera;
-        public frmMenuInicioVentas(frmCabecera cabecera) {
+        private Usuario login;
+        public frmMenuInicioVentas(frmCabecera cabecera, Usuario user) {
             InitializeComponent();
             this.cabecera = cabecera;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Left = 0;
-            this.Top = 111;
+            StartPosition = FormStartPosition.Manual;
+            Left = 0;
+            Top = 111;
+            login = user;
         }
         //boton documento de pago
         private void btnDocumentoPago_Click(object sender, EventArgs e) {

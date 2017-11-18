@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
 using Vista.Vista_menu;
+using Modelo;
 
 namespace Vista
 {
     public partial class Principal : Form
     {
         private frmCabecera fCabecera;
-        public Principal(string nombreUsuario)
+        public Principal(Usuario user)
         {
             InitializeComponent();
             IsMdiContainer = true;
-            //this.Size = new Size(700,350);
-            //FormBorderStyle = FormBorderStyle.None;
-            //frmMenuInicio fMenuInicio = new frmMenuInicio(this,nombreUsuario);
-            fCabecera = new frmCabecera (nombreUsuario);
+            fCabecera = new frmCabecera (user);
             fCabecera.MdiParent = this;
             fCabecera.Show();
         }

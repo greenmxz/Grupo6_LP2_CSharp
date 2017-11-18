@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmProducto));
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
@@ -48,11 +49,14 @@
             this.gbxProd1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnCerrarProducto = new System.Windows.Forms.Button();
+            this.pBoxI1 = new System.Windows.Forms.PictureBox();
+            this.tip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxProd3.SuspendLayout();
             this.gbxProd2.SuspendLayout();
             this.gbxProd1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -168,6 +172,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pBoxI1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label6);
@@ -307,6 +312,16 @@
             this.btnCerrarProducto.UseVisualStyleBackColor = false;
             this.btnCerrarProducto.Click += new System.EventHandler(this.btnCerrarProducto_Click);
             // 
+            // pBoxI1
+            // 
+            this.pBoxI1.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI1.Image")));
+            this.pBoxI1.Location = new System.Drawing.Point(181, 140);
+            this.pBoxI1.Name = "pBoxI1";
+            this.pBoxI1.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI1.TabIndex = 15;
+            this.pBoxI1.TabStop = false;
+            // 
             // frmAdmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +344,7 @@
             this.gbxProd3.ResumeLayout(false);
             this.gbxProd2.ResumeLayout(false);
             this.gbxProd1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,5 +374,7 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnCerrarProducto;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pBoxI1;
+        private System.Windows.Forms.ToolTip tip1;
     }
 }

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmCliente));
             this.lblDistrito = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
@@ -37,7 +38,7 @@
             this.txtDirElecClientes = new System.Windows.Forms.TextBox();
             this.txtRUCClientes = new System.Windows.Forms.TextBox();
             this.txtCodigoClientes = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pBox1 = new System.Windows.Forms.PictureBox();
             this.gbxCli3 = new System.Windows.Forms.GroupBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.gbxCli2 = new System.Windows.Forms.GroupBox();
@@ -50,12 +51,17 @@
             this.gbxBasicoProveedor = new System.Windows.Forms.GroupBox();
             this.gbxContactoProveedor = new System.Windows.Forms.GroupBox();
             this.cboDistritoClientes = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pBoxI1 = new System.Windows.Forms.PictureBox();
+            this.pBoxI2 = new System.Windows.Forms.PictureBox();
+            this.tip1 = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).BeginInit();
             this.gbxCli3.SuspendLayout();
             this.gbxCli2.SuspendLayout();
             this.gbxCli1.SuspendLayout();
             this.gbxBasicoProveedor.SuspendLayout();
             this.gbxContactoProveedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDistrito
@@ -147,7 +153,7 @@
             // 
             this.txtDirElecClientes.Location = new System.Drawing.Point(103, 50);
             this.txtDirElecClientes.Name = "txtDirElecClientes";
-            this.txtDirElecClientes.Size = new System.Drawing.Size(312, 20);
+            this.txtDirElecClientes.Size = new System.Drawing.Size(285, 20);
             this.txtDirElecClientes.TabIndex = 4;
             // 
             // txtRUCClientes
@@ -166,15 +172,15 @@
             this.txtCodigoClientes.TabIndex = 0;
             this.txtCodigoClientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // pictureBox1
+            // pBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(585, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pBox1.Image = ((System.Drawing.Image)(resources.GetObject("pBox1.Image")));
+            this.pBox1.Location = new System.Drawing.Point(0, 0);
+            this.pBox1.Name = "pBox1";
+            this.pBox1.Size = new System.Drawing.Size(585, 100);
+            this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox1.TabIndex = 7;
+            this.pBox1.TabStop = false;
             // 
             // gbxCli3
             // 
@@ -274,6 +280,7 @@
             // 
             // gbxBasicoProveedor
             // 
+            this.gbxBasicoProveedor.Controls.Add(this.pBoxI1);
             this.gbxBasicoProveedor.Controls.Add(this.txtCodigoClientes);
             this.gbxBasicoProveedor.Controls.Add(this.txtRUCClientes);
             this.gbxBasicoProveedor.Controls.Add(this.lblCodigo);
@@ -289,6 +296,7 @@
             // 
             // gbxContactoProveedor
             // 
+            this.gbxContactoProveedor.Controls.Add(this.pBoxI2);
             this.gbxContactoProveedor.Controls.Add(this.cboDistritoClientes);
             this.gbxContactoProveedor.Controls.Add(this.txtTlfClientes);
             this.gbxContactoProveedor.Controls.Add(this.lblDistrito);
@@ -313,6 +321,26 @@
             this.cboDistritoClientes.Size = new System.Drawing.Size(179, 21);
             this.cboDistritoClientes.TabIndex = 13;
             // 
+            // pBoxI1
+            // 
+            this.pBoxI1.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI1.Image")));
+            this.pBoxI1.Location = new System.Drawing.Point(215, 45);
+            this.pBoxI1.Name = "pBoxI1";
+            this.pBoxI1.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI1.TabIndex = 9;
+            this.pBoxI1.TabStop = false;
+            // 
+            // pBoxI2
+            // 
+            this.pBoxI2.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI2.Image")));
+            this.pBoxI2.Location = new System.Drawing.Point(395, 50);
+            this.pBoxI2.Name = "pBoxI2";
+            this.pBoxI2.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI2.TabIndex = 10;
+            this.pBoxI2.TabStop = false;
+            // 
             // frmAdmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,12 +353,12 @@
             this.Controls.Add(this.gbxCli3);
             this.Controls.Add(this.gbxCli2);
             this.Controls.Add(this.gbxCli1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(244, 0);
             this.Name = "frmAdmCliente";
             this.Text = "Administrar Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).EndInit();
             this.gbxCli3.ResumeLayout(false);
             this.gbxCli2.ResumeLayout(false);
             this.gbxCli1.ResumeLayout(false);
@@ -338,6 +366,8 @@
             this.gbxBasicoProveedor.PerformLayout();
             this.gbxContactoProveedor.ResumeLayout(false);
             this.gbxContactoProveedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,7 +386,7 @@
         private System.Windows.Forms.TextBox txtDirClientes;
         private System.Windows.Forms.TextBox txtDirElecClientes;
         private System.Windows.Forms.Label lblDistrito;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pBox1;
         private System.Windows.Forms.GroupBox gbxCli3;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.GroupBox gbxCli2;
@@ -369,5 +399,8 @@
         private System.Windows.Forms.GroupBox gbxBasicoProveedor;
         private System.Windows.Forms.GroupBox gbxContactoProveedor;
         private System.Windows.Forms.ComboBox cboDistritoClientes;
+        private System.Windows.Forms.PictureBox pBoxI1;
+        private System.Windows.Forms.PictureBox pBoxI2;
+        private System.Windows.Forms.ToolTip tip1;
     }
 }

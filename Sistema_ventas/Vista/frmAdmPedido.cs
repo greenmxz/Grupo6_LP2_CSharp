@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Modelo;
-using Controlador;
 
 namespace Vista
 {
@@ -22,15 +14,16 @@ namespace Vista
         private frmBusquedaPedido frmBusquedaPedido;
         private frmBusquedaCliente frmBusqCli;
         private frmBusquedaProducto frmBusqProd;
-        
+        private Usuario login;
         private double total = 0;
-        public frmAdmPedido()
+        public frmAdmPedido(Usuario user)
         {
             InitializeComponent();
             cliseleccionado = new Cliente();
             prodSeleccionado = new Producto();
             pedido = new Pedido();
             txtTotal.Text = string.Format("{0:0.00}", total);
+            login = user;
         }
         public estado Estado { get => frmState; set => frmState = value; }
         public Cliente Cliseleccionado { get => cliseleccionado; set => cliseleccionado = value; }

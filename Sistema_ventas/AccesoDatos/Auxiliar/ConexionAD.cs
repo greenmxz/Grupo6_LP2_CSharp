@@ -15,8 +15,9 @@ namespace AccesoDatos.Auxiliar
                 conect = new MySqlConnection(cadena);
                 conect.Open();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
+                
             }
         }
         public static void cerrar()
