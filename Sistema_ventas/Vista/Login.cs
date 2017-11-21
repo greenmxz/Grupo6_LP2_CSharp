@@ -68,7 +68,7 @@ namespace Vista {
                 usuario.Tipo = dr.GetInt32("idTipoUsuario");
                 dr.Close();
                 ConexionVista.cerrar();
-                MessageBoxTemporal.Show(usuario, "Validación de ingreso", 2, true);
+                //MessageBoxTemporal.Show(usuario, "Validación de ingreso", 2, true);
                 DialogResult = DialogResult.OK;
             }
         }

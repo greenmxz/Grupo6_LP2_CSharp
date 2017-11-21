@@ -5,7 +5,7 @@ using System.ComponentModel;
 using Modelo;
 
 namespace Vista {
-    public enum estado { Nuevo, Registrar, Cerrado }
+    public enum estado { Nuevo, Registrar, Buscado, Cerrado }
     public partial class frmAdmCliente : Form {
         private estado frmState;
         private frmBusquedaCliente frmCli;
@@ -36,7 +36,9 @@ namespace Vista {
                     txtDirClientes.Enabled = false;
                     cboDistritoClientes.Enabled = false;
                     gbxCli1.Enabled = true;
-                    gbxCli2.Enabled = false;
+                    btnModificarCliente.Enabled = false;
+                    btnEliminarCliente.Enabled = false;
+                    btnLimpiarCliente.Enabled = false;
                     gbxCli3.Enabled = true;
                     break;
                 case (estado.Registrar):
@@ -47,8 +49,24 @@ namespace Vista {
                     txtDirElecClientes.Enabled = true;
                     txtDirClientes.Enabled = true;
                     cboDistritoClientes.Enabled = true;
+                    gbxCli1.Enabled = true;
+                    btnModificarCliente.Enabled = false;
+                    btnEliminarCliente.Enabled = false;
+                    btnLimpiarCliente.Enabled = true;
+                    gbxCli3.Enabled = false;
+                    break;
+                case (estado.Buscado):
+                    btnAgregarCliente.Text = "Nuevo";
+                    txtRUCClientes.Enabled = true;
+                    txtRazSocClientes.Enabled = true;
+                    txtTlfClientes.Enabled = true;
+                    txtDirElecClientes.Enabled = true;
+                    txtDirClientes.Enabled = true;
+                    cboDistritoClientes.Enabled = true;
                     gbxCli1.Enabled = false;
-                    gbxCli2.Enabled = true;
+                    btnModificarCliente.Enabled = true;
+                    btnEliminarCliente.Enabled = true;
+                    btnLimpiarCliente.Enabled = true;
                     gbxCli3.Enabled = false;
                     break;
                 case (estado.Cerrado):
@@ -76,7 +94,7 @@ namespace Vista {
                 txtDirClientes.Text = c.Direccion;
                 txtTlfClientes.Text = c.Telefono;
                 cboDistritoClientes.SelectedIndex = c.Distrito-1;
-                definirEstado(estado.Registrar);
+                definirEstado(estado.Buscado);
             }
         }
         private void btnModificarCliente_Click(object sender, EventArgs e)
@@ -274,6 +292,14 @@ namespace Vista {
                 {
                     Verificador.imprimirMessageBoxCliente(RUC, razSoc, telef, correoElec, direc, dist);
                 }
+            }
+        }
+
+        private void txtRUCClientes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -38,7 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pBoxI1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxProd3 = new System.Windows.Forms.GroupBox();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
@@ -49,14 +49,15 @@
             this.gbxProd1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnCerrarProducto = new System.Windows.Forms.Button();
-            this.pBoxI1 = new System.Windows.Forms.PictureBox();
             this.tip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pBoxI2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxProd3.SuspendLayout();
             this.gbxProd2.SuspendLayout();
             this.gbxProd1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -164,6 +165,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(103, 25);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
@@ -172,8 +174,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pBoxI2);
             this.groupBox1.Controls.Add(this.pBoxI1);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -195,15 +197,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
             // 
-            // label7
+            // pBoxI1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(185, 168);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "PEN";
+            this.pBoxI1.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI1.Image")));
+            this.pBoxI1.Location = new System.Drawing.Point(181, 140);
+            this.pBoxI1.Name = "pBoxI1";
+            this.pBoxI1.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI1.TabIndex = 15;
+            this.pBoxI1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -276,7 +278,7 @@
             this.btnLimpiarProducto.Name = "btnLimpiarProducto";
             this.btnLimpiarProducto.Size = new System.Drawing.Size(91, 23);
             this.btnLimpiarProducto.TabIndex = 6;
-            this.btnLimpiarProducto.Text = "Limpiar";
+            this.btnLimpiarProducto.Text = "Cancelar";
             this.btnLimpiarProducto.UseVisualStyleBackColor = true;
             this.btnLimpiarProducto.Click += new System.EventHandler(this.btnLimpiarProducto_Click);
             // 
@@ -296,7 +298,7 @@
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(91, 23);
             this.btnAgregarProducto.TabIndex = 0;
-            this.btnAgregarProducto.Text = "Registrar";
+            this.btnAgregarProducto.Text = "Nuevo";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
@@ -312,15 +314,15 @@
             this.btnCerrarProducto.UseVisualStyleBackColor = false;
             this.btnCerrarProducto.Click += new System.EventHandler(this.btnCerrarProducto_Click);
             // 
-            // pBoxI1
+            // pBoxI2
             // 
-            this.pBoxI1.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI1.Image")));
-            this.pBoxI1.Location = new System.Drawing.Point(181, 140);
-            this.pBoxI1.Name = "pBoxI1";
-            this.pBoxI1.Size = new System.Drawing.Size(20, 20);
-            this.pBoxI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBoxI1.TabIndex = 15;
-            this.pBoxI1.TabStop = false;
+            this.pBoxI2.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI2.Image")));
+            this.pBoxI2.Location = new System.Drawing.Point(181, 165);
+            this.pBoxI2.Name = "pBoxI2";
+            this.pBoxI2.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI2.TabIndex = 16;
+            this.pBoxI2.TabStop = false;
             // 
             // frmAdmProducto
             // 
@@ -340,11 +342,12 @@
             this.Text = "Administrar Producto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbxProd3.ResumeLayout(false);
             this.gbxProd2.ResumeLayout(false);
             this.gbxProd1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,8 +376,8 @@
         private System.Windows.Forms.GroupBox gbxProd1;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnCerrarProducto;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pBoxI1;
         private System.Windows.Forms.ToolTip tip1;
+        private System.Windows.Forms.PictureBox pBoxI2;
     }
 }

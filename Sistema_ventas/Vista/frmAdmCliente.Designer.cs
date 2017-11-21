@@ -49,18 +49,18 @@
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnCerrarCliente = new System.Windows.Forms.Button();
             this.gbxBasicoProveedor = new System.Windows.Forms.GroupBox();
-            this.gbxContactoProveedor = new System.Windows.Forms.GroupBox();
-            this.cboDistritoClientes = new System.Windows.Forms.ComboBox();
             this.pBoxI1 = new System.Windows.Forms.PictureBox();
+            this.gbxContactoProveedor = new System.Windows.Forms.GroupBox();
             this.pBoxI2 = new System.Windows.Forms.PictureBox();
+            this.cboDistritoClientes = new System.Windows.Forms.ComboBox();
             this.tip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pBox1)).BeginInit();
             this.gbxCli3.SuspendLayout();
             this.gbxCli2.SuspendLayout();
             this.gbxCli1.SuspendLayout();
             this.gbxBasicoProveedor.SuspendLayout();
-            this.gbxContactoProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).BeginInit();
+            this.gbxContactoProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,6 +138,7 @@
             // txtTlfClientes
             // 
             this.txtTlfClientes.Location = new System.Drawing.Point(103, 25);
+            this.txtTlfClientes.MaxLength = 11;
             this.txtTlfClientes.Name = "txtTlfClientes";
             this.txtTlfClientes.Size = new System.Drawing.Size(86, 20);
             this.txtTlfClientes.TabIndex = 3;
@@ -159,9 +160,11 @@
             // txtRUCClientes
             // 
             this.txtRUCClientes.Location = new System.Drawing.Point(103, 45);
+            this.txtRUCClientes.MaxLength = 11;
             this.txtRUCClientes.Name = "txtRUCClientes";
             this.txtRUCClientes.Size = new System.Drawing.Size(110, 20);
             this.txtRUCClientes.TabIndex = 1;
+            this.txtRUCClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUCClientes_KeyPress);
             // 
             // txtCodigoClientes
             // 
@@ -294,6 +297,16 @@
             this.gbxBasicoProveedor.TabStop = false;
             this.gbxBasicoProveedor.Text = "Datos básicos";
             // 
+            // pBoxI1
+            // 
+            this.pBoxI1.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI1.Image")));
+            this.pBoxI1.Location = new System.Drawing.Point(215, 45);
+            this.pBoxI1.Name = "pBoxI1";
+            this.pBoxI1.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI1.TabIndex = 9;
+            this.pBoxI1.TabStop = false;
+            // 
             // gbxContactoProveedor
             // 
             this.gbxContactoProveedor.Controls.Add(this.pBoxI2);
@@ -312,25 +325,6 @@
             this.gbxContactoProveedor.TabStop = false;
             this.gbxContactoProveedor.Text = "Medios de contacto";
             // 
-            // cboDistritoClientes
-            // 
-            this.cboDistritoClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDistritoClientes.FormattingEnabled = true;
-            this.cboDistritoClientes.Location = new System.Drawing.Point(103, 100);
-            this.cboDistritoClientes.Name = "cboDistritoClientes";
-            this.cboDistritoClientes.Size = new System.Drawing.Size(179, 21);
-            this.cboDistritoClientes.TabIndex = 13;
-            // 
-            // pBoxI1
-            // 
-            this.pBoxI1.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI1.Image")));
-            this.pBoxI1.Location = new System.Drawing.Point(215, 45);
-            this.pBoxI1.Name = "pBoxI1";
-            this.pBoxI1.Size = new System.Drawing.Size(20, 20);
-            this.pBoxI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBoxI1.TabIndex = 9;
-            this.pBoxI1.TabStop = false;
-            // 
             // pBoxI2
             // 
             this.pBoxI2.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI2.Image")));
@@ -340,6 +334,15 @@
             this.pBoxI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxI2.TabIndex = 10;
             this.pBoxI2.TabStop = false;
+            // 
+            // cboDistritoClientes
+            // 
+            this.cboDistritoClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDistritoClientes.FormattingEnabled = true;
+            this.cboDistritoClientes.Location = new System.Drawing.Point(103, 100);
+            this.cboDistritoClientes.Name = "cboDistritoClientes";
+            this.cboDistritoClientes.Size = new System.Drawing.Size(179, 21);
+            this.cboDistritoClientes.TabIndex = 13;
             // 
             // frmAdmCliente
             // 
@@ -364,9 +367,9 @@
             this.gbxCli1.ResumeLayout(false);
             this.gbxBasicoProveedor.ResumeLayout(false);
             this.gbxBasicoProveedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
             this.gbxContactoProveedor.ResumeLayout(false);
             this.gbxContactoProveedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).EndInit();
             this.ResumeLayout(false);
 
