@@ -35,7 +35,6 @@ namespace AccesoDatos
                     lista.Add(c);
                 }
             }
-
             ConexionAD.cerrar();
             return lista;
         }

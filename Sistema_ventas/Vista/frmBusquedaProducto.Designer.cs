@@ -33,6 +33,10 @@
             this.btnCerrarBusqProducto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecProd = new System.Windows.Forms.Button();
+            this.codigoProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +46,11 @@
             this.dgvBuscProducto.AllowUserToAddRows = false;
             this.dgvBuscProducto.AllowUserToDeleteRows = false;
             this.dgvBuscProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuscProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoProd,
+            this.nombProd,
+            this.puProd,
+            this.stockProd});
             this.dgvBuscProducto.Location = new System.Drawing.Point(13, 118);
             this.dgvBuscProducto.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBuscProducto.Name = "dgvBuscProducto";
@@ -84,6 +93,34 @@
             this.btnSelecProd.UseVisualStyleBackColor = true;
             this.btnSelecProd.Click += new System.EventHandler(this.btnSelecProd_Click);
             // 
+            // codigoProd
+            // 
+            this.codigoProd.HeaderText = "Código";
+            this.codigoProd.Name = "codigoProd";
+            this.codigoProd.ReadOnly = true;
+            this.codigoProd.Width = 60;
+            // 
+            // nombProd
+            // 
+            this.nombProd.HeaderText = "Nombre";
+            this.nombProd.Name = "nombProd";
+            this.nombProd.ReadOnly = true;
+            this.nombProd.Width = 130;
+            // 
+            // puProd
+            // 
+            this.puProd.HeaderText = "Precio unitario";
+            this.puProd.Name = "puProd";
+            this.puProd.ReadOnly = true;
+            this.puProd.Width = 80;
+            // 
+            // stockProd
+            // 
+            this.stockProd.HeaderText = "Stock";
+            this.stockProd.Name = "stockProd";
+            this.stockProd.ReadOnly = true;
+            this.stockProd.Width = 80;
+            // 
             // frmBusquedaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,5 +145,9 @@
         private System.Windows.Forms.Button btnCerrarBusqProducto;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSelecProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn puProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockProd;
     }
 }

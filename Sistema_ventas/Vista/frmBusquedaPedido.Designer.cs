@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaPedido));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NumeroPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrarBusqPedido = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecPed = new System.Windows.Forms.Button();
+            this.NumeroPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,39 +50,12 @@
             this.NumeroPedido,
             this.TotalVenta,
             this.RUC,
-            this.NombreCliente});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 117);
+            this.totalPed});
+            this.dataGridView1.Location = new System.Drawing.Point(11, 117);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 233);
+            this.dataGridView1.Size = new System.Drawing.Size(400, 233);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // NumeroPedido
-            // 
-            this.NumeroPedido.HeaderText = "Numero de pedido";
-            this.NumeroPedido.Name = "NumeroPedido";
-            this.NumeroPedido.ReadOnly = true;
-            this.NumeroPedido.Width = 90;
-            // 
-            // TotalVenta
-            // 
-            this.TotalVenta.HeaderText = "Total";
-            this.TotalVenta.Name = "TotalVenta";
-            this.TotalVenta.ReadOnly = true;
-            this.TotalVenta.Width = 60;
-            // 
-            // RUC
-            // 
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            this.RUC.ReadOnly = true;
-            this.RUC.Width = 90;
-            // 
-            // NombreCliente
-            // 
-            this.NombreCliente.HeaderText = "Nombre cliente";
-            this.NombreCliente.Name = "NombreCliente";
-            this.NombreCliente.ReadOnly = true;
             // 
             // btnCerrarBusqPedido
             // 
@@ -118,6 +91,34 @@
             this.btnSelecPed.UseVisualStyleBackColor = true;
             this.btnSelecPed.Click += new System.EventHandler(this.btnSelecPed_Click);
             // 
+            // NumeroPedido
+            // 
+            this.NumeroPedido.HeaderText = "Código";
+            this.NumeroPedido.Name = "NumeroPedido";
+            this.NumeroPedido.ReadOnly = true;
+            this.NumeroPedido.Width = 60;
+            // 
+            // TotalVenta
+            // 
+            this.TotalVenta.HeaderText = "Fecha";
+            this.TotalVenta.Name = "TotalVenta";
+            this.TotalVenta.ReadOnly = true;
+            this.TotalVenta.Width = 110;
+            // 
+            // RUC
+            // 
+            this.RUC.HeaderText = "RUC de Cliente";
+            this.RUC.Name = "RUC";
+            this.RUC.ReadOnly = true;
+            this.RUC.Width = 105;
+            // 
+            // totalPed
+            // 
+            this.totalPed.HeaderText = "Total";
+            this.totalPed.Name = "totalPed";
+            this.totalPed.ReadOnly = true;
+            this.totalPed.Width = 80;
+            // 
             // frmBusquedaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +145,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPed;
     }
 }

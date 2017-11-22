@@ -11,34 +11,46 @@ namespace Vista
     public partial class frmBusquedaProducto : Form
     {
         private estado _estado;
-        private Producto producto;
+        private Producto productoSelecc;
         private ProductoCL productocl;
         private BindingList<Producto> listaproducto;
         public frmBusquedaProducto()
         {
             InitializeComponent();
-            producto = new Producto();
+            productoSelecc = new Producto();
             productocl = new ProductoCL();
             listaproducto = productocl.devolverlista();
-            dgvBuscProducto.DataSource = listaproducto;
+            foreach(Producto p in listaproducto)
+            {
+                dgvBuscProducto.Rows.Add(p.Id, p.Nombre, p.Precio.ToString("N2"), p.Stock);
+            }
 
         }
 
         public estado Estado { get => _estado; set => _estado = value; }
-        public Producto Producto { get => producto; set => producto = value; }
+        public Producto ProductoSelecc { get => productoSelecc; set => productoSelecc = value; }
 
         private void btnCerrarBusqProducto_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            this.Estado = estado.Cerrado;
+            Dispose();
+            Estado = estado.Cerrado;
         }
         private void btnSelecProd_Click(object sender, EventArgs e)
         {
-            producto = (Producto)dgvBuscProducto.CurrentRow.DataBoundItem;
-            
-            this.Estado = estado.Cerrado;            
-            this.DialogResult = DialogResult.OK;
-            this.Dispose();
+            int id = (int)dgvBuscProducto.CurrentRow.Index;
+            int i=0;
+            foreach (Producto p in listaproducto)
+            {
+                if (i == id)
+                {
+                    productoSelecc = p;
+                    break;
+                }
+                i++;
+            }
+            Estado = estado.Cerrado;            
+            DialogResult = DialogResult.OK;
+            Dispose();
         }
     }
 }

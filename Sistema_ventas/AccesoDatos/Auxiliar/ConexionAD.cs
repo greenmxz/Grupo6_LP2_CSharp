@@ -17,7 +17,6 @@ namespace AccesoDatos.Auxiliar
             }
             catch (Exception ex)
             {
-                
             }
         }
         public static void cerrar()

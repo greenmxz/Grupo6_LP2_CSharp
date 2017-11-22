@@ -23,13 +23,58 @@ namespace Vista
             prodSeleccionado = new Producto();
             pedido = new Pedido();
             txtTotal.Text = string.Format("{0:0.00}", total);
+            definirEstado(estado.Nuevo);
             login = user;
         }
         public estado Estado { get => frmState; set => frmState = value; }
         public Cliente Cliseleccionado { get => cliseleccionado; set => cliseleccionado = value; }
         public Producto ProdSeleccionado { get => prodSeleccionado; set => prodSeleccionado = value; }
         public Pedido Pedido { get => pedido; set => pedido = value; }
-
+        public void definirEstado(estado e)
+        {
+            frmState = e;
+            switch (e)
+            {
+                case (estado.Nuevo):
+                    btnAgregarPedido.Text = "Nuevo";
+                    dateTimePedido.Enabled = false;
+                    btnBuscarClienteXPedido.Enabled = false;
+                    gBoxProd.Enabled = false;
+                    dgvPedido.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnBuscarPedido.Enabled = true;
+                    break;
+                case (estado.Registrar):
+                    btnAgregarPedido.Text = "Registrar";
+                    dateTimePedido.Enabled = true;
+                    btnBuscarClienteXPedido.Enabled = true;
+                    gBoxProd.Enabled = true;
+                    dgvPedido.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    btnBuscarPedido.Enabled = false;
+                    break;
+                case (estado.Buscar):
+                    btnAgregarPedido.Text = "Modificar";
+                    dateTimePedido.Enabled = false;
+                    btnBuscarClienteXPedido.Enabled = false;
+                    gBoxProd.Enabled = false;
+                    dgvPedido.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnBuscarPedido.Enabled = true;
+                    break;
+                case (estado.Modificar):
+                    btnAgregarPedido.Text = "Confirmar";
+                    dateTimePedido.Enabled = true;
+                    btnBuscarClienteXPedido.Enabled = true;
+                    gBoxProd.Enabled = true;
+                    dgvPedido.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    btnBuscarPedido.Enabled = true;
+                    break;
+                case (estado.Cerrado):
+                    break;
+            }
+        }
         private void btnBuscarPedido_Click(object sender, EventArgs e) {
             if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado) {
 
@@ -79,7 +124,7 @@ namespace Vista
             frmBusqProd = new frmBusquedaProducto();
             if (frmBusqProd.ShowDialog() == DialogResult.OK)
             {
-                prodSeleccionado = frmBusqProd.Producto;
+                prodSeleccionado = frmBusqProd.ProductoSelecc;
                 txtCodigoProd.Text = prodSeleccionado.Id.ToString();
                 txtNombProd.Text = prodSeleccionado.Nombre;                
                 
@@ -96,6 +141,7 @@ namespace Vista
         }
         private void btnAgregarClienteXPedido_Click(object sender, EventArgs e)
         {
+
             if (cliseleccionado == null)
             {
                 MessageBox.Show("Falta ingresar datos de cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -118,26 +164,41 @@ namespace Vista
         }
         private void btnAgregarPedido_Click(object sender, EventArgs e)
         {
-            string url = "server=200.16.7.96;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=ta1RQx6flDXdiTpr;";
-            MySqlConnection conn = new MySqlConnection(url);
-            conn.Open();
-            //MessageBox("Conexión exitosa","Conexiones");
-            //MySqlCommand com = new MySqlCommand();
-            MySqlCommand mysqlcom = new MySqlCommand();
-            string sqlquery = "INSERT INTO Pedido " +
-                              " (importeTotal,fechaPedido,idCliente,idEstadoPedido,estadoRegistro,idAdministradorSistema,idAlmacenero,idResponsableLogistica)" +
-                              " values (" +
-                              pedido.Total+",'"+pedido.DateReg+"',"+pedido.DatoCliente.Id+",1,1,3,12,4)";
-            mysqlcom.Connection = conn;
-            mysqlcom.CommandText = sqlquery;
-            mysqlcom.ExecuteNonQuery();
-            txtTotal.Text = pedido.Total.ToString("N2");
+            if (frmState == estado.Nuevo)
+            {
+                definirEstado(estado.Registrar);
+            }
+            else
+            {
+                //string url = "server=200.16.7.96;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=ta1RQx6flDXdiTpr;";
+                //MySqlConnection conn = new MySqlConnection(url);
+                //conn.Open();
+                ////MessageBox("Conexión exitosa","Conexiones");
+                ////MySqlCommand com = new MySqlCommand();
+                //MySqlCommand mysqlcom = new MySqlCommand();
+                //string sqlquery = "INSERT INTO Pedido " +
+                //                  " (importeTotal,fechaPedido,idCliente,idEstadoPedido,estadoRegistro,idAdministradorSistema,idAlmacenero,idResponsableLogistica)" +
+                //                  " values (" +
+                //                  pedido.Total + ",'" + pedido.DateReg + "'," + pedido.DatoCliente.Id + ",1,1,3,12,4)";
+                //mysqlcom.Connection = conn;
+                //mysqlcom.CommandText = sqlquery;
+                //mysqlcom.ExecuteNonQuery();
+                //txtTotal.Text = pedido.Total.ToString("N2");
+                btnCancelar_Click(sender, e);
+            }
+        }
 
-            txtCantProd.Text = "";
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            definirEstado(estado.Nuevo);
+            txtRUCCliente.Text = "";
+            txtRazSocCliente.Text = "";
+            total = 0;
+            txtTotal.Text = string.Format("{0:0.00}", total);
             txtCodigoProd.Text = "";
             txtNombProd.Text = "";
-            txtRazSocCliente.Text = "";
-            txtRUCCliente.Text = "";
+            txtCantProd.Text = "";
+            dgvPedido.Rows.Clear();
         }
     }
 }

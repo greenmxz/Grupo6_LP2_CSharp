@@ -58,5 +58,38 @@ namespace Vista
             ConexionVista.cerrar();
             return id;
         }
+        public static int executeFunction(string nombre, BindingList<string> param, BindingList<int> values)
+        {
+            ConexionVista.conectar();
+
+            MySqlCommand cmdCons = new MySqlCommand();
+            ConexionVista.cast(cmdCons);
+            cmdCons.CommandText = nombre;
+            cmdCons.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (param != null)
+            {
+                int i = 0;
+                foreach (string elem in param)
+                {
+                    MySqlParameter parameter = new MySqlParameter();
+                    parameter.Value = values[i];
+                    parameter.Direction = System.Data.ParameterDirection.Input;
+                    parameter.ParameterName = elem;
+                    i++;
+                    cmdCons.Parameters.Add(parameter);
+                }
+            }
+
+            MySqlParameter resp = new MySqlParameter();
+            resp.Direction = System.Data.ParameterDirection.ReturnValue;
+            cmdCons.Parameters.Add(resp);
+
+            cmdCons.ExecuteNonQuery();
+            int id = Convert.ToInt32(resp.Value.ToString());
+
+            ConexionVista.cerrar();
+            return id;
+        }
     }
 }

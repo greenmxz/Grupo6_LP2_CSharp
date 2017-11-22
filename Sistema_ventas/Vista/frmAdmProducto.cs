@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.ComponentModel;
 using MySql.Data.MySqlClient;
 using Modelo;
 
@@ -17,7 +18,8 @@ namespace Vista {
             InitializeComponent();
             txtCodigo.Enabled = false;
             definirEstado(estado.Nuevo);
-            int id = AdminDB.executeFunction("obtener_idProducto", null, null);
+            BindingList<string> aux = new BindingList<string>();
+            int id = AdminDB.executeFunction("obtener_idProducto", null, aux);
             txtCodigo.Text = Convert.ToString(id);
             tip1.SetToolTip(pBoxI1, "Coloque el peso en kilogramos");
             tip1.SetToolTip(pBoxI2, "El precio debe estar en PEN (denominación" + Environment.NewLine + "internacional del Sol peruano)");
@@ -38,6 +40,7 @@ namespace Vista {
             {
                 case (estado.Nuevo):
                     btnAgregarProducto.Text = "Nuevo";
+                    btnModificarProducto.Text = "Modificar";
                     txtNombre.Enabled = false;
                     txtDescripcion.Enabled = false;
                     txtPeso.Enabled = false;
@@ -51,6 +54,7 @@ namespace Vista {
                     break;
                 case (estado.Registrar):
                     btnAgregarProducto.Text = "Registrar";
+                    btnModificarProducto.Text = "Modificar";
                     txtNombre.Enabled = true;
                     txtDescripcion.Enabled = true;
                     txtPeso.Enabled = true;
@@ -62,8 +66,23 @@ namespace Vista {
                     btnLimpiarProducto.Enabled = true;
                     gbxProd3.Enabled = false;
                     break;
-                case (estado.Buscado):
+                case (estado.Buscar):
                     btnAgregarProducto.Text = "Nuevo";
+                    btnModificarProducto.Text = "Modificar";
+                    txtNombre.Enabled = false;
+                    txtDescripcion.Enabled = false;
+                    txtPeso.Enabled = false;
+                    txtPU.Enabled = false;
+                    txtStockIni.Enabled = false;
+                    gbxProd1.Enabled = false;
+                    btnModificarProducto.Enabled = true;
+                    btnEliminarProducto.Enabled = true;
+                    btnLimpiarProducto.Enabled = true;
+                    gbxProd3.Enabled = false;
+                    break;
+                case (estado.Modificar):
+                    btnAgregarProducto.Text = "Nuevo";
+                    btnModificarProducto.Text = "Confirmar";
                     txtNombre.Enabled = true;
                     txtDescripcion.Enabled = true;
                     txtPeso.Enabled = true;
@@ -71,7 +90,7 @@ namespace Vista {
                     txtStockIni.Enabled = true;
                     gbxProd1.Enabled = false;
                     btnModificarProducto.Enabled = true;
-                    btnEliminarProducto.Enabled = true;
+                    btnEliminarProducto.Enabled = false;
                     btnLimpiarProducto.Enabled = true;
                     gbxProd3.Enabled = false;
                     break;
@@ -91,27 +110,25 @@ namespace Vista {
             }
         }
         private void btnBuscarProducto_Click(object sender, EventArgs e)
-        {
-            //if (frmBPROD == null || frmBPROD.Estado == estado.Cerrado)
-            //{             
+        {           
                 frmBPROD = new frmBusquedaProducto();
                 if (frmBPROD.ShowDialog() == DialogResult.OK)
                 {
 
-                    prodSeleccionado = frmBPROD.Producto;                    
+                    prodSeleccionado = frmBPROD.ProductoSelecc;                    
                     txtCodigo.Text = prodSeleccionado.Id.ToString();
                     txtNombre.Text = prodSeleccionado.Nombre;
                     txtDescripcion.Text = prodSeleccionado.Descripcion;
                     txtPU.Text = prodSeleccionado.Precio.ToString("N2");
                     txtPeso.Text = prodSeleccionado.Peso.ToString("N2");
+                    txtStockIni.Text = Convert.ToString(prodSeleccionado.Stock);
+                    definirEstado(estado.Buscar);
                 }
                 frmBPROD.Estado = estado.Nuevo;
                 frmBPROD.MdiParent = this.MdiParent;
                 frmBPROD.StartPosition = FormStartPosition.Manual;
                 frmBPROD.Left = 588;
                 frmBPROD.Top = 112;
-                //frmBPROD.Visible = true;
-            //}
         }
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -121,16 +138,17 @@ namespace Vista {
             }
             else
             {
-                int id = AdminDB.executeFunction("obtener_idProducto", null, null);
+                BindingList<string> aux = new BindingList<string>();
+                int id = AdminDB.executeFunction("obtener_idProducto", null, aux);
                 txtCodigo.Text = Convert.ToString(id);
                 string nombre = txtNombre.Text;
                 string descrip = txtDescripcion.Text;
                 string peso = txtPeso.Text;
                 string precUnit = txtPU.Text;
                 string stock = txtStockIni.Text;
-                if (nombre != "" && descrip != "" && Int32.Parse(peso) > 0 && precUnit != "" && Double.Parse(precUnit) > 0 && stock != "" && Int32.Parse(stock) > 0)
+                if (nombre != "" && descrip != "" && peso != "" && Double.Parse(peso) > 0 && precUnit != "" && Double.Parse(precUnit) > 0 && stock != "" && Int32.Parse(stock) > 0)
                 {
-                    string cadena = "¿Está seguro de que desea registrar el siguiente producto:";
+                    string cadena = "¿Está seguro de que desea registrar el siguiente producto?:";
                     cadena = cadena + Environment.NewLine + "Nombre: " + nombre;
                     cadena = cadena + Environment.NewLine + "Descripción: " + descrip;
                     cadena = cadena + Environment.NewLine + "Peso: " + peso + " kilogramos (Kg)";
@@ -145,7 +163,7 @@ namespace Vista {
                             {
                                 string sqlquery = "INSERT INTO Producto " +
                                                   "VALUES (" + id + ",'" + nombre + "','" + descrip + "'," + Double.Parse(precUnit) +
-                                                  "," + Int32.Parse(peso) + ",1," + login.IdUsuario + "," + Int32.Parse(stock) + ")";
+                                                  "," + Double.Parse(peso) + ",1," + login.IdUsuario + "," + Int32.Parse(stock) + ")";
                                 ConexionVista.conectar();
                                 MySqlCommand cmdProd = new MySqlCommand();
                                 cmdProd.CommandText = sqlquery;
@@ -179,7 +197,8 @@ namespace Vista {
         }
         private void btnLimpiarProducto_Click(object sender, EventArgs e)
         {
-            int nuevoID = AdminDB.executeFunction("obtener_idCliente", null, null);
+            BindingList<string> aux = new BindingList<string>();
+            int nuevoID = AdminDB.executeFunction("obtener_idCliente", null, aux);
             txtCodigo.Text = Convert.ToString(nuevoID);
             txtNombre.Text = "";
             txtDescripcion.Text = "";
@@ -190,36 +209,90 @@ namespace Vista {
         }
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(txtCodigo.Text);
-            string nombre = txtNombre.Text;
-            string descrip = txtDescripcion.Text;
-            string peso = txtPeso.Text;
-            string precUnit = txtPU.Text;
-            string stock = txtStockIni.Text;
-            if (nombre != "" && descrip != "" && Int32.Parse(peso) > 0 && precUnit != "" && Double.Parse(precUnit) > 0 && stock != "" && Int32.Parse(stock) > 0)
+            if (Estado == estado.Buscar)
             {
-                string cadena = "¿Está seguro de que desea modificar la información del siguiente producto:";
-                cadena = cadena + Environment.NewLine + "Nombre: " + nombre;
-                cadena = cadena + Environment.NewLine + "Descripción: " + descrip;
-                cadena = cadena + Environment.NewLine + "Peso: " + peso + " kilogramos (Kg)";
-                cadena = cadena + Environment.NewLine + "Precio unitario: " + precUnit + " PEN";
-                cadena = cadena + Environment.NewLine + "Stock: " + stock +" unidades";
-                DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de modificación", MessageBoxButtons.YesNo);
+                definirEstado(estado.Modificar);
+            }
+            else
+            {
+                int id = Int32.Parse(txtCodigo.Text);
+                string nombre = txtNombre.Text;
+                string descrip = txtDescripcion.Text;
+                string peso = txtPeso.Text;
+                string precUnit = txtPU.Text;
+                string stock = txtStockIni.Text;
+                if (nombre != "" && descrip != "" && peso != "" && Double.Parse(peso) > 0 && precUnit != "" && Double.Parse(precUnit) > 0 && stock != "" && Int32.Parse(stock) > 0)
+                {
+                    string cadena = "¿Está seguro de que desea modificar la información del siguiente producto?:";
+                    cadena = cadena + Environment.NewLine + "Nombre: " + nombre;
+                    cadena = cadena + Environment.NewLine + "Descripción: " + descrip;
+                    cadena = cadena + Environment.NewLine + "Peso: " + peso + " kilogramos (Kg)";
+                    cadena = cadena + Environment.NewLine + "Precio unitario: " + precUnit + " PEN";
+                    cadena = cadena + Environment.NewLine + "Stock: " + stock + " unidades";
+                    DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de modificación", MessageBoxButtons.YesNo);
+                    switch (result)
+                    {
+                        case DialogResult.Yes:
+                            try
+                            {
+                                string sql = "UPDATE Producto SET nombre='" + txtNombre.Text + "',descripcion='" + txtDescripcion.Text +
+                                              "',precioUnitario=" + Double.Parse(txtPU.Text) + ",peso=" + Double.Parse(txtPeso.Text) +
+                                              ",stock=" + Int32.Parse(txtStockIni.Text) +
+                                             " WHERE idProducto=" + Int32.Parse(txtCodigo.Text) + ";";
+                                ConexionVista.conectar();
+                                MySqlCommand cmdProd = new MySqlCommand();
+                                cmdProd.CommandText = sql;
+                                ConexionVista.cast(cmdProd);
+                                cmdProd.ExecuteNonQuery();
+                                MessageBox.Show("Producto modificado exitosamente", "Modificación exitosa");
+                                ConexionVista.cerrar();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "Error");
+                            }
+                            break;
+                        case DialogResult.No:
+                            MessageBox.Show("La operación ha sido cancelada");
+                            break;
+                    }
+                    btnLimpiarProducto_Click(sender, e);
+                }
+                else
+                {
+                    //Verificador.imprimirMessageBoxProducto(nombre, descrip, marca, precUnit);
+                }
+            }
+        }
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(txtCodigo.Text);
+            BindingList<string> param = new BindingList<string>();
+            BindingList<int> values = new BindingList<int>();
+            param.Add("busqID");
+            values.Add(id);
+            int countDepend = AdminDB.executeFunction("contarPedidosXProducto", param, values);
+            if (countDepend == 0)
+            {
+                string cadena = "¿Está seguro de que desea eliminar el siguiente producto?:";
+                cadena = cadena + Environment.NewLine + "Nombre: " + txtNombre.Text;
+                cadena = cadena + Environment.NewLine + "Descripción: " + txtDescripcion.Text;
+                cadena = cadena + Environment.NewLine + "Peso: " + txtPeso + " kilogramos (Kg)";
+                cadena = cadena + Environment.NewLine + "Precio unitario: " + txtPU.Text + " PEN";
+                cadena = cadena + Environment.NewLine + "Stock: " + txtStockIni.Text + " unidades";
+                DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de eliminación", MessageBoxButtons.YesNo);
                 switch (result)
                 {
                     case DialogResult.Yes:
                         try
                         {
-                            string sql = "UPDATE Producto SET nombre='" + txtNombre.Text + "',descripcion='" + txtDescripcion.Text +
-                                          "',precioUnitario=" + float.Parse(txtPU.Text) + ",peso=" + double.Parse(txtPeso.Text) +
-                                          ",stock=" + Int32.Parse(txtStockIni.Text) +
-                                         " WHERE idProducto=" + txtCodigo.Text;
                             ConexionVista.conectar();
                             MySqlCommand cmdProd = new MySqlCommand();
+                            string sql = "UPDATE Producto SET estadoRegistro=2 WHERE idProducto=" + id;
                             cmdProd.CommandText = sql;
                             ConexionVista.cast(cmdProd);
                             cmdProd.ExecuteNonQuery();
-                            MessageBox.Show("Producto modificado exitosamente", "Modificación exitosa");
+                            MessageBox.Show("Producto eliminado exitosamente", "Eliminación exitosa");
                             ConexionVista.cerrar();
                         }
                         catch (Exception ex)
@@ -235,51 +308,16 @@ namespace Vista {
             }
             else
             {
-                //Verificador.imprimirMessageBoxProducto(nombre, descrip, marca, precUnit);
-            }
-        }
-        private void btnEliminarProducto_Click(object sender, EventArgs e)
-        {
-            string nombre = txtNombre.Text;
-            string descrip = txtDescripcion.Text;
-            string marca = txtPeso.Text;
-            string precUnit = txtPU.Text;
-            if (nombre != "" && descrip != "" && marca != "" && precUnit != "" && Double.Parse(precUnit) > 0)
-            {
-                string cadena = "¿Está seguro de que desea eliminar el siguiente producto:";
-                cadena = cadena + Environment.NewLine + "Nombre: " + nombre;
-                cadena = cadena + Environment.NewLine + "Descripción: " + descrip;
-                cadena = cadena + Environment.NewLine + "Marca: " + marca;
-                cadena = cadena + Environment.NewLine + "Precio unitario: " + precUnit;
-                DialogResult result = MessageBox.Show(cadena, "Mensaje de confirmación de eliminación", MessageBoxButtons.YesNo);
-                switch (result)
+                string diferencial;
+                if(countDepend == 1)
                 {
-                    case DialogResult.Yes:
-                        string url = "server=200.16.7.96;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=ta1RQx6flDXdiTpr;";
-                        MySqlConnection conn = new MySqlConnection(url);
-                        conn.Open();
-                        MySqlCommand cmd = new MySqlCommand();                   
-                        string sql = "DELETE FROM Producto WHERE idProducto=" + Int32.Parse(txtCodigo.Text);
-                        cmd.Connection = conn;
-                        cmd.CommandText = sql;
-                        cmd.ExecuteNonQuery();
-                        
-
-                        MessageBox.Show("Producto eliminado exitosamente", "Eliminación exitosa");
-                        txtNombre.Text = "";
-                        txtDescripcion.Text = "";
-                        txtPeso.Text = "";
-                        txtPU.Text = "";
-                        txtStockIni.Text = "";
-                        break;
-                    case DialogResult.No:
-                        MessageBox.Show("La operación ha sido cancelada");
-                        break;
+                    diferencial = " pedido";
                 }
-            }
-            else
-            {
-                Verificador.imprimirMessageBoxProducto(nombre, descrip, marca, precUnit);
+                else
+                {
+                    diferencial = " pedidos";
+                }
+                MessageBox.Show("No puede eliminarse este producto, puesto que se ha detectado " + countDepend + diferencial + " que lo involucran", "Dependencia pedido-producto detectada");
             }
         }
     }

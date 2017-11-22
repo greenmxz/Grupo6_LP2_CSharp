@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmPedido));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gBoxProd = new System.Windows.Forms.GroupBox();
             this.btnQuitarClienteXPedido = new System.Windows.Forms.Button();
             this.txtNombProd = new System.Windows.Forms.TextBox();
             this.txtCodigoProd = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePedido = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarClienteXPedido = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gBoxCli = new System.Windows.Forms.GroupBox();
             this.btnCerrarPedido = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxPed2 = new System.Windows.Forms.GroupBox();
@@ -63,33 +63,34 @@
             this.gbxPed1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.gBoxProd.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.gBoxCli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxPed2.SuspendLayout();
             this.gbxPed1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gBoxProd
             // 
-            this.groupBox1.Controls.Add(this.btnQuitarClienteXPedido);
-            this.groupBox1.Controls.Add(this.txtNombProd);
-            this.groupBox1.Controls.Add(this.txtCodigoProd);
-            this.groupBox1.Controls.Add(this.btnAgregarClienteXPedido);
-            this.groupBox1.Controls.Add(this.txtCantProd);
-            this.groupBox1.Controls.Add(this.btnModificarClienteXPedido);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.btnBuscarProdXPedido);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(9, 211);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(566, 100);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del producto";
+            this.gBoxProd.Controls.Add(this.btnQuitarClienteXPedido);
+            this.gBoxProd.Controls.Add(this.txtNombProd);
+            this.gBoxProd.Controls.Add(this.txtCodigoProd);
+            this.gBoxProd.Controls.Add(this.btnAgregarClienteXPedido);
+            this.gBoxProd.Controls.Add(this.txtCantProd);
+            this.gBoxProd.Controls.Add(this.btnModificarClienteXPedido);
+            this.gBoxProd.Controls.Add(this.label5);
+            this.gBoxProd.Controls.Add(this.btnBuscarProdXPedido);
+            this.gBoxProd.Controls.Add(this.label3);
+            this.gBoxProd.Controls.Add(this.label2);
+            this.gBoxProd.Location = new System.Drawing.Point(9, 211);
+            this.gBoxProd.Name = "gBoxProd";
+            this.gBoxProd.Size = new System.Drawing.Size(566, 100);
+            this.gBoxProd.TabIndex = 1;
+            this.gBoxProd.TabStop = false;
+            this.gBoxProd.Text = "Datos del producto";
             // 
             // btnQuitarClienteXPedido
             // 
@@ -308,19 +309,19 @@
             this.btnBuscarClienteXPedido.UseVisualStyleBackColor = true;
             this.btnBuscarClienteXPedido.Click += new System.EventHandler(this.btnBuscarClienteXPedido_Click);
             // 
-            // groupBox3
+            // gBoxCli
             // 
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.btnBuscarClienteXPedido);
-            this.groupBox3.Controls.Add(this.txtRazSocCliente);
-            this.groupBox3.Controls.Add(this.txtRUCCliente);
-            this.groupBox3.Location = new System.Drawing.Point(10, 137);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(565, 72);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos del cliente";
+            this.gBoxCli.Controls.Add(this.label6);
+            this.gBoxCli.Controls.Add(this.label7);
+            this.gBoxCli.Controls.Add(this.btnBuscarClienteXPedido);
+            this.gBoxCli.Controls.Add(this.txtRazSocCliente);
+            this.gBoxCli.Controls.Add(this.txtRUCCliente);
+            this.gBoxCli.Location = new System.Drawing.Point(10, 137);
+            this.gBoxCli.Name = "gBoxCli";
+            this.gBoxCli.Size = new System.Drawing.Size(429, 72);
+            this.gBoxCli.TabIndex = 10;
+            this.gBoxCli.TabStop = false;
+            this.gBoxCli.Text = "Datos del cliente";
             // 
             // btnCerrarPedido
             // 
@@ -347,17 +348,18 @@
             // 
             // gbxPed2
             // 
+            this.gbxPed2.Controls.Add(this.btnCancelar);
             this.gbxPed2.Controls.Add(this.btnBuscarPedido);
-            this.gbxPed2.Location = new System.Drawing.Point(460, 365);
+            this.gbxPed2.Location = new System.Drawing.Point(460, 313);
             this.gbxPed2.Name = "gbxPed2";
-            this.gbxPed2.Size = new System.Drawing.Size(115, 70);
+            this.gbxPed2.Size = new System.Drawing.Size(115, 122);
             this.gbxPed2.TabIndex = 16;
             this.gbxPed2.TabStop = false;
             // 
             // btnBuscarPedido
             // 
             this.btnBuscarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPedido.Location = new System.Drawing.Point(12, 18);
+            this.btnBuscarPedido.Location = new System.Drawing.Point(12, 25);
             this.btnBuscarPedido.Name = "btnBuscarPedido";
             this.btnBuscarPedido.Size = new System.Drawing.Size(91, 39);
             this.btnBuscarPedido.TabIndex = 3;
@@ -368,7 +370,7 @@
             // gbxPed1
             // 
             this.gbxPed1.Controls.Add(this.btnAgregarPedido);
-            this.gbxPed1.Location = new System.Drawing.Point(460, 314);
+            this.gbxPed1.Location = new System.Drawing.Point(460, 147);
             this.gbxPed1.Name = "gbxPed1";
             this.gbxPed1.Size = new System.Drawing.Size(115, 51);
             this.gbxPed1.TabIndex = 15;
@@ -377,11 +379,11 @@
             // btnAgregarPedido
             // 
             this.btnAgregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarPedido.Location = new System.Drawing.Point(12, 16);
+            this.btnAgregarPedido.Location = new System.Drawing.Point(12, 17);
             this.btnAgregarPedido.Name = "btnAgregarPedido";
             this.btnAgregarPedido.Size = new System.Drawing.Size(91, 23);
             this.btnAgregarPedido.TabIndex = 0;
-            this.btnAgregarPedido.Text = "Registrar";
+            this.btnAgregarPedido.Text = "Nuevo";
             this.btnAgregarPedido.UseVisualStyleBackColor = true;
             this.btnAgregarPedido.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
@@ -395,6 +397,17 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "PEN";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(12, 81);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(91, 23);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAdmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,22 +418,22 @@
             this.Controls.Add(this.gbxPed1);
             this.Controls.Add(this.btnCerrarPedido);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gBoxCli);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.dateTimePedido);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gBoxProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdmPedido";
             this.Text = "frmAdmPedido";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gBoxProd.ResumeLayout(false);
+            this.gBoxProd.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gBoxCli.ResumeLayout(false);
+            this.gBoxCli.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbxPed2.ResumeLayout(false);
             this.gbxPed1.ResumeLayout(false);
@@ -430,7 +443,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gBoxProd;
         private System.Windows.Forms.Button btnBuscarProdXPedido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -451,7 +464,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePedido;
         private System.Windows.Forms.Button btnBuscarClienteXPedido;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gBoxCli;
         private System.Windows.Forms.Button btnQuitarClienteXPedido;
         private System.Windows.Forms.Button btnCerrarPedido;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -464,5 +477,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

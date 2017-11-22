@@ -38,6 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pBoxI2 = new System.Windows.Forms.PictureBox();
             this.pBoxI1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxProd3 = new System.Windows.Forms.GroupBox();
@@ -50,14 +51,13 @@
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnCerrarProducto = new System.Windows.Forms.Button();
             this.tip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pBoxI2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxProd3.SuspendLayout();
             this.gbxProd2.SuspendLayout();
             this.gbxProd1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -66,7 +66,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 20);
-            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtPeso
             // 
@@ -74,7 +74,7 @@
             this.txtPeso.Margin = new System.Windows.Forms.Padding(2);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(76, 20);
-            this.txtPeso.TabIndex = 1;
+            this.txtPeso.TabIndex = 4;
             // 
             // txtStockIni
             // 
@@ -82,7 +82,7 @@
             this.txtStockIni.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockIni.Name = "txtStockIni";
             this.txtStockIni.Size = new System.Drawing.Size(54, 20);
-            this.txtStockIni.TabIndex = 2;
+            this.txtStockIni.TabIndex = 6;
             this.txtStockIni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockIni_KeyPress);
             // 
             // txtPU
@@ -91,7 +91,7 @@
             this.txtPU.Margin = new System.Windows.Forms.Padding(2);
             this.txtPU.Name = "txtPU";
             this.txtPU.Size = new System.Drawing.Size(76, 20);
-            this.txtPU.TabIndex = 3;
+            this.txtPU.TabIndex = 5;
             this.txtPU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPU_KeyPress);
             // 
             // txtDescripcion
@@ -101,7 +101,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(311, 60);
-            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // label1
             // 
@@ -170,7 +170,7 @@
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(76, 20);
-            this.txtCodigo.TabIndex = 11;
+            this.txtCodigo.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -196,6 +196,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
+            // 
+            // pBoxI2
+            // 
+            this.pBoxI2.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI2.Image")));
+            this.pBoxI2.Location = new System.Drawing.Point(181, 165);
+            this.pBoxI2.Name = "pBoxI2";
+            this.pBoxI2.Size = new System.Drawing.Size(20, 20);
+            this.pBoxI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxI2.TabIndex = 16;
+            this.pBoxI2.TabStop = false;
             // 
             // pBoxI1
             // 
@@ -233,7 +243,7 @@
             this.btnBuscarProducto.Location = new System.Drawing.Point(12, 18);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(91, 39);
-            this.btnBuscarProducto.TabIndex = 3;
+            this.btnBuscarProducto.TabIndex = 11;
             this.btnBuscarProducto.Text = "Busca a un producto aquí";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
             this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
@@ -255,7 +265,7 @@
             this.btnModificarProducto.Location = new System.Drawing.Point(12, 16);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(91, 23);
-            this.btnModificarProducto.TabIndex = 1;
+            this.btnModificarProducto.TabIndex = 8;
             this.btnModificarProducto.Text = "Modificar";
             this.btnModificarProducto.UseVisualStyleBackColor = true;
             this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click);
@@ -266,7 +276,7 @@
             this.btnEliminarProducto.Location = new System.Drawing.Point(12, 45);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(91, 23);
-            this.btnEliminarProducto.TabIndex = 2;
+            this.btnEliminarProducto.TabIndex = 9;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
@@ -277,7 +287,7 @@
             this.btnLimpiarProducto.Location = new System.Drawing.Point(12, 74);
             this.btnLimpiarProducto.Name = "btnLimpiarProducto";
             this.btnLimpiarProducto.Size = new System.Drawing.Size(91, 23);
-            this.btnLimpiarProducto.TabIndex = 6;
+            this.btnLimpiarProducto.TabIndex = 10;
             this.btnLimpiarProducto.Text = "Cancelar";
             this.btnLimpiarProducto.UseVisualStyleBackColor = true;
             this.btnLimpiarProducto.Click += new System.EventHandler(this.btnLimpiarProducto_Click);
@@ -297,7 +307,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(12, 16);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(91, 23);
-            this.btnAgregarProducto.TabIndex = 0;
+            this.btnAgregarProducto.TabIndex = 7;
             this.btnAgregarProducto.Text = "Nuevo";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
@@ -313,16 +323,6 @@
             this.btnCerrarProducto.Text = "CERRAR";
             this.btnCerrarProducto.UseVisualStyleBackColor = false;
             this.btnCerrarProducto.Click += new System.EventHandler(this.btnCerrarProducto_Click);
-            // 
-            // pBoxI2
-            // 
-            this.pBoxI2.Image = ((System.Drawing.Image)(resources.GetObject("pBoxI2.Image")));
-            this.pBoxI2.Location = new System.Drawing.Point(181, 165);
-            this.pBoxI2.Name = "pBoxI2";
-            this.pBoxI2.Size = new System.Drawing.Size(20, 20);
-            this.pBoxI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBoxI2.TabIndex = 16;
-            this.pBoxI2.TabStop = false;
             // 
             // frmAdmProducto
             // 
@@ -342,12 +342,12 @@
             this.Text = "Administrar Producto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxI1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbxProd3.ResumeLayout(false);
             this.gbxProd2.ResumeLayout(false);
             this.gbxProd1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxI2)).EndInit();
             this.ResumeLayout(false);
 
         }

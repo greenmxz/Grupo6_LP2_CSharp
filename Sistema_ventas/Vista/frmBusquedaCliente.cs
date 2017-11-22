@@ -29,8 +29,8 @@ namespace Vista
         }
         private void btnCerrarBusqCliente_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            this.Estado = estado.Cerrado;
+            Dispose();
+            Estado = estado.Cerrado;
         }
         private void btnSelecCli_Click(object sender, EventArgs e)
         {
@@ -47,9 +47,9 @@ namespace Vista
                 }
                 i++;
             }
-            this.DialogResult = DialogResult.OK;
-            this.Estado = estado.Cerrado;
-            this.Dispose();
+            DialogResult = DialogResult.OK;
+            Estado = estado.Cerrado;
+            Dispose();
         }
     }
 }
