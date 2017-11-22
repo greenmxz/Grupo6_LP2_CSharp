@@ -6,7 +6,6 @@ namespace Modelo
 {
     public class Pedido
     {
-        private int _i;
         private int _idPedido;
         private Cliente _datoCliente;
         private BindingList<Producto> _lProductos;
@@ -18,13 +17,13 @@ namespace Modelo
             _datoCliente = new Cliente();
             this._lProductos = new BindingList<Producto>();
         }
-        public Pedido(int i, int idPedido, Cliente datoCliente, BindingList<Producto> lProductos, string estado,
+        public Pedido(int idPedido, Cliente datoCliente, BindingList<Producto> lProductos, string estado,
                       double total, DateTime dateReg)
         {
-            I = i;
             _idPedido = idPedido;
             _datoCliente = datoCliente;
-            //para lista como inicializar, averiguar
+            _lProductos = new BindingList<Producto>();
+            _lProductos = lProductos;
             _estado = estado;
             _total = total;
             _dateReg = dateReg;
@@ -34,7 +33,6 @@ namespace Modelo
         public string Estado { get => _estado; set => _estado = value; }
         public double Total { get => _total; set => _total = value; }
         public DateTime DateReg { get => _dateReg; set => _dateReg = value; }
-        public int I { get => _i; set => _i = value; }
         internal BindingList<Producto> LProductos { get => _lProductos; set => _lProductos = value; }
     }
 }

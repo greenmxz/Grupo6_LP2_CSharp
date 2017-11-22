@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Auxiliar\ConexionAD.cs" />
     <Compile Include="ClienteAD.cs" />
+    <Compile Include="PedidoAD.cs" />
     <Compile Include="ProductoAD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

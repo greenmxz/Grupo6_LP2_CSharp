@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteCL.cs" />
+    <Compile Include="PedidoCL.cs" />
     <Compile Include="ProductoCL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

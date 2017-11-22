@@ -77,18 +77,24 @@ namespace Vista
         }
         private void btnBuscarPedido_Click(object sender, EventArgs e) {
             if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado) {
-
-
                 frmBusquedaPedido = new frmBusquedaPedido();
                 frmBusquedaPedido.Estado = estado.Nuevo;
-                frmBusquedaPedido.MdiParent = this.MdiParent;
-
+                //frmBusquedaPedido.MdiParent = this.MdiParent;
                 frmBusquedaPedido.StartPosition = FormStartPosition.Manual;
                 frmBusquedaPedido.Left = 588;
-
                 frmBusquedaPedido.Top = 112;
-
-                frmBusquedaPedido.Visible = true;
+                frmBusquedaPedido.ShowDialog();
+                //frmBusquedaPedido.Visible = true;
+            }
+            if (frmBusquedaPedido.DialogResult == DialogResult.OK)
+            {
+                Pedido p = frmBusquedaPedido.PedidoSelecc;
+                dateTimePedido.Text = Convert.ToString(p.DateReg);
+                txtTotal.Text = Convert.ToString(p.Total);
+                txtRUCCliente.Text = p.DatoCliente.Ruc;
+                txtRazSocCliente.Text = p.DatoCliente.RazonSocial;
+                //foreach(Producto pr in )
+                definirEstado(estado.Buscar);
             }
         }
         private void btnCerrarPedido_Click(object sender, EventArgs e)

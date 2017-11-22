@@ -4,14 +4,14 @@ using Modelo;
 
 namespace Controlador
 {
-    public class ClienteCL
+    public class PedidoCL
     {
-        private ClienteAD accesoDatos;
-        public ClienteCL()
+        private PedidoAD accesoDatos;
+        public PedidoCL()
         {
-            accesoDatos = new ClienteAD();
+            accesoDatos = new PedidoAD();
         }
-        public BindingList<Cliente> devolverLista()
+        public BindingList<Pedido> devolverLista()
         {
             return accesoDatos.devolverLista();
         }
