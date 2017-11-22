@@ -17,9 +17,9 @@ namespace Vista
             logNegPed = new PedidoCL();
             BindingList<Pedido> lista = new BindingList<Pedido>();
             lista = logNegPed.devolverLista();
-            foreach (Pedido elem in lista)
+            foreach(Pedido p in lista)
             {
-                dataGridView1.Rows.Add(elem.IdPedido, elem.DateReg, elem.DatoCliente.Ruc, elem.Total);
+                dataGridView1.Rows.Add(p.IdPedido, p.DateReg, p.DatoCliente.Ruc, string.Format("{0:0.00}", p.Total));
             }
             Estado = estado.Nuevo;
         }
@@ -38,7 +38,7 @@ namespace Vista
             int i = 0;
             foreach (Pedido c in lista)
             {
-                if (c.IdPedido == id)
+                if (i == id)
                 {
                     pedidoSelecc = c;
                     break;

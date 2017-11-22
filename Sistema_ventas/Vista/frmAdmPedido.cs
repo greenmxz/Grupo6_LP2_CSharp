@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.ComponentModel;
 using Modelo;
 
 namespace Vista
@@ -16,12 +17,16 @@ namespace Vista
         private frmBusquedaProducto frmBusqProd;
         private Usuario login;
         private double total = 0;
+        private BindingList<Producto> listaProd;
+        private BindingList<int> listaCantidad;
         public frmAdmPedido(Usuario user)
         {
             InitializeComponent();
             cliseleccionado = new Cliente();
             prodSeleccionado = new Producto();
             pedido = new Pedido();
+            listaProd = new BindingList<Producto>();
+            listaCantidad = new BindingList<int>();
             txtTotal.Text = string.Format("{0:0.00}", total);
             definirEstado(estado.Nuevo);
             login = user;
@@ -65,11 +70,11 @@ namespace Vista
                 case (estado.Modificar):
                     btnAgregarPedido.Text = "Confirmar";
                     dateTimePedido.Enabled = true;
-                    btnBuscarClienteXPedido.Enabled = true;
+                    btnBuscarClienteXPedido.Enabled = false;
                     gBoxProd.Enabled = true;
                     dgvPedido.Enabled = true;
                     btnCancelar.Enabled = true;
-                    btnBuscarPedido.Enabled = true;
+                    btnBuscarPedido.Enabled = false;
                     break;
                 case (estado.Cerrado):
                     break;
@@ -88,12 +93,79 @@ namespace Vista
             }
             if (frmBusquedaPedido.DialogResult == DialogResult.OK)
             {
+                dgvPedido.Rows.Clear();
                 Pedido p = frmBusquedaPedido.PedidoSelecc;
                 dateTimePedido.Text = Convert.ToString(p.DateReg);
-                txtTotal.Text = Convert.ToString(p.Total);
+                total = p.Total;
+                txtTotal.Text = string.Format("{0:0.00}", p.Total);
                 txtRUCCliente.Text = p.DatoCliente.Ruc;
                 txtRazSocCliente.Text = p.DatoCliente.RazonSocial;
-                //foreach(Producto pr in )
+                /* EXTRACCIÓN DE PRODUCTOS */
+                MySqlConnection conProd1 = new MySqlConnection();
+                listaProd = new BindingList<Producto>();
+                listaCantidad = new BindingList<int>();
+                try
+                {
+                    string cadena = "server=200.16.7.96;user=inf282g6;database=inf282g6;" +
+                         "port=3306;password=ta1RQx6flDXdiTpr;";
+                    conProd1 = new MySqlConnection(cadena);
+                    conProd1.Open();
+                    MySqlCommand cmdProd1 = new MySqlCommand();
+                    cmdProd1.CommandText = "SELECT * FROM DetallePedido WHERE idPedido=" + p.IdPedido;
+                    cmdProd1.Connection = conProd1;
+                    MySqlDataReader readerProd1 = cmdProd1.ExecuteReader();
+                    while (readerProd1.Read())
+                    {
+                        int idProd = readerProd1.GetInt32("idProducto");
+                        int valid = 0;
+                        foreach (Producto pr in listaProd)
+                        {
+                            if (pr.Id == idProd)
+                            {
+                                valid = 1;
+                                break;
+                            }
+                        }
+                        if (valid == 0)
+                        {
+                            int cantidad = readerProd1.GetInt32("cantidad");
+                            listaCantidad.Add(cantidad);
+                            MySqlConnection conProd2 = new MySqlConnection();
+                            try
+                            {
+                                string cadenaA = "server=200.16.7.96;user=inf282g6;database=inf282g6;" +
+                                     "port=3306;password=ta1RQx6flDXdiTpr;";
+                                conProd2 = new MySqlConnection(cadenaA);
+                                conProd2.Open();
+                                MySqlCommand cmdProd2 = new MySqlCommand();
+                                cmdProd2.CommandText = "SELECT * FROM Producto WHERE idProducto=" + idProd;
+                                cmdProd2.Connection = conProd2;
+                                MySqlDataReader readerProd2 = cmdProd2.ExecuteReader();
+                                readerProd2.Read();
+                                Producto prodPed = new Producto();
+                                prodPed.Id = idProd;
+                                prodPed.Nombre = readerProd2.GetString("nombre");
+                                prodPed.Precio = readerProd2.GetDouble("precioUnitario");
+                                listaProd.Add(prodPed);
+                            }
+                            catch (Exception gg3)
+                            {
+
+                            }
+                        }
+                    }
+                }
+                catch (Exception gg2)
+                {
+
+                }
+                int i = 0;
+                foreach(Producto pr in listaProd)
+                {
+                    double subtotal = listaCantidad[i] * pr.Precio;
+                    dgvPedido.Rows.Add(pr.Nombre, listaCantidad[i], string.Format("{0:0.00}", pr.Precio), string.Format("{0:0.00}", subtotal));
+                    i++;
+                }
                 definirEstado(estado.Buscar);
             }
         }
@@ -154,17 +226,26 @@ namespace Vista
             }
             else
             {
-                
-                pedido.DatoCliente = cliseleccionado;
-                if (prodSeleccionado == null || txtCantProd.Text=="")
+                if (txtCodigoProd.Text != "" && txtNombProd.Text != "" && txtCantProd.Text != "")
                 {
-                    MessageBox.Show("Falta ingresar datos de producto", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    pedido.DatoCliente = cliseleccionado;
+                    if (prodSeleccionado == null || txtCantProd.Text == "")
+                    {
+                        MessageBox.Show("Falta ingresar datos de producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        double subtotal = Int32.Parse(txtCantProd.Text) * (prodSeleccionado.Precio);
+                        dgvPedido.Rows.Add(prodSeleccionado.Nombre, txtCantProd.Text, string.Format("{0:0.00}", prodSeleccionado.Precio), subtotal.ToString("N2"));
+                        listaProd.Add(prodSeleccionado);
+                        listaCantidad.Add(Int32.Parse(txtCantProd.Text));
+                        total += subtotal;
+                        txtTotal.Text = string.Format("{0:0.00}", total);
+                    }
                 }
                 else
                 {
-                    double subtotal = Int32.Parse(txtCantProd.Text) * (prodSeleccionado.Precio);
-                    dgvPedido.Rows.Add(prodSeleccionado.Nombre, txtCantProd.Text, prodSeleccionado.Precio, subtotal.ToString("N2"));
-                    pedido.Total += subtotal;
+                    MessageBox.Show("Debe seleccionar un producto válido", "Producto inválido detectado");
                 }
             }
         }
@@ -174,22 +255,17 @@ namespace Vista
             {
                 definirEstado(estado.Registrar);
             }
+            else if (frmState == estado.Registrar)
+            {
+
+                btnCancelar_Click(sender, e);
+            }
+            else if (frmState == estado.Buscar)
+            {
+                definirEstado(estado.Modificar);
+            }
             else
             {
-                //string url = "server=200.16.7.96;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=ta1RQx6flDXdiTpr;";
-                //MySqlConnection conn = new MySqlConnection(url);
-                //conn.Open();
-                ////MessageBox("Conexión exitosa","Conexiones");
-                ////MySqlCommand com = new MySqlCommand();
-                //MySqlCommand mysqlcom = new MySqlCommand();
-                //string sqlquery = "INSERT INTO Pedido " +
-                //                  " (importeTotal,fechaPedido,idCliente,idEstadoPedido,estadoRegistro,idAdministradorSistema,idAlmacenero,idResponsableLogistica)" +
-                //                  " values (" +
-                //                  pedido.Total + ",'" + pedido.DateReg + "'," + pedido.DatoCliente.Id + ",1,1,3,12,4)";
-                //mysqlcom.Connection = conn;
-                //mysqlcom.CommandText = sqlquery;
-                //mysqlcom.ExecuteNonQuery();
-                //txtTotal.Text = pedido.Total.ToString("N2");
                 btnCancelar_Click(sender, e);
             }
         }
@@ -205,6 +281,42 @@ namespace Vista
             txtNombProd.Text = "";
             txtCantProd.Text = "";
             dgvPedido.Rows.Clear();
+        }
+
+        private void dgvPedido_Click(object sender, EventArgs e)
+        {
+            int id = (int)dgvPedido.CurrentRow.Index;
+            txtCodigoProd.Text = Convert.ToString(listaProd[id].Id);
+            txtNombProd.Text = listaProd[id].Nombre;
+            txtCantProd.Text = Convert.ToString(listaCantidad[id]);
+        }
+
+        private void btnQuitarClienteXPedido_Click(object sender, EventArgs e)
+        {
+            int id = (int)dgvPedido.CurrentRow.Index;
+            total -= listaProd[id].Precio * listaCantidad[id];
+            txtTotal.Text = string.Format("{0:0.00}", total);
+            listaProd.RemoveAt(id);
+            listaCantidad.RemoveAt(id);
+            dgvPedido.Rows.RemoveAt(id);
+            txtCodigoProd.Text = "";
+            txtNombProd.Text = "";
+            txtCantProd.Text = "";
+        }
+
+        private void btnModificarClienteXPedido_Click(object sender, EventArgs e)
+        {
+            if (txtCodigoProd.Text != "" && txtNombProd.Text != "" && txtCantProd.Text != "")
+            {
+                int id = (int)dgvPedido.CurrentRow.Index;
+                total -= listaProd[id].Precio;
+
+
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un producto de la tabla", "Anomalía en modificación detectada");
+            }
         }
     }
 }

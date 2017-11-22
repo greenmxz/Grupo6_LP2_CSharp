@@ -59,11 +59,11 @@
             this.btnCerrarPedido = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxPed2 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBuscarPedido = new System.Windows.Forms.Button();
             this.gbxPed1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.gBoxProd.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
@@ -101,6 +101,7 @@
             this.btnQuitarClienteXPedido.TabIndex = 9;
             this.btnQuitarClienteXPedido.Text = "Quitar";
             this.btnQuitarClienteXPedido.UseVisualStyleBackColor = true;
+            this.btnQuitarClienteXPedido.Click += new System.EventHandler(this.btnQuitarClienteXPedido_Click);
             // 
             // txtNombProd
             // 
@@ -145,6 +146,7 @@
             this.btnModificarClienteXPedido.TabIndex = 3;
             this.btnModificarClienteXPedido.Text = "Modificar";
             this.btnModificarClienteXPedido.UseVisualStyleBackColor = true;
+            this.btnModificarClienteXPedido.Click += new System.EventHandler(this.btnModificarClienteXPedido_Click);
             // 
             // label5
             // 
@@ -206,6 +208,7 @@
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.Size = new System.Drawing.Size(404, 85);
             this.dgvPedido.TabIndex = 0;
+            this.dgvPedido.Click += new System.EventHandler(this.dgvPedido_Click);
             // 
             // Nombre
             // 
@@ -356,6 +359,17 @@
             this.gbxPed2.TabIndex = 16;
             this.gbxPed2.TabStop = false;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(12, 81);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(91, 23);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnBuscarPedido
             // 
             this.btnBuscarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -396,17 +410,6 @@
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "PEN";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 81);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(91, 23);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmAdmPedido
             // 

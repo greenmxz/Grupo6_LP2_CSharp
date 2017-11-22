@@ -103,21 +103,21 @@
             this.TotalVenta.HeaderText = "Fecha";
             this.TotalVenta.Name = "TotalVenta";
             this.TotalVenta.ReadOnly = true;
-            this.TotalVenta.Width = 110;
+            this.TotalVenta.Width = 140;
             // 
             // RUC
             // 
             this.RUC.HeaderText = "RUC de Cliente";
             this.RUC.Name = "RUC";
             this.RUC.ReadOnly = true;
-            this.RUC.Width = 105;
+            this.RUC.Width = 95;
             // 
             // totalPed
             // 
             this.totalPed.HeaderText = "Total";
             this.totalPed.Name = "totalPed";
             this.totalPed.ReadOnly = true;
-            this.totalPed.Width = 80;
+            this.totalPed.Width = 60;
             // 
             // frmBusquedaPedido
             // 
