@@ -7,6 +7,7 @@ using Modelo;
 namespace Vista {
     public partial class frmAdmProducto : Form {
         private estado _estado;
+        private bool busqprod=false;
         private frmBusquedaProducto frmBPROD;
         private Producto prodSeleccionado;
         private Usuario login;
@@ -32,6 +33,26 @@ namespace Vista {
             Visible = true;
             txtCodigo.Enabled = false;
             definirEstado(estado.Nuevo);
+        }
+
+        public void instanciabusqueda()
+        {
+            
+            //btnAgregarProducto.Text = "Registrar";
+            //btnModificarProducto.Text = "Modificar";
+            
+            txtNombre.Enabled = true;
+            txtDescripcion.Enabled = true;
+            txtPeso.Enabled = true;
+            txtPU.Enabled = true;
+            txtStockIni.Enabled = true;
+            //gbxProd1.Enabled = true;
+            btnModificarProducto.Enabled = false;
+            btnEliminarProducto.Enabled = false;
+            btnLimpiarProducto.Enabled = true;
+            //gbxProd3.Enabled = false;
+            //btnBuscarProducto.Enabled = true;
+
         }
         public void definirEstado(estado e)
         {
@@ -94,6 +115,8 @@ namespace Vista {
                     btnLimpiarProducto.Enabled = true;
                     gbxProd3.Enabled = false;
                     break;
+                //case (estado.busqProducto):
+
                 case (estado.Cerrado):
                     break;
             }
@@ -110,25 +133,64 @@ namespace Vista {
             }
         }
         private void btnBuscarProducto_Click(object sender, EventArgs e)
-        {           
-                frmBPROD = new frmBusquedaProducto();
-                if (frmBPROD.ShowDialog() == DialogResult.OK)
-                {
+        {
+            if (busqprod == false)
+            {
+                btnBuscarProducto.Text = "Buscar";
+                btnBuscarProducto.Enabled = true;
+                instanciabusqueda();
+                busqprod = true;
 
-                    prodSeleccionado = frmBPROD.ProductoSelecc;                    
-                    txtCodigo.Text = prodSeleccionado.Id.ToString();
-                    txtNombre.Text = prodSeleccionado.Nombre;
-                    txtDescripcion.Text = prodSeleccionado.Descripcion;
-                    txtPU.Text = prodSeleccionado.Precio.ToString("N2");
-                    txtPeso.Text = prodSeleccionado.Peso.ToString("N2");
-                    txtStockIni.Text = Convert.ToString(prodSeleccionado.Stock);
-                    definirEstado(estado.Buscar);
+            }
+            //definirEstado(estado.Buscar);
+            else if (busqprod == true)
+            {
+                if (txtNombre.Text == "")
+                {
+                    frmBPROD = new frmBusquedaProducto();
+                    if (frmBPROD.ShowDialog() == DialogResult.OK)
+                    {
+
+                        prodSeleccionado = frmBPROD.ProductoSelecc;
+                        txtCodigo.Text = prodSeleccionado.Id.ToString();
+                        txtNombre.Text = prodSeleccionado.Nombre;
+                        txtDescripcion.Text = prodSeleccionado.Descripcion;
+                        txtPU.Text = prodSeleccionado.Precio.ToString("N2");
+                        txtPeso.Text = prodSeleccionado.Peso.ToString("N2");
+                        txtStockIni.Text = Convert.ToString(prodSeleccionado.Stock);
+                        definirEstado(estado.Buscar);
+                    }
+
+                    frmBPROD.Estado = estado.Nuevo;
+                    frmBPROD.MdiParent = this.MdiParent;
+                    frmBPROD.StartPosition = FormStartPosition.Manual;
+                    frmBPROD.Left = 588;
+                    frmBPROD.Top = 112;
                 }
-                frmBPROD.Estado = estado.Nuevo;
-                frmBPROD.MdiParent = this.MdiParent;
-                frmBPROD.StartPosition = FormStartPosition.Manual;
-                frmBPROD.Left = 588;
-                frmBPROD.Top = 112;
+                else {
+                    string nombreaux = txtNombre.Text;
+                    frmBPROD = new frmBusquedaProducto(nombreaux);
+                    if (frmBPROD.ShowDialog() == DialogResult.OK)
+                    {
+
+                        prodSeleccionado = frmBPROD.ProductoSelecc;
+                        txtCodigo.Text = prodSeleccionado.Id.ToString();
+                        txtNombre.Text = prodSeleccionado.Nombre;
+                        txtDescripcion.Text = prodSeleccionado.Descripcion;
+                        txtPU.Text = prodSeleccionado.Precio.ToString("N2");
+                        txtPeso.Text = prodSeleccionado.Peso.ToString("N2");
+                        txtStockIni.Text = Convert.ToString(prodSeleccionado.Stock);
+                        definirEstado(estado.Buscar);
+                    }
+
+                    frmBPROD.Estado = estado.Nuevo;
+                    frmBPROD.MdiParent = this.MdiParent;
+                    frmBPROD.StartPosition = FormStartPosition.Manual;
+                    frmBPROD.Left = 588;
+                    frmBPROD.Top = 112;
+
+                }                    
+            }
         }
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -205,6 +267,8 @@ namespace Vista {
             txtPeso.Text = "";
             txtPU.Text = "";
             txtStockIni.Text = "";
+            busqprod = false;
+            btnBuscarProducto.Text = "Busca tu producto aqui!";
             definirEstado(estado.Nuevo);
         }
         private void btnModificarProducto_Click(object sender, EventArgs e)

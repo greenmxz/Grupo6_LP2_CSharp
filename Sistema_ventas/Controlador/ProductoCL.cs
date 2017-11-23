@@ -20,5 +20,10 @@ namespace Controlador
         {
             return accesoDatos.devolverlista();
         }
+
+        public BindingList<Producto> devolverlista(string nombre)
+        {
+            return accesoDatos.devolverlista(nombre);
+        }
     }
 }
