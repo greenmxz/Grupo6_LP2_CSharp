@@ -27,6 +27,20 @@ namespace Vista
 
         }
 
+        public frmBusquedaProducto(string nombre)
+        {
+            InitializeComponent();
+            productoSelecc = new Producto();
+            productocl = new ProductoCL();
+            listaproducto = productocl.devolverlista(nombre);
+            foreach (Producto p in listaproducto)
+            {
+                dgvBuscProducto.Rows.Add(p.Id, p.Nombre, p.Precio.ToString("N2"), p.Stock);
+            }
+
+        }
+
+
         public estado Estado { get => _estado; set => _estado = value; }
         public Producto ProductoSelecc { get => productoSelecc; set => productoSelecc = value; }
 

@@ -65,15 +65,19 @@ namespace Vista.Vista_menu {
                     MenuInicioVentas.MdiParent = this.ParentForm;
                     MenuInicioVentas.Show();
                     Abierto = true;
+                    
                 }
             }
             else {
                 if (usuario.Tipo == 5) {
-                    MenuInicioAdm.Dispose();
-                    
+                    //this.MenuInicioAdm.Dispose();
+                     MenuInicioVentas.Dispose();
                 }
                 else {
-                    MenuInicioVentas.Dispose();
+                    Abierto = false;
+                    //MenuInicioVentas.Visible = false;
+                    // MenuInicioVentas.Dispose();
+                    menuInicioAdm.Dispose();
                 }
                 Abierto = false; 
             }
@@ -87,6 +91,15 @@ namespace Vista.Vista_menu {
         }
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e) {
             this.Cursor = Cursors.Default;
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            //if (menuInicioVentas.Visible == true)
+            //{
+                //MenuInicioVentas.Visible = false;
+
+            //}
         }
     }
 }
