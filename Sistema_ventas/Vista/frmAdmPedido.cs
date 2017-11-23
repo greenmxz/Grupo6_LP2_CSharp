@@ -235,11 +235,38 @@ namespace Vista
                     }
                     else
                     {
-                        double subtotal = Int32.Parse(txtCantProd.Text) * (prodSeleccionado.Precio);
-                        dgvPedido.Rows.Add(prodSeleccionado.Nombre, txtCantProd.Text, string.Format("{0:0.00}", prodSeleccionado.Precio), subtotal.ToString("N2"));
-                        listaProd.Add(prodSeleccionado);
-                        listaCantidad.Add(Int32.Parse(txtCantProd.Text));
-                        total += subtotal;
+                        int valid = 1, ii = 0;
+                        foreach (Producto pr in listaProd)
+                        {
+                            if (pr.Id == Int32.Parse(txtCodigoProd.Text))
+                            {
+                                valid = 0;
+                                break;
+                            }
+                            ii++;
+                        }
+                        if (valid == 1)
+                        {
+                            double subtotal = Int32.Parse(txtCantProd.Text) * (prodSeleccionado.Precio);
+                            dgvPedido.Rows.Add(prodSeleccionado.Nombre, txtCantProd.Text, string.Format("{0:0.00}", prodSeleccionado.Precio), subtotal.ToString("N2"));
+                            listaProd.Add(prodSeleccionado);
+                            listaCantidad.Add(Int32.Parse(txtCantProd.Text));
+                            total += subtotal;
+                        }
+                        else
+                        {
+                            total -= listaCantidad[ii] * listaProd[ii].Precio;
+                            listaCantidad[ii] += Int32.Parse(txtCantProd.Text);
+                            total += listaCantidad[ii] * listaProd[ii].Precio;
+                            dgvPedido.Rows.Clear();
+                            int i = 0;
+                            foreach (Producto pr in listaProd)
+                            {
+                                double subtotal = listaCantidad[i] * pr.Precio;
+                                dgvPedido.Rows.Add(pr.Nombre, listaCantidad[i], string.Format("{0:0.00}", pr.Precio), string.Format("{0:0.00}", subtotal));
+                                i++;
+                            }
+                        }
                         txtTotal.Text = string.Format("{0:0.00}", total);
                     }
                 }
@@ -257,7 +284,47 @@ namespace Vista
             }
             else if (frmState == estado.Registrar)
             {
-
+                // REGISTRO DE PEDIDO
+                int id = 0;
+                try
+                {
+                    BindingList<string> aux = new BindingList<string>();
+                    id = AdminDB.executeFunction("obtener_idPedido", null, aux);
+                    string formato = dateTimePedido.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                    string sentencia = "INSERT INTO Pedido" +
+                        " VALUES (" + id + "," + total + ",'" + formato + "'," + cliseleccionado.Id + "," +
+                        "1,1," + login.IdUsuario + ",3,12)";
+                    ConexionVista.conectar();
+                    MySqlCommand cmdCli = new MySqlCommand();
+                    cmdCli.CommandText = sentencia;
+                    ConexionVista.cast(cmdCli);
+                    cmdCli.ExecuteNonQuery();
+                    ConexionVista.cerrar();
+                }
+                catch (Exception ggg1)
+                {
+                }
+                // REGISTRO DE DETALLES
+                int count = 0;
+                foreach (Producto p in listaProd)
+                {
+                    try
+                    {
+                        BindingList<string> aux = new BindingList<string>();
+                        double subtotal = listaProd[count].Precio * listaCantidad[count];
+                        ConexionVista.conectar();
+                        MySqlCommand cmdCli = new MySqlCommand();
+                        cmdCli.CommandText = "INSERT INTO DetallePedido" +
+                            " VALUES (" + id + "," + listaCantidad[count] + "," + subtotal + "," + listaProd[count].Id + ")";
+                        ConexionVista.cast(cmdCli);
+                        cmdCli.ExecuteNonQuery();
+                        ConexionVista.cerrar();
+                    }
+                    catch (Exception ggg2)
+                    {
+                    }
+                    count++;
+                }
                 btnCancelar_Click(sender, e);
             }
             else if (frmState == estado.Buscar)
@@ -266,6 +333,42 @@ namespace Vista
             }
             else
             {
+                // ACTUALIZACIÓN DE PEDIDO
+                try
+                {
+                    string formato = dateTimePedido.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                    string sentencia = "UPDATE Pedido SET importeTotal=" + total + " WHERE idPedido=" + pedido.IdPedido;
+                    ConexionVista.conectar();
+                    MySqlCommand cmdCli = new MySqlCommand();
+                    cmdCli.CommandText = sentencia;
+                    ConexionVista.cast(cmdCli);
+                    cmdCli.ExecuteNonQuery();
+                    ConexionVista.cerrar();
+                }
+                catch (Exception ggg1)
+                {
+                }
+                // ACTUALIZACIÓN DE DETALLES
+                int count = 0;
+                foreach (Producto p in listaProd)
+                {
+                    try
+                    {
+                        BindingList<string> aux = new BindingList<string>();
+                        double subtotal = listaProd[count].Precio * listaCantidad[count];
+                        ConexionVista.conectar();
+                        MySqlCommand cmdCli = new MySqlCommand();
+                        cmdCli.CommandText = "UPDATE DetallePedido SET cantidad=" + listaCantidad[count] + ",subtotal=" + subtotal +
+                            " WHERE idPedido=" + pedido.IdPedido + " AND idProducto=" + listaProd[count].Id + ")";
+                        ConexionVista.cast(cmdCli);
+                        cmdCli.ExecuteNonQuery();
+                        ConexionVista.cerrar();
+                    }
+                    catch (Exception ggg2)
+                    {
+                    }
+                    count++;
+                }
                 btnCancelar_Click(sender, e);
             }
         }
@@ -309,13 +412,30 @@ namespace Vista
             if (txtCodigoProd.Text != "" && txtNombProd.Text != "" && txtCantProd.Text != "")
             {
                 int id = (int)dgvPedido.CurrentRow.Index;
-                total -= listaProd[id].Precio;
-
-
+                total -= listaProd[id].Precio * listaCantidad[id];
+                listaCantidad[id] = Int32.Parse(txtCantProd.Text);
+                total += listaProd[id].Precio * listaCantidad[id];
+                txtTotal.Text = string.Format("{0:0.00}", total);
+                dgvPedido.Rows.Clear();
+                int i = 0;
+                foreach (Producto pr in listaProd)
+                {
+                    double subtotal = listaCantidad[i] * pr.Precio;
+                    dgvPedido.Rows.Add(pr.Nombre, listaCantidad[i], string.Format("{0:0.00}", pr.Precio), string.Format("{0:0.00}", subtotal));
+                    i++;
+                }
             }
             else
             {
                 MessageBox.Show("Debe seleccionar un producto de la tabla", "Anomalía en modificación detectada");
+            }
+        }
+
+        private void txtCantProd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

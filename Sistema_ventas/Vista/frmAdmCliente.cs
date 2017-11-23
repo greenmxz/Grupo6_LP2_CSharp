@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.ComponentModel;
 using Modelo;
+using Controlador;
 
 namespace Vista {
     public enum estado { Nuevo, Registrar, Buscar, Modificar, Cerrado }

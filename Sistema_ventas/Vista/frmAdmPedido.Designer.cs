@@ -136,6 +136,7 @@
             this.txtCantProd.Name = "txtCantProd";
             this.txtCantProd.Size = new System.Drawing.Size(97, 20);
             this.txtCantProd.TabIndex = 6;
+            this.txtCantProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantProd_KeyPress);
             // 
             // btnModificarClienteXPedido
             // 
