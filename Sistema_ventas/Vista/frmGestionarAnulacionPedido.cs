@@ -24,14 +24,37 @@ namespace Vista {
             if (frmBusquedaPedido == null || frmBusquedaPedido.Estado == estado.Cerrado)
             {
                 frmBusquedaPedido = new frmBusquedaPedido();
-                frmBusquedaPedido.MdiParent = this.ParentForm;
+
+                //frmBusquedaPedido.MdiParent = this.ParentForm;
                 frmBusquedaPedido.Show();
                 frmBusquedaPedido.StartPosition = FormStartPosition.Manual;
                 frmBusquedaPedido.Left = 588;
 
                 frmBusquedaPedido.Top = 112;
+                //frmBusquedaPedido.ShowDialog();
             }
+            //MessageBox.Show("gg");
+
+            if (frmBusquedaPedido.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("gg");
+                //dgvAnuPedido.Rows.Clear();
+                Pedido p = frmBusquedaPedido.PedidoSelecc;
+                txtAnuPedidoId.Text = p.IdPedido.ToString();
+                txtAnuPedidoRuc.Text = p.DatoCliente.Ruc;
+
+            }
+
+
+
+
+
         }
+
+
+
+
+
         private void btnCancelarAnulacion_Click(object sender, EventArgs e)
         {
             this.Dispose();

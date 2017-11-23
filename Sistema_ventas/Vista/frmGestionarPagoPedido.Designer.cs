@@ -37,7 +37,7 @@
             this.NombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPagoPedidoId = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -177,12 +177,12 @@
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
             // 
-            // textBox1
+            // txtPagoPedidoId
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
-            this.textBox1.TabIndex = 50;
+            this.txtPagoPedidoId.Location = new System.Drawing.Point(112, 115);
+            this.txtPagoPedidoId.Name = "txtPagoPedidoId";
+            this.txtPagoPedidoId.Size = new System.Drawing.Size(85, 20);
+            this.txtPagoPedidoId.TabIndex = 50;
             // 
             // groupBox1
             // 
@@ -314,7 +314,7 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPagoPedidoId);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCerrarPago);
@@ -348,7 +348,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPagoPedidoId;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;

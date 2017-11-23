@@ -30,10 +30,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAnuPedidoId = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAnuPedidoRuc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.btnCancelarAnulacion = new System.Windows.Forms.Button();
             this.btnLimpiarAnulacion = new System.Windows.Forms.Button();
             this.btnCerrarAnula = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAnuPedido = new System.Windows.Forms.DataGridView();
             this.NombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxAnula2.SuspendLayout();
             this.gbxAnula1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnuPedido)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,17 +108,17 @@
             this.textBox4.Size = new System.Drawing.Size(115, 20);
             this.textBox4.TabIndex = 19;
             // 
-            // textBox1
+            // txtAnuPedidoId
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtAnuPedidoId.Location = new System.Drawing.Point(112, 113);
+            this.txtAnuPedidoId.Name = "txtAnuPedidoId";
+            this.txtAnuPedidoId.Size = new System.Drawing.Size(85, 20);
+            this.txtAnuPedidoId.TabIndex = 16;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtAnuPedidoRuc);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(13, 144);
@@ -135,12 +135,12 @@
             this.textBox3.Size = new System.Drawing.Size(173, 20);
             this.textBox3.TabIndex = 3;
             // 
-            // textBox2
+            // txtAnuPedidoRuc
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(112, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtAnuPedidoRuc.Location = new System.Drawing.Point(83, 18);
+            this.txtAnuPedidoRuc.Name = "txtAnuPedidoRuc";
+            this.txtAnuPedidoRuc.Size = new System.Drawing.Size(112, 20);
+            this.txtAnuPedidoRuc.TabIndex = 2;
             // 
             // label3
             // 
@@ -254,20 +254,20 @@
             this.btnCerrarAnula.UseVisualStyleBackColor = false;
             this.btnCerrarAnula.Click += new System.EventHandler(this.btnCerrarProveedor_Click);
             // 
-            // dataGridView1
+            // dgvAnuPedido
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAnuPedido.AllowUserToAddRows = false;
+            this.dgvAnuPedido.AllowUserToDeleteRows = false;
+            this.dgvAnuPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnuPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreProd,
             this.Cantidad,
             this.Subtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(387, 150);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvAnuPedido.Location = new System.Drawing.Point(20, 19);
+            this.dgvAnuPedido.Name = "dgvAnuPedido";
+            this.dgvAnuPedido.ReadOnly = true;
+            this.dgvAnuPedido.Size = new System.Drawing.Size(387, 150);
+            this.dgvAnuPedido.TabIndex = 4;
             // 
             // NombreProd
             // 
@@ -292,7 +292,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvAnuPedido);
             this.groupBox2.Location = new System.Drawing.Point(13, 230);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(426, 184);
@@ -316,7 +316,7 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAnuPedidoId);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -327,7 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbxAnula2.ResumeLayout(false);
             this.gbxAnula1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnuPedido)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -341,10 +341,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAnuPedidoId;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAnuPedidoRuc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -356,7 +356,7 @@
         private System.Windows.Forms.Button btnCancelarAnulacion;
         private System.Windows.Forms.Button btnLimpiarAnulacion;
         private System.Windows.Forms.Button btnCerrarAnula;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAnuPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;

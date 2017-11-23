@@ -32,7 +32,20 @@ namespace Vista {
                 frmBusquedaPedido.Left = 588;
 
                 frmBusquedaPedido.Top = 112;
+
             }
+
+            if (frmBusquedaPedido.DialogResult == DialogResult.OK)
+            {
+               
+                //dgvAnuPedido.Rows.Clear();
+                Pedido p = frmBusquedaPedido.PedidoSelecc;
+                txtPagoPedidoId.Text = p.IdPedido.ToString();
+                
+
+            }
+
+
         }
         private void btnCancelarPago_Click(object sender, EventArgs e)
         {
